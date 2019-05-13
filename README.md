@@ -2,7 +2,21 @@
 
 ![log](media/log.png)
 
-[TOC]
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [An online deep learning  course for humanists [Under Development]](#an-online-deep-learning--course-for-humanists-under-development)
+  - [Project Description](#project-description)
+  - [Course Outline](#course-outline)
+    - [Part 1 Introduction: Teach computer to classify handwritten digits](#part-1-introduction-teach-computer-to-classify-handwritten-digits)
+    - [Part 2 Classify Hand Gesture Pose in Art](#part-2-classify-hand-gesture-pose-in-art)
+    - [Part 3 Audio Recognition of Simple words](#part-3-audio-recognition-of-simple-words)
+    - [Part 4 Exploring Sentiment in Literature](#part-4-exploring-sentiment-in-literature)
+  - [About Me](#about-me)
+  - [Reference](#reference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Project Description
 
