@@ -16,13 +16,8 @@
 $right-sidebar-center-offset: ($page-max-width - $sidebar-width) / 2 -
     $spacing-unit-large;
 
-.sidebar__right > * {
-    direction: ltr;
-}
-
 .sidebar__right {
     display: none;
-    overflow-x: hidden;
     @include mq($from: desktop) {
         display: block;
         width: $right-sidebar-width;
@@ -31,10 +26,7 @@ $right-sidebar-center-offset: ($page-max-width - $sidebar-width) / 2 -
         top: 3 * $spacing-unit;
         right: 0; /* [1] */
         padding-right: $spacing-unit;
-        overflow-y: auto;
-        max-height: 90%; // Required for scrolling to work properly
-        scrollbar-width: thin;
-        direction: rtl;
+
         z-index: 1; // Keep sidebar on top of page content
     }
 
@@ -45,7 +37,7 @@ $right-sidebar-center-offset: ($page-max-width - $sidebar-width) / 2 -
     }
 }
 
-aside.sidebar__right {
+nav.onthispage {
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
         'Helvetica Neue', 'Lucida Grande', Arial, sans-serif;
     color: #7a8288;

@@ -1,14 +1,13 @@
 ---
 interact_link: content/features/notebooks.ipynb
 kernel_name: python3
-has_widgets: false
 title: 'Jupyter notebooks'
 prev_page:
   url: /features/markdown
   title: 'Markdown files'
 next_page:
-  url: /features/hiding
-  title: 'Hiding code blocks or entire cells'
+  url: /version_control
+  title: 'Turing Way chapter'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -48,20 +47,20 @@ But make sure you \\$Escape \\$your \\$dollar signs \\$you want to keep!
 Textbooks with Jupyter will also embed your code blocks and output in your site.
 For example, here's some sample Matplotlib code:
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+
+
+{:.input_area}
 ```python
 from matplotlib import rcParams, cycler
 import matplotlib.pyplot as plt
 import numpy as np
 plt.ion()
 ```
-</div>
 
-</div>
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+
+
+{:.input_area}
 ```python
 # Fixing random state for reproducibility
 np.random.seed(19680801)
@@ -82,17 +81,13 @@ fig, ax = plt.subplots(figsize=(10, 5))
 lines = ax.plot(data)
 ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
 ```
-</div>
 
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
 
-{:.output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/docs/_build/images/features/notebooks_2_0.png)
 
-</div>
-</div>
-</div>
+{:.output .output_png}
+![png](../images/features/notebooks_2_0.png)
+
+
 
 Note that the image above is captured and displayed by Jekyll.
 
@@ -102,74 +97,26 @@ You can also remove some content before publishing your book to the web. For exa
 in [the original notebook](https://github.com/jupyter/jupyter-book/blob/master/notebooks/introduction/notebooks.ipynb) there
 used to be a cell below...
 
-<div markdown="1" class="cell code_cell removed">
-<div class="input_area" markdown="1">
-```python
-thisvariable = "none of this should show up in the textbook"
-
-fig, ax = plt.subplots()
-x = np.random.randn(100)
-y = np.random.randn(100)
-ax.scatter(x, y, s=np.abs(x*100), c=x, cmap=plt.cm.coolwarm)
-ax.text(0, .5, thisvariable, fontsize=20, transform=ax.transAxes)
-ax.set_axis_off()
-```
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-
-{:.output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/docs/_build/images/features/notebooks_5_0.png)
-
-</div>
-</div>
-</div>
-
 You can also **remove only the code** so that images and other output still show up.
 
 Below we'll *only* display an image. It was generated with Python code in a cell,
 which you can [see in the original notebook](https://github.com/jupyter/jupyter-book/blob/master/notebooks/introduction/notebooks.ipynb)
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-# NO CODE
-thisvariable = "this plot *will* show up in the textbook."
 
-fig, ax = plt.subplots()
-x = np.random.randn(100)
-y = np.random.randn(100)
-ax.scatter(x, y, s=np.abs(x*100), c=x, cmap=plt.cm.coolwarm)
-ax.text(0, .5, thisvariable, fontsize=20, transform=ax.transAxes)
-ax.set_axis_off()
-```
-</div>
 
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
 
-{:.output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/docs/_build/images/features/notebooks_7_0.png)
 
-</div>
-</div>
-</div>
+{:.output .output_png}
+![png](../images/features/notebooks_6_0.png)
+
+
 
 And here we'll *only* display a Pandas DataFrame. Again, this was generated with Python code
 from [this original notebook](https://github.com/jupyter/textbooks-with-jupyter/blob/master/notebooks/introduction/notebooks.ipynb).
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-# NO CODE
-import pandas as pd
-pd.DataFrame([['hi', 'there'], ['this', 'is'], ['a', 'DataFrame']], columns=['Word A', 'Word B'])
-```
-</div>
 
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
+
+
 
 
 
@@ -218,9 +165,6 @@ pd.DataFrame([['hi', 'there'], ['this', 'is'], ['a', 'DataFrame']], columns=['Wo
 </div>
 
 
-</div>
-</div>
-</div>
 
 You can configure the text that *Textbooks with Jupyter* uses for this by modifying your site's `_config.yml` file.
 
@@ -232,17 +176,17 @@ is converted to Markdown, the code for creating the interactive map is retained.
 **Note that this will only work for some packages.** They need to be able to output standalone HTML/Javascript, and not
 depend on an underlying Python kernel to work.
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+
+
+{:.input_area}
 ```python
 import folium
 ```
-</div>
 
-</div>
 
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
+
+
+{:.input_area}
 ```python
 m = folium.Map(
     location=[45.372, -121.6972],
@@ -272,10 +216,8 @@ folium.Marker(
 m
 
 ```
-</div>
 
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
+
 
 
 
@@ -284,98 +226,3 @@ m
 </div>
 
 
-</div>
-</div>
-</div>
-
-## Rich outputs from notebook cells
-
-Because notebooks have rich text outputs, you can store these in
-your Jupyter Book as well!
-
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-!jupyter-book create -h
-```
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_stream}
-```
-usage: jupyter-book [-h] [--out-folder OUT_FOLDER] [--license LICENSE]
-                    [--content-folder CONTENT_FOLDER] [--toc TOC]
-                    [--config CONFIG] [--custom-css CUSTOM_CSS]
-                    [--custom-js CUSTOM_JS]
-                    [--extra-files EXTRA_FILES [EXTRA_FILES ...]]
-                    [--overwrite] [--demo] [--verbose VERBOSE]
-                    name
-
-Create a new Jupyter Book
-
-positional arguments:
-  name                  The name of your Jupyter Book (your book template will
-                        be placed in a folder of this name)
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --out-folder OUT_FOLDER
-                        The location where your book will be placed
-  --license LICENSE     A path to a LICENSE.md file if you have already
-                        created one
-  --content-folder CONTENT_FOLDER
-                        A path to a folder that holds your book content
-  --toc TOC             A path to a yaml file that contains a Table of
-                        Contents for your Jupyter Book. This will overwrite
-                        parts of the book template's default toc.yml
-                        configuration
-  --config CONFIG       A path to a configuration YAML file that contains
-                        configuration for your Jupyter Book. This will
-                        overwrite parts of the book template's default
-                        _config.yml configuration
-  --custom-css CUSTOM_CSS
-                        A path to a CSS file that defines some custom CSS
-                        rules for your book
-  --custom-js CUSTOM_JS
-                        A path to a JS file that defines some custom CSS rules
-                        for your book
-  --extra-files EXTRA_FILES [EXTRA_FILES ...]
-                        A list of extra files / folders to copy into your
-                        book's directory
-  --overwrite           Whether to overwrite a pre-existing book if it exists
-  --demo                Whether to build the book with demo content instead of
-                        your own content
-  --verbose VERBOSE     Whether to display output information. [yes/no]
-```
-</div>
-</div>
-</div>
-
-<div markdown="1" class="cell code_cell">
-<div class="input_area" markdown="1">
-```python
-this_will_error
-```
-</div>
-
-<div class="output_wrapper" markdown="1">
-<div class="output_subarea" markdown="1">
-{:.output_traceback_line}
-```
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-1-09f61459889d> in <module>()
-    ----> 1 this_will_error
-    
-
-    NameError: name 'this_will_error' is not defined
-
-
-```
-</div>
-</div>
-</div>

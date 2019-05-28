@@ -1,8 +1,8 @@
 ---
 title: 'Features and customization'
 prev_page:
-  url: /guide/05_advanced
-  title: 'How-to and advanced topics'
+  url: /https://github.com/jupyter/jupyter-book
+  title: 'GitHub repository'
 next_page:
   url: /features/markdown
   title: 'Markdown files'
@@ -11,12 +11,17 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 # Features
 
 This is a short demonstration textbook to show the general layout / style of textbooks built
-with Jupyter and Jekyll.
+with Jupyter and Jekyll. The markdown files for *this* page (and others in the textbook) is generated from the notebooks
+with the `scripts/generate_textbook.py` script, which is called when you run `make book`.
 
-To begin, click on one of the chapter sections in the sidebar to the left.
-Alternatively, click on the "next" button below in order to read
-further.
+The content for the book is contained in a folder in the site's repository called `content/`. It has a
+combination of markdown and Jupyter notebooks. This content is rendered into the textbook that you see here!
 
-The first sections demonstrate some simple functionality of Jupyter Books,
-while the final chapters contain a subset of content from the
-[Foundations in Data Science](https://inferentialthinking.com) textbook.
+To begin, click on one of the chapter sections in the sidebar to the left. The first section demonstrates some
+simple functionality of this repository, while the following chapters contain a subset of content from the
+[Foundations in Data Science](https://inferentialthinking.com).
+
+## Quickstart
+
+This chapter shows a couple ways to add content to your course textbook. Click on the section headers
+to the left, or on the "next" button below in order to read further.
