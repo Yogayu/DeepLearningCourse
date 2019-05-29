@@ -1,21 +1,11 @@
----
-title: 'Home'
-prev_page:
-  url: 
-  title: ''
-next_page:
-  url: https://sites.google.com/case.edu/techne-public-site/home
-  title: 'Techne Public Site'
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
-# An online deep learning  course for humanists
+# An online deep learning  course for humanists [Under Development]
 
 ![log](media/logo.png)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [An online deep learning course for humanists](#an-online-deep-learning--course-for-humanists-under-development)
+- [An online deep learning  course for humanists [Under Development]](#an-online-deep-learning--course-for-humanists-under-development)
   - [Project Description](#project-description)
   - [Course Outline](#course-outline)
     - [Part 1 Introduction: Teach computer to classify handwritten digits](#part-1-introduction-teach-computer-to-classify-handwritten-digits)
@@ -65,6 +55,21 @@ In this part, the student will learn how to build a basic speech recognition net
 In this part, the student will learn how to build use Convolutional Neural Network and Recurrent Neural Network to train a [models](https://github.com/awjuliani/DNN-Sentiment), which will let us exploring Sentiment in Literature.
 
 **Dataset**: we will choose three books (one positive book, one negative book, and one normal book) form [**Project Gutenberg**](http://www.gutenberg.org). Project Gutenberg offers over 58,000 free eBooks. 
+
+
+
+## About Me
+
+- **Name**: Xinyu You
+- **Email**: yxydiscovery@gmail.com
+- **Github**: http://github.com/yogayu
+- **Website**: http://data2art.com
+- **Resume**: [http://resume.data2art.com](http://resume.data2art.com)
+
+
+
+If there are any problems, feel free to contact me.
+
 
 
 ## Reference

@@ -27,8 +27,13 @@
   not_numbered: true
 
 # External link
+- title: Techne Public Site
+  url: https://sites.google.com/case.edu/techne-public-site/home
+  external: true
+  not_numbered: true
+
 - title: GitHub repository
-  url: https://github.com/jupyter/jupyter-book
+  url: https://github.com/Yogayu/DeepLearningCourse
   external: true
   not_numbered: true
 
@@ -40,22 +45,36 @@
 - divider: true
 
 # Add a header and sample content section
-- header: Demo textbook
+# - header: CONTENTS
+
+- title: 0. Environment Setup
+  url: /part0/environment
+  not_numbered: true
+
+- title: 1. Introduction
+  url: /part1/introduction
+  not_numbered: true
+  # expand_sections: true
+  # sections:
+# - title: 2. Classify Hand Gesture Pose in Art
+#   url: /part1/introduction
+#   not_numbered: true
 
 # A chapter w/ a collection of sections beneath it
-- title: Features and customization
-  url: /features/features
-  not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Markdown files
-    url: /features/markdown
-    not_numbered: true
-  - title: Jupyter notebooks
-    url: /features/notebooks
-    not_numbered: true
+# - title: Features and customization
+#   url: /features/features
+#   not_numbered: true
+#   expand_sections: true
+#   sections:
+#   - title: Markdown files
+#     url: /features/markdown
+#     not_numbered: true
+#   - title: Jupyter notebooks
+#     url: /features/notebooks
+#     not_numbered: true
+
 
 # Version control chapter
-- title: Turing Way chapter
-  url: /version_control
-  not_numbered: true
+# - title: Turing Way chapter
+#   url: /version_control
+#   not_numbered: true

@@ -16,14 +16,13 @@
 
 #######################################################################################
 # Jekyll site settings
-title: Kirstie's second attempt at building a jupyterbook
-author: Kirstie Whitaker
-email: kwhitaker@turing.ac.uk
-description: >-
-  This is an example book built with Jupyter Books.
+title: An online deep learning course for humanists
+author: Xinyu You
+email: yxydiscovery@gmail.com
+description: This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.
 
-baseurl: /               # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: https://kirstiejane.github.io/mybookname2    # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: / # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+url: https://yogayu.github.io/DeepLearningCourse/    # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################
@@ -37,8 +36,8 @@ use_hide_code_button: true        # If True, a small button appears to the right
 # Sidebar settings
 show_sidebar: true                # Show the sidebar. Only set to false if your only wish to host a single page.
 collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
-textbook_logo: images/logo/logo.png               # A logo to be displayed at the top of your textbook sidebar
-textbook_logo_link: https://jupyter.org/jupyter-book/                    # A link for the logo.
+textbook_logo:               # A logo to be displayed at the top of your textbook sidebar
+# textbook_logo_link: https://jupyter.org/jupyter-book/                    # A link for the logo.
 sidebar_footer_text: Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter
   Book</a>
 number_toc_chapters: true         # Whether to add numbers to chapterse in your Table of Contents. If true, you can control this at the Chapter level in _data/toc.yml
@@ -61,8 +60,8 @@ jupyterhub_interact_text: Interact             # The text that interact buttons 
 use_binder_button: false                 # If 'true', add a binder button for interactive links
 binderhub_url: https://mybinder.org                        # The URL for your BinderHub. If no URL, use ""
 binder_repo_base: https://github.com/                     # The site on which the textbook repository is hosted
-binder_repo_org: YOUR-ORG                     # The username or organization that owns this repository
-binder_repo_name: YOUR-REPO                        # The name of the repository on the web
+binder_repo_org: yogayu                     # The username or organization that owns this repository
+binder_repo_name: DeepLearningCourse                       # The name of the repository on the web
 binder_repo_branch: master                   # The branch on which your textbook is hosted.
 binderhub_interact_text: Interact              # The text that interact buttons will contain.
 
@@ -111,7 +110,7 @@ defaults:
     toc_label: '  On this page'
     toc_icon: list-ul
 
-favicon_path: images/logo/favicon.ico
+# favicon_path: images/logo/favicon.ico
 
 # Markdown Processing
 markdown: kramdown
