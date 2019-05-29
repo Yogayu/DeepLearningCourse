@@ -1,4 +1,4 @@
-# An online deep learning  course for humanists [Under Development]
+# An online deep learning  course for humanists
 
 ![log](media/logo.png)
 
@@ -17,7 +17,7 @@
   - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
+## 
 ## Project Description
 
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).

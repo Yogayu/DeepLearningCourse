@@ -16,7 +16,7 @@
 
 #######################################################################################
 # Jekyll site settings
-title: An online deep learning course for humanists
+title: Deep Learning course for humanists
 author: Xinyu You
 email: yxydiscovery@gmail.com
 description: This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.

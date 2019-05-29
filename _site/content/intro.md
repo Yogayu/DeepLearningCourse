@@ -1,4 +1,4 @@
-# An online deep learning  course for humanists
+# Deep Learning course for humanists
 
 ![log](media/logo.png)
 
