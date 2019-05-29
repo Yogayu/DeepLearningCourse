@@ -29,9 +29,9 @@
   "headline":
     "Home",
   "datePublished":
-    "2019-05-29T20:32:58+08:00",
+    "2019-05-29T20:44:16+08:00",
   "dateModified":
-    "2019-05-29T20:32:58+08:00",
+    "2019-05-29T20:44:16+08:00",
   "description":
     "Deep Learning course for humanists",
   "author": {
@@ -626,24 +626,6 @@ initFunction(initQuery);
 <!-- TOC will only show up if it has at least one item -->
 
 
-  <aside class="sidebar__right">
-    <nav class="onthispage">
-      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
-      <ul class="toc__menu">
-  <li><a href="#project-description">Project Description</a></li>
-  <li><a href="#course-outline">Course Outline</a>
-    <ul>
-      <li><a href="#part-1-introduction-teach-computer-to-classify-handwritten-digits">Part 1 Introduction: Teach computer to classify handwritten digits</a></li>
-      <li><a href="#part-2-classify-hand-gesture-pose-in-art">Part 2 Classify Hand Gesture Pose in Art</a></li>
-      <li><a href="#part-3-audio-recognition-of-simple-words">Part 3 Audio Recognition of Simple words</a></li>
-      <li><a href="#part-4-exploring-sentiment-in-literature">Part 4 Exploring Sentiment in Literature</a></li>
-    </ul>
-  </li>
-  <li><a href="#reference">Reference</a></li>
-</ul>
-    </nav>
-  </aside>
-
 
       
       <main class="c-textbook__page" tabindex="-1">
@@ -668,72 +650,11 @@ initFunction(initQuery);
 
 <p><img src="media/logo.png" alt="log" /></p>
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-<ul>
-  <li><a href="#an-online-deep-learning--course-for-humanists-under-development">An online deep learning course for humanists</a>
-    <ul>
-      <li><a href="#project-description">Project Description</a></li>
-      <li><a href="#course-outline">Course Outline</a>
-        <ul>
-          <li><a href="#part-1-introduction-teach-computer-to-classify-handwritten-digits">Part 1 Introduction: Teach computer to classify handwritten digits</a></li>
-          <li><a href="#part-2-classify-hand-gesture-pose-in-art">Part 2 Classify Hand Gesture Pose in Art</a></li>
-          <li><a href="#part-3-audio-recognition-of-simple-words">Part 3 Audio Recognition of Simple words</a></li>
-          <li><a href="#part-4-exploring-sentiment-in-literature">Part 4 Exploring Sentiment in Literature</a></li>
-        </ul>
-      </li>
-      <li><a href="#about-me">About Me</a></li>
-      <li><a href="#reference">Reference</a></li>
-    </ul>
-  </li>
-</ul>
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<h2 id="project-description">Project Description</h2>
-
 <p>This is my <a href="https://summerofcode.withgoogle.com/projects/#6543412331806720">Google Summer of Code 2019</a> Project with <a href="http://www.redhenlab.org/">Red Hen Lab</a>.</p>
 
 <p>The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.</p>
 
 <p>Project Mentors: <a href="http://cogweb.ucla.edu/steen/">Francis Steen</a>, <a href="http://markturner.org">Mark Turner</a> and Rajesh Kasturirangan.</p>
-
-<h2 id="course-outline">Course Outline</h2>
-
-<h3 id="part-1-introduction-teach-computer-to-classify-handwritten-digits">Part 1 Introduction: Teach computer to classify handwritten digits</h3>
-
-<p>In this part, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset and TensorFlow’s deep neural networks classifier.</p>
-
-<p><strong>DataSet:</strong> The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.</p>
-
-<h3 id="part-2-classify-hand-gesture-pose-in-art">Part 2 Classify Hand Gesture Pose in Art</h3>
-
-<p>In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.</p>
-
-<p><strong>Dataset:</strong>  we will use Rijksmuseum dataset, the <a href="http://data.fondazionezeri.unibo.it/query/">Fototeca Zeri data</a> or the <a href="[http://foto.biblhertz.it](http://foto.biblhertz.it/)">Bibliotheca Hertziana dataset</a>.</p>
-
-<h3 id="part-3-audio-recognition-of-simple-words">Part 3 Audio Recognition of Simple words</h3>
-
-<p>In this part, the student will learn how to build a basic speech recognition network that recognizes ten different words:  “yes”, “no”, “up”, “down”, “left”, “right”, “on”, “off”, “stop”, or “go”. Real speech and audio recognition systems is much more complex than classify handwritten digits.</p>
-
-<p><strong>Dataset</strong>: we will use the <a href="https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz">Speech Commands dataset</a>, which consists of over 105,000 WAVE audio files of people saying thirty different words. This data was collected by Google and released under a CC-BY license.</p>
-
-<h3 id="part-4-exploring-sentiment-in-literature">Part 4 Exploring Sentiment in Literature</h3>
-
-<p>In this part, the student will learn how to build use Convolutional Neural Network and Recurrent Neural Network to train a <a href="https://github.com/awjuliani/DNN-Sentiment">models</a>, which will let us exploring Sentiment in Literature.</p>
-
-<p><strong>Dataset</strong>: we will choose three books (one positive book, one negative book, and one normal book) form <a href="http://www.gutenberg.org"><strong>Project Gutenberg</strong></a>. Project Gutenberg offers over 58,000 free eBooks.</p>
-
-<h2 id="reference">Reference</h2>
-
-<ul>
-  <li>https://elitedatascience.com/machine-learning-projects-for-beginners</li>
-  <li>https://github.com/gkchai/GestureRecognition</li>
-  <li>https://www.tensorflow.org/tutorials/sequences/audio_recognition</li>
-  <li>https://medium.com/@awjuliani/exploring-sentiment-in-literature-with-deep-learning-30366aff578e</li>
-  <li>http://awjuliani.github.io/books/</li>
-</ul>
 
               <nav class="c-page__nav">
   

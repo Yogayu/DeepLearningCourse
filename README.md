@@ -17,7 +17,10 @@
   - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-## 
+## Read Online
+
+This book is powered by Jekyll Book. So you can read it online: [https://yogayu.github.io/DeepLearningCourse/](https://yogayu.github.io/DeepLearningCourse/)
+
 ## Project Description
 
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).
