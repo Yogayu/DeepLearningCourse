@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>0. Environment Setup</title>
-  <meta name="description" content="Environment setupPython">
+  <meta name="description" content="Environment Setup">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///part0/environment.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///part0/environment.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="0. Environment Setup" />
-<meta property="og:description" content="Environment setupPython" />
+<meta property="og:description" content="Environment Setup" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "0. Environment Setup",
   "datePublished":
-    "2019-05-29T20:44:16+08:00",
+    "2019-05-29T22:09:17+08:00",
   "dateModified":
-    "2019-05-29T20:44:16+08:00",
+    "2019-05-29T22:09:17+08:00",
   "description":
-    "Environment setupPython",
+    "Environment Setup",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -400,6 +400,147 @@ initFunction(initHiddenCells);
 
   <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
   
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("https://yogayu.github.io/DeepLearningCourse/") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
 
   <!-- Lunr search code - will only be executed on the /search page -->
   <script src="/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
@@ -630,9 +771,15 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#python">Python</a></li>
-  <li><a href="#conda">Conda</a></li>
+  <li><a href="#anaconda">Anaconda</a>
+    <ul>
+      <li><a href="#create-a-new-environment">Create a new environment</a></li>
+      <li><a href="#install-a-package-into-the-current-environment">Install a package into the current environment</a></li>
+    </ul>
+  </li>
   <li><a href="#tensorflow">TensorFlow</a></li>
+  <li><a href="#jupyter-lab">Jupyter Lab</a></li>
+  <li><a href="#reference">Reference</a></li>
 </ul>
     </nav>
   </aside>
@@ -657,12 +804,107 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="environment-setup">Environment setup</h1>
-<h2 id="python">Python</h2>
+              <h1 id="environment-setup">Environment Setup</h1>
 
-<h2 id="conda">Conda</h2>
+<h2 id="anaconda">Anaconda</h2>
+
+<p>“The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.” It ships with more than 1,000 data packages, the conda command-line tool and with a desktop graphical user interface called Anaconda Navigator.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>It contains almost Packages we will use in this course, like scikit-learn, NumPy and pandas.</p>
+
+<p>Download and install the version according to your computer operation system:</p>
+
+<p><a href="https://docs.anaconda.com/anaconda/install/">https://docs.anaconda.com/anaconda/install/</a></p>
+
+<p>After installing, you can open Anaconda Navigator App.</p>
+
+<p><img src="./images/conda.png" alt="conda" /></p>
+
+<p>In the environment tab, all the packages installed are listed.</p>
+
+<p>Using <code class="highlighter-rouge">info</code> to check it installed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda info
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<p><img src="./images/condainfo.png" alt="conda" /></p>
+
+<h3 id="create-a-new-environment">Create a new environment</h3>
+
+<p>We will name the environment snowflakes and install the package BioPython. At the Anaconda Prompt or in your terminal window, type the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create --name snowflakes biopython
+</code></pre></div></div>
+
+<p>Conda checks to see what additional packages (“dependencies”) Biopython will need, and asks if you want to proceed:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Proceed ([y]/n)? y
+</code></pre></div></div>
+<p>Type “y” and press Enter to proceed.
+To use, or “activate” the new environment, type the following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Windows: conda activate snowflakes
+Linux and macOS: conda activate snowflakes
+</code></pre></div></div>
+
+<h3 id="install-a-package-into-the-current-environment">Install a package into the current environment</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install beautifulsoup4
+</code></pre></div></div>
+
+<p>Check to see if the newly installed program is in this environment:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda list
+</code></pre></div></div>
 
 <h2 id="tensorflow">TensorFlow</h2>
+
+<p>TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>Install the TensorFlow 2.0 Alpha with a CPU version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install tensorflow==2.0.0-alpha0
+</code></pre></div></div>
+
+<p>If your computer have great GPU, you can install the TensorFlow 2.0 Alpha with a GPU version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install tensorflow-gpu  # stable
+pip install tensorflow-gpu==2.0.0-alpha0
+</code></pre></div></div>
+
+<p>For more detail instructions, read this web page: https://www.tensorflow.org/install/pip</p>
+
+<h2 id="jupyter-lab">Jupyter Lab</h2>
+<p>JupyterLab is a next-generation web-based interface developed by the Jupyter team for the Jupyter project. It is more integrated, flexible, and extensible than the Jupyter Notebook. It supports more than 100 kinds of languages, and supports for multiple documents mutual integration, which realizes the interactive computing new work process.</p>
+
+<p>As we have installed conda, we use conda to install this package:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda install -c conda-forge jupyterlab
+</code></pre></div></div>
+
+<p>Start up JupyterLab:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter lab
+</code></pre></div></div>
+
+<p><img src="./images/JupyterLab.png" alt="conda" /></p>
+
+<p>For more detail instructions, I recommend you to refer this page:</p>
+
+<p><a href="http://data2art.com/Jupyterlab-en.html">http://data2art.com/Jupyterlab-en.html</a></p>
+
+<h2 id="reference">Reference</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>https://conda.io/projects/conda/en/latest/user-guide/getting-started.html <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>https://www.tensorflow.org/install <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
               <nav class="c-page__nav">
   

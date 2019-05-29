@@ -1,8 +1,8 @@
 ---
 title: '1. Introduction'
 prev_page:
-  url: /part0/environment
-  title: '0. Environment Setup'
+  url: /part0/WhatIsDeepLearning
+  title: 'What is Deep Learning?'
 next_page:
   url: 
   title: ''
