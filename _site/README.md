@@ -9,6 +9,7 @@
 - [An online deep learning  course for humanists [Under Development]](#an-online-deep-learning--course-for-humanists-under-development)
   - [Project Description](#project-description)
   - [Course Outline](#course-outline)
+    - [Part 0](#Part-0-Environment-Setup)
     - [Part 1 Introduction: Teach computer to classify handwritten digits](#part-1-introduction-teach-computer-to-classify-handwritten-digits)
     - [Part 2 Classify Hand Gesture Pose in Art](#part-2-classify-hand-gesture-pose-in-art)
     - [Part 3 Audio Recognition of Simple words](#part-3-audio-recognition-of-simple-words)
@@ -30,6 +31,10 @@ The Project goal is to design and develops an online course, to teach deep learn
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
 ## Course Outline
+### Part 0: Environment Setup
+Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
+
+[Read Online](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
 
 ### Part 1 Introduction: Teach computer to classify handwritten digits
 
@@ -37,23 +42,17 @@ In this part, the student will learn how to teach the computer to classify handw
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
 
-
-
 ### Part 2 Classify Hand Gesture Pose in Art
 
 In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.
 
 **Dataset:**  we will use Rijksmuseum dataset, the [Fototeca Zeri data](<http://data.fondazionezeri.unibo.it/query/>) or the [Bibliotheca Hertziana dataset]([http://foto.biblhertz.it](http://foto.biblhertz.it/)).
 
-
-
 ### Part 3 Audio Recognition of Simple words
 
 In this part, the student will learn how to build a basic speech recognition network that recognizes ten different words:  "yes", "no", "up", "down", "left", "right", "on", "off", "stop", or "go". Real speech and audio recognition systems is much more complex than classify handwritten digits. 
 
 **Dataset**: we will use the [Speech Commands dataset](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), which consists of over 105,000 WAVE audio files of people saying thirty different words. This data was collected by Google and released under a CC-BY license.
-
-
 
 ### Part 4 Exploring Sentiment in Literature
 
@@ -67,15 +66,11 @@ In this part, the student will learn how to build use Convolutional Neural Netwo
 
 - **Name**: Xinyu You
 - **Email**: yxydiscovery@gmail.com
-- **Github**: http://github.com/yogayu
-- **Website**: http://data2art.com
-- **Resume**: [http://resume.data2art.com](http://resume.data2art.com)
+- **Github**: [yogayu](http://github.com/yogayu)
+- **Website**: [data2art](http://data2art.com)
+- **Resume**: [youxinyu.me](http://youxinyu.me)
 
-
-
-If there are any problems, feel free to contact me.
-
-
+If there are any problems, please feel free to contact me.
 
 ## Reference
 

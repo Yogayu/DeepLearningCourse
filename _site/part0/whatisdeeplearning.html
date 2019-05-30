@@ -29,9 +29,9 @@
   "headline":
     "What is Deep Learning?",
   "datePublished":
-    "2019-05-29T22:09:17+08:00",
+    "2019-05-30T20:09:01+08:00",
   "dateModified":
-    "2019-05-29T22:09:17+08:00",
+    "2019-05-30T20:09:01+08:00",
   "description":
     "What is deep learning?",
   "author": {
@@ -731,6 +731,35 @@ initFunction(initQuery);
         </a>
 
         
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections ">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/part0/WhatIsDeepLearning.html"
+                >
+                  
+                  What is Deep Learning?
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
       </li>
 
       
@@ -766,6 +795,15 @@ initFunction(initQuery);
 
 <!-- TOC will only show up if it has at least one item -->
 
+
+  <aside class="sidebar__right">
+    <nav class="onthispage">
+      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#fashion-mnist">Fashion-MNIST</a></li>
+</ul>
+    </nav>
+  </aside>
 
 
       
@@ -810,9 +848,172 @@ initFunction(initQuery);
 
 <p>Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of machine learning methods based on artificial neural networks. Learning can be supervised, semi-supervised or unsupervised.</p>
 
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<h2 id="fashion-mnist">Fashion-MNIST</h2>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">d2lzh</span> <span class="k">as</span> <span class="n">d2l</span>
+<span class="kn">from</span> <span class="nn">mxnet.gluon</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">gdata</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
 </code></pre></div></div>
 
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mnist_train</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">mnist_test</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Downloading /Users/yogayu/.mxnet/datasets/fashion-mnist/train-images-idx3-ubyte.gz from https://apache-mxnet.s3-accelerate.dualstack.amazonaws.com/gluon/dataset/fashion-mnist/train-images-idx3-ubyte.gz...
+Downloading /Users/yogayu/.mxnet/datasets/fashion-mnist/train-labels-idx1-ubyte.gz from https://apache-mxnet.s3-accelerate.dualstack.amazonaws.com/gluon/dataset/fashion-mnist/train-labels-idx1-ubyte.gz...
+Downloading /Users/yogayu/.mxnet/datasets/fashion-mnist/t10k-images-idx3-ubyte.gz from https://apache-mxnet.s3-accelerate.dualstack.amazonaws.com/gluon/dataset/fashion-mnist/t10k-images-idx3-ubyte.gz...
+Downloading /Users/yogayu/.mxnet/datasets/fashion-mnist/t10k-labels-idx1-ubyte.gz from https://apache-mxnet.s3-accelerate.dualstack.amazonaws.com/gluon/dataset/fashion-mnist/t10k-labels-idx1-ubyte.gz...
+
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">len</span><span class="p">(</span><span class="n">mnist_train</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">mnist_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(60000, 10000)
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">feature</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">mnist_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">feature</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">feature</span><span class="o">.</span><span class="n">dtype</span>
+</code></pre></div></div>
+
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((28, 28, 1), numpy.uint8)
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">label</span><span class="p">),</span> <span class="n">label</span><span class="o">.</span><span class="n">dtype</span>
+</code></pre></div></div>
+
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2, numpy.int32, dtype('int32'))
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_fashion_mnist_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+    <span class="n">text_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">'t-shirt'</span><span class="p">,</span> <span class="s">'trouser'</span><span class="p">,</span> <span class="s">'pullover'</span><span class="p">,</span> <span class="s">'dress'</span><span class="p">,</span> <span class="s">'coat'</span><span class="p">,</span>
+                   <span class="s">'sandal'</span><span class="p">,</span> <span class="s">'shirt'</span><span class="p">,</span> <span class="s">'sneaker'</span><span class="p">,</span> <span class="s">'bag'</span><span class="p">,</span> <span class="s">'ankle boot'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">text_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">show_fashion_mnist</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+    <span class="n">d2l</span><span class="o">.</span><span class="n">use_svg_display</span><span class="p">()</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">figs</span> <span class="o">=</span> <span class="n">d2l</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">figs</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">())</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">mnist_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">show_fashion_mnist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">get_fashion_mnist_labels</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part0/WhatIsDeepLearning_10_0.svg" alt="svg" /></p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">transformer</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'win'</span><span class="p">):</span>
+    <span class="n">num_workers</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c"># 0表示不用额外的进程来加速读取数据</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">num_workers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">train_iter</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train</span><span class="o">.</span><span class="n">transform_first</span><span class="p">(</span><span class="n">transformer</span><span class="p">),</span>
+                              <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                              <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+<span class="n">test_iter</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_test</span><span class="o">.</span><span class="n">transform_first</span><span class="p">(</span><span class="n">transformer</span><span class="p">),</span>
+                             <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                             <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_iter</span><span class="p">:</span>
+    <span class="k">continue</span>
+<span class="s">'</span><span class="si">%.2</span><span class="s">f sec'</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'0.87 sec'
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">d2lzh</span> <span class="k">as</span> <span class="n">d2l</span>
+<span class="kn">from</span> <span class="nn">mxnet</span> <span class="kn">import</span> <span class="n">gluon</span><span class="p">,</span> <span class="n">init</span><span class="p">,</span> <span class="n">nd</span>
+<span class="kn">from</span> <span class="nn">mxnet.gluon</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">gdata</span><span class="p">,</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+
+        <span class="n">nn</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+
+        <span class="n">nn</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+
+        <span class="n">nn</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">"relu"</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">"relu"</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+
+        <span class="n">nn</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+<span class="n">net</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">net</span><span class="p">:</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s">'output shape:</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conv0 output shape:	 (1, 96, 54, 54)
+pool0 output shape:	 (1, 96, 26, 26)
+conv1 output shape:	 (1, 256, 26, 26)
+pool1 output shape:	 (1, 256, 12, 12)
+conv2 output shape:	 (1, 384, 12, 12)
+conv3 output shape:	 (1, 384, 12, 12)
+conv4 output shape:	 (1, 256, 12, 12)
+pool2 output shape:	 (1, 256, 5, 5)
+dense0 output shape:	 (1, 4096)
+dropout0 output shape:	 (1, 4096)
+dense1 output shape:	 (1, 4096)
+dropout1 output shape:	 (1, 4096)
+dense2 output shape:	 (1, 10)
+
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">load_data_fashion_mnist</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="s">'~'</span><span class="p">,</span> <span class="s">'.mxnet'</span><span class="p">,</span> <span class="s">'datasets'</span><span class="p">,</span> <span class="s">'fashion-mnist'</span><span class="p">)):</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">transformer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">resize</span><span class="p">:</span>
+        <span class="n">transformer</span> <span class="o">+=</span> <span class="p">[</span><span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">resize</span><span class="p">)]</span>
+    <span class="n">transformer</span> <span class="o">+=</span> <span class="p">[</span><span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()]</span>
+    <span class="n">transformer</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">transformer</span><span class="p">)</span>
+    <span class="n">mnist_train</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">mnist_test</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">num_workers</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'win32'</span><span class="p">)</span> <span class="k">else</span> <span class="mi">4</span>
+    <span class="n">train_iter</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">mnist_train</span><span class="o">.</span><span class="n">transform_first</span><span class="p">(</span><span class="n">transformer</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+    <span class="n">test_iter</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">mnist_test</span><span class="o">.</span><span class="n">transform_first</span><span class="p">(</span><span class="n">transformer</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">test_iter</span>
+
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">train_iter</span><span class="p">,</span> <span class="n">test_iter</span> <span class="o">=</span> <span class="n">load_data_fashion_mnist</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">resize</span><span class="o">=</span><span class="mi">224</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lr</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">ctx</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">d2l</span><span class="o">.</span><span class="n">try_gpu</span><span class="p">()</span>
+<span class="n">net</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">force_reinit</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="n">init</span><span class="o">.</span><span class="n">Xavier</span><span class="p">())</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">gluon</span><span class="o">.</span><span class="n">Trainer</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">collect_params</span><span class="p">(),</span> <span class="s">'sgd'</span><span class="p">,</span> <span class="p">{</span><span class="s">'learning_rate'</span><span class="p">:</span> <span class="n">lr</span><span class="p">})</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">train_ch5</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">test_iter</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">trainer</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>training on cpu(0)
+
+</code></pre></div></div>
 
               <nav class="c-page__nav">
   

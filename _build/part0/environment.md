@@ -4,21 +4,21 @@ prev_page:
   url: https://github.com/Yogayu/DeepLearningCourse
   title: 'GitHub repository'
 next_page:
-  url: /part1/introduction
-  title: '1. Introduction'
+  url: /part0/WhatIsDeepLearning
+  title: 'What is Deep Learning?'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Environment Setup
 
 ## Anaconda
 
-The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.[^1] It ships with more than 1,000 data packages, the conda command-line tool and with a desktop graphical user interface called Anaconda Navigator.
+"The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X." It ships with more than 1,000 data packages, the conda command-line tool and with a desktop graphical user interface called Anaconda Navigator.
 
 It contains almost Packages we will use in this course, like scikit-learn, NumPy and pandas.
 
 Download and install the version according to your computer operation system:
 
-[https://docs.anaconda.com/anaconda/install/](https://docs.anaconda.com/anaconda/install/)
+https://docs.anaconda.com/anaconda/install/
 
 After installing, you can open Anaconda Navigator App.
 
@@ -98,21 +98,21 @@ conda install -c conda-forge jupyterlab
 
 Start up JupyterLab:
 
-
 ```
 jupyter lab
 ```
 
-![conda](./images/JupyterLab.png)
+![conda](./images/jupyterLab.png)
 
 
+For more detail instructions, please refer to this page:
 
-For more detail instructions, I recommend you to refer this page:
-
-[http://data2art.com/Jupyterlab-en.html](http://data2art.com/Jupyterlab-en.html)
+http://data2art.com/Jupyterlab-en.html
 
 
 ## Reference
 
-[^1]:https://conda.io/projects/conda/en/latest/user-guide/getting-started.html
+- https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-environments
+- https://www.tensorflow.org/install
+
 [^2]:https://www.tensorflow.org/install

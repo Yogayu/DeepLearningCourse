@@ -88,16 +88,14 @@ conda install -c conda-forge jupyterlab
 
 Start up JupyterLab:
 
-
 ```
 jupyter lab
 ```
 
-![conda](./images/JupyterLab.png)
+![conda](./images/jupyterLab.png)
 
 
-
-For more detail instructions, I recommend you to refer this page:
+For more detail instructions, please refer to this page:
 
 http://data2art.com/Jupyterlab-en.html
 

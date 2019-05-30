@@ -50,11 +50,11 @@
 - title: 0. Environment Setup
   url: /part0/environment
   not_numbered: true
-  # expand_sections: true
-  # sections:
-  #   - title: What is Deep Learning?
-  #     url: /part0/WhatIsDeepLearning
-  #     not_numbered: false
+  expand_sections: true
+  sections:
+    - title: What is Deep Learning?
+      url: /part0/WhatIsDeepLearning
+      not_numbered: false
 - title: 1. Introduction
   url: /part1/introduction
   not_numbered: true
