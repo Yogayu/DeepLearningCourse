@@ -9,7 +9,7 @@
 - [An online deep learning  course for humanists [Under Development]](#an-online-deep-learning--course-for-humanists-under-development)
   - [Project Description](#project-description)
   - [Course Outline](#course-outline)
-    - [Part 0](#Part-0-Environment-Setup)
+    - [Part 0 Environment Setup](#Part-0-Environment-Setup)
     - [Part 1 Introduction: Teach computer to classify handwritten digits](#part-1-introduction-teach-computer-to-classify-handwritten-digits)
     - [Part 2 Classify Hand Gesture Pose in Art](#part-2-classify-hand-gesture-pose-in-art)
     - [Part 3 Audio Recognition of Simple words](#part-3-audio-recognition-of-simple-words)

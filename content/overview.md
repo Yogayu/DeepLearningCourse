@@ -66,8 +66,6 @@ In this part, the student will learn how to build use Convolutional Neural Netwo
 - **Website**: http://data2art.com
 - **Resume**: [http://resume.data2art.com](http://resume.data2art.com)
 
-
-
 If there are any problems, feel free to contact me.
 
 
