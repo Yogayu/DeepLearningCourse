@@ -18,6 +18,47 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of machine learning methods based on artificial neural networks. Learning can be supervised, semi-supervised or unsupervised.
 
+
+
+{:.input_area}
+```python
+import tensorflow as tf
+```
+
+
+
+
+{:.input_area}
+```python
+z = 0.34
+tf.nn.sigmoid(z)
+tf.nn.tanh(z)
+tf.nn.relu(z)
+```
+
+
+
+
+
+{:.output .output_data_text}
+```
+<tf.Tensor: id=5, shape=(), dtype=float32, numpy=0.34>
+```
+
+
+
+
+
+{:.input_area}
+```python
+from tf.keras.layers import *
+inputs = Inputs(m)
+hidden = Dense(d1)(inputs)
+outputs = Dense(2)(hidden)
+model = Model(inputs, outputs)
+```
+
+
 ## Fashion-MNIST
 
 
@@ -148,7 +189,7 @@ show_fashion_mnist(X, get_fashion_mnist_labels(y))
 
 
 
-![svg](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part0/WhatIsDeepLearning_10_0.svg)
+![svg](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part0/WhatIsDeepLearning_13_0.svg)
 
 
 

@@ -29,9 +29,9 @@
   "headline":
     "What is Deep Learning?",
   "datePublished":
-    "2019-05-30T20:09:01+08:00",
+    "2019-06-02T22:09:31+08:00",
   "dateModified":
-    "2019-05-30T20:09:01+08:00",
+    "2019-06-02T22:09:31+08:00",
   "description":
     "What is deep learning?",
   "author": {
@@ -848,6 +848,25 @@ initFunction(initQuery);
 
 <p>Deep learning (also known as deep structured learning or hierarchical learning) is part of a broader family of machine learning methods based on artificial neural networks. Learning can be supervised, semi-supervised or unsupervised.</p>
 
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">z</span> <span class="o">=</span> <span class="mf">0.34</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;tf.Tensor: id=5, shape=(), dtype=float32, numpy=0.34&gt;
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tf.keras.layers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">Inputs</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">hidden</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">d1</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">hidden</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h2 id="fashion-mnist">Fashion-MNIST</h2>
 
 <div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -909,7 +928,7 @@ Downloading /Users/yogayu/.mxnet/datasets/fashion-mnist/t10k-labels-idx1-ubyte.g
 <span class="n">show_fashion_mnist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">get_fashion_mnist_labels</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part0/WhatIsDeepLearning_10_0.svg" alt="svg" /></p>
+<p><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part0/WhatIsDeepLearning_13_0.svg" alt="svg" /></p>
 
 <div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="n">transformer</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()</span>

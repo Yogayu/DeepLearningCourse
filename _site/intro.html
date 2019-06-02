@@ -29,9 +29,9 @@
   "headline":
     "Home",
   "datePublished":
-    "2019-05-30T20:09:01+08:00",
+    "2019-06-02T22:09:31+08:00",
   "dateModified":
-    "2019-05-30T20:09:01+08:00",
+    "2019-06-02T22:09:31+08:00",
   "description":
     "Deep Learning course for humanists",
   "author": {
@@ -796,6 +796,31 @@ initFunction(initQuery);
 <!-- TOC will only show up if it has at least one item -->
 
 
+  <aside class="sidebar__right">
+    <nav class="onthispage">
+      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#course-outline">Course Outline</a>
+    <ul>
+      <li><a href="#background-knowledge">Background Knowledge</a></li>
+      <li><a href="#chapter-1-introduction">Chapter 1 Introduction</a></li>
+      <li><a href="#chapter-2-perceptron">Chapter 2 Perceptron</a></li>
+      <li><a href="#chapter-3-multilayer-perceptron">Chapter 3 Multilayer Perceptron</a></li>
+      <li><a href="#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 4 Make your own neural network to classify handwritten digitals</a></li>
+    </ul>
+  </li>
+  <li><a href="#other-projects">Other Projects</a>
+    <ul>
+      <li><a href="#classify-hand-gesture-pose-in-art">Classify Hand Gesture Pose in Art</a></li>
+      <li><a href="#audio-recognition-of-simple-words">Audio Recognition of Simple words</a></li>
+      <li><a href="#exploring-sentiment-in-literature">Exploring Sentiment in Literature</a></li>
+    </ul>
+  </li>
+  <li><a href="#about-me">About Me</a></li>
+</ul>
+    </nav>
+  </aside>
+
 
       
       <main class="c-textbook__page" tabindex="-1">
@@ -818,13 +843,179 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="deep-learning-course-for-humanists">Deep Learning course for humanists</h1>
 
-<p><img src="media/logo.png" alt="log" /></p>
+<p><img src="../media/logo.png" alt="" /></p>
 
 <p>This is my <a href="https://summerofcode.withgoogle.com/projects/#6543412331806720">Google Summer of Code 2019</a> Project with <a href="http://www.redhenlab.org/">Red Hen Lab</a>.</p>
 
-<p>The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.</p>
+<p>The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication.</p>
 
 <p>Project Mentors: <a href="http://cogweb.ucla.edu/steen/">Francis Steen</a>, <a href="http://markturner.org">Mark Turner</a> and Rajesh Kasturirangan.</p>
+
+<h2 id="course-outline">Course Outline</h2>
+
+<h3 id="background-knowledge">Background Knowledge</h3>
+
+<p>Programming</p>
+
+<ul>
+  <li><a href="https://sites.google.com/case.edu/techne-public-site/python?authuser=0">Python Basic</a></li>
+</ul>
+
+<p>Math</p>
+
+<ul>
+  <li>basic matrix, calculus, and statistics.</li>
+</ul>
+
+<h3 id="chapter-1-introduction">Chapter 1 Introduction</h3>
+
+<ol>
+  <li>What is deep learning?</li>
+  <li>Relationship: AI-&gt; machine learning -&gt; deep learning</li>
+  <li>What can deep learning do?</li>
+  <li><a href="https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup">Environment Setup</a>
+Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.</li>
+</ol>
+
+<h3 id="chapter-2-perceptron">Chapter 2 Perceptron</h3>
+
+<ol>
+  <li>How do we learn?</li>
+  <li>How can machine learn?</li>
+  <li>Perceptron: a single layer neural network</li>
+</ol>
+
+<h3 id="chapter-3-multilayer-perceptron">Chapter 3 Multilayer Perceptron</h3>
+
+<p>A multi-layer perceptron is called Neural Networks</p>
+
+<h4 id="section-1">Section 1</h4>
+
+<h5 id="1-neuron">1. Neuron</h5>
+
+<ul>
+  <li>Biological neuron model
+    <ul>
+      <li>Artificial neural</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="2-activation-function">2. Activation function</h5>
+
+<ul>
+  <li>Why need this? None-linearities
+    <ul>
+      <li>Some common activation functions</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="3-two-layer-neural-network">3. Two layer Neural Network</h5>
+
+<p>The architecture:</p>
+
+<ul>
+  <li>Nodes</li>
+  <li>Input/Output</li>
+  <li>Layer
+    <ul>
+      <li>Input Layer</li>
+      <li>Output Layer</li>
+      <li>Hidden Layer: Why we call it hidden layer</li>
+    </ul>
+  </li>
+  <li>Connection
+    <ul>
+      <li>Fully connected</li>
+    </ul>
+  </li>
+  <li>Weights</li>
+</ul>
+
+<h4 id="section-2">Section 2</h4>
+
+<h4 id="1-propagation">1. Propagation</h4>
+
+<ul>
+  <li>Forward Propagation</li>
+  <li>Backward Propagation</li>
+  <li>Math: Matrix Multiplication</li>
+</ul>
+
+<p>Make animation videos.</p>
+
+<h4 id="learning-training-neural-networks">Learning: Training Neural Networks</h4>
+
+<ul>
+  <li>Example</li>
+  <li>Error loss
+The empirical loss measures the total loss over the dataset</li>
+  <li>Loss Optimization
+    <ul>
+      <li>Loss function is a function of the Weight</li>
+      <li>Gradient Descent
+        <ul>
+          <li>Greedy algorithm</li>
+          <li>Like Hiking Down a Mountain
+Make an animation video</li>
+          <li>Local minimum</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Optimization</li>
+</ul>
+
+<h4 id="physical-experiment">Physical Experiment</h4>
+
+<ul>
+  <li>Every student acted as a Neuron</li>
+  <li>Mock Forward Propagation</li>
+  <li>Mock Backward Propagation</li>
+</ul>
+
+<h3 id="chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 4 Make your own neural network to classify handwritten digitals</h3>
+
+<p>In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.</p>
+
+<p><strong>DataSet:</strong> The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.</p>
+
+<p>TBD</p>
+
+<h2 id="other-projects">Other Projects</h2>
+
+<p>TBD</p>
+
+<h3 id="classify-hand-gesture-pose-in-art">Classify Hand Gesture Pose in Art</h3>
+
+<p>In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.</p>
+
+<p><strong>Dataset:</strong>  we will use Rijksmuseum dataset, the <a href="http://data.fondazionezeri.unibo.it/query/">Fototeca Zeri data</a> or the <a href="[http://foto.biblhertz.it](http://foto.biblhertz.it/)">Bibliotheca Hertziana dataset</a>.</p>
+
+<h3 id="audio-recognition-of-simple-words">Audio Recognition of Simple words</h3>
+
+<p>In this part, the student will learn how to build a basic speech recognition network that recognizes ten different words:  “yes”, “no”, “up”, “down”, “left”, “right”, “on”, “off”, “stop”, or “go”. Real speech and audio recognition systems is much more complex than classify handwritten digits.</p>
+
+<p><strong>Dataset</strong>: we will use the <a href="https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz">Speech Commands dataset</a>, which consists of over 105,000 WAVE audio files of people saying thirty different words. This data was collected by Google and released under a CC-BY license.</p>
+
+<h3 id="exploring-sentiment-in-literature">Exploring Sentiment in Literature</h3>
+
+<p>In this part, the student will learn how to build use Convolutional Neural Network and Recurrent Neural Network to train a <a href="https://github.com/awjuliani/DNN-Sentiment">models</a>, which will let us exploring Sentiment in Literature.</p>
+
+<p><strong>Dataset</strong>: we will choose three books (one positive book, one negative book, and one normal book) form <a href="http://www.gutenberg.org"><strong>Project Gutenberg</strong></a>. Project Gutenberg offers over 58,000 free eBooks.</p>
+
+<h2 id="about-me">About Me</h2>
+
+<ul>
+  <li><strong>Name</strong>: Xinyu You</li>
+  <li><strong>Email</strong>: yxydiscovery@gmail.com</li>
+  <li><strong>Github</strong>: <a href="http://github.com/yogayu">yogayu</a></li>
+  <li><strong>Website</strong>: <a href="http://data2art.com">data2art</a></li>
+  <li><strong>Resume</strong>: <a href="http://youxinyu.me">youxinyu.me</a></li>
+</ul>
+
+<p>If there are any problems, please feel free to contact me.</p>
 
               <nav class="c-page__nav">
   

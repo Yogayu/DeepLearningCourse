@@ -2,6 +2,35 @@
 
 ![log](media/logo.png)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Read Online](#read-online)
+- [Project Description](#project-description)
+- [Course Outline](#course-outline)
+  - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+  - [Chapter 1 Introduction](#chapter-1-introduction)
+  - [Chapter 2 Perceptron](#chapter-2-perceptron)
+  - [Chapter 3 Multilayer Perceptron](#chapter-3-multilayer-perceptron)
+    - [Section 1](#section-1)
+      - [1. Neuron](#1-neuron)
+      - [2. Activation function](#2-activation-function)
+      - [3. Two layer Neural Network](#3-two-layer-neural-network)
+    - [Section 2](#section-2)
+    - [1. Propagation](#1-propagation)
+    - [Learning: Training Neural Networks](#learning-training-neural-networks)
+    - [Physical Experiment](#physical-experiment)
+  - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+- [Other Projects](#other-projects)
+  - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
+  - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
+  - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
+- [About Me](#about-me)
+- [Reference](#reference)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Read Online
 
 This book is powered by Jekyll Book. So you can read it online: 
@@ -20,7 +49,13 @@ Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](h
 
 ### Chapter 0 Background Knowledge
 
+Programming
+
 - [Python Basic](https://sites.google.com/case.edu/techne-public-site/python?authuser=0)
+
+Math
+
+- basic matrix, calculus, and statistics.
 
 ### Chapter 1 Introduction
 

@@ -1,4 +1,4 @@
-# An online deep learning  course for humanists
+# An online deep learning  course for humanists (WIP)
 
 ![log](media/logo.png)
 
@@ -6,55 +6,154 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [An online deep learning  course for humanists [Under Development]](#an-online-deep-learning--course-for-humanists-under-development)
-  - [Project Description](#project-description)
-  - [Course Outline](#course-outline)
-    - [Part 0](#Part-0-Environment-Setup)
-    - [Part 1 Introduction: Teach computer to classify handwritten digits](#part-1-introduction-teach-computer-to-classify-handwritten-digits)
-    - [Part 2 Classify Hand Gesture Pose in Art](#part-2-classify-hand-gesture-pose-in-art)
-    - [Part 3 Audio Recognition of Simple words](#part-3-audio-recognition-of-simple-words)
-    - [Part 4 Exploring Sentiment in Literature](#part-4-exploring-sentiment-in-literature)
-  - [About Me](#about-me)
-  - [Reference](#reference)
+- [Read Online](#read-online)
+- [Project Description](#project-description)
+- [Course Outline](#course-outline)
+  - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+  - [Chapter 1 Introduction](#chapter-1-introduction)
+  - [Chapter 2 Perceptron](#chapter-2-perceptron)
+  - [Chapter 3 Multilayer Perceptron](#chapter-3-multilayer-perceptron)
+    - [Section 1](#section-1)
+      - [1. Neuron](#1-neuron)
+      - [2. Activation function](#2-activation-function)
+      - [3. Two layer Neural Network](#3-two-layer-neural-network)
+    - [Section 2](#section-2)
+    - [1. Propagation](#1-propagation)
+    - [Learning: Training Neural Networks](#learning-training-neural-networks)
+    - [Physical Experiment](#physical-experiment)
+  - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+- [Other Projects](#other-projects)
+  - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
+  - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
+  - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
+- [About Me](#about-me)
+- [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Read Online
 
-This book is powered by Jekyll Book. So you can read it online: [https://yogayu.github.io/DeepLearningCourse/](https://yogayu.github.io/DeepLearningCourse/)
+This book is powered by Jekyll Book. So you can read it online: 
+- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
+- [Github Jekyll Book](https://yogayu.github.io/DeepLearningCourse/)
 
 ## Project Description
 
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).
 
-The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.
+The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication. 
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
 ## Course Outline
-### Part 0: Environment Setup
-Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
 
-[Read Online](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
+### Chapter 0 Background Knowledge
 
-### Part 1 Introduction: Teach computer to classify handwritten digits
+Programming
 
-In this part, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset and TensorFlow’s deep neural networks classifier. 
+- [Python Basic](https://sites.google.com/case.edu/techne-public-site/python?authuser=0)
+
+Math
+
+- basic matrix, calculus, and statistics.
+
+### Chapter 1 Introduction
+
+1. What is deep learning?
+2. Relationship: AI-> machine learning -> deep learning
+3. What can deep learning do?
+4. [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
+		Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
+
+### Chapter 2 Perceptron
+
+1. How do we learn?
+2. How can machine learn?
+3. Perceptron: a single layer neural network
+
+### Chapter 3 Multilayer Perceptron
+
+A multi-layer perceptron is called Neural Networks
+
+#### Section 1
+##### 1. Neuron
+
+- Biological neuron model
+	- Artificial neural
+
+##### 2. Activation function
+
+- Why need this? None-linearities
+	- Some common activation functions
+
+##### 3. Two layer Neural Network
+
+The architecture:
+
+- Nodes
+- Input/Output
+- Layer
+	- Input Layer
+	- Output Layer
+	- Hidden Layer: Why we call it hidden layer
+- Connection
+	- Fully connected
+- Weights
+
+#### Section 2
+
+#### 1. Propagation
+
+- Forward Propagation
+- Backward Propagation
+- Math: Matrix Multiplication
+
+Make animation videos.
+
+#### Learning: Training Neural Networks
+- Example
+- Error loss
+    The empirical loss measures the total loss over the dataset
+- Loss Optimization
+	- Loss function is a function of the Weight
+	- Gradient Descent
+      - Greedy algorithm
+      - Like Hiking Down a Mountain
+      Make an animation video
+      - Local minimum
+- Optimization
+#### Physical Experiment
+
+- Every student acted as a Neuron
+- Mock Forward Propagation
+- Mock Backward Propagation
+
+
+### Chapter 4 Make your own neural network to classify handwritten digitals
+
+In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
 
-### Part 2 Classify Hand Gesture Pose in Art
+TBD
+
+## Other Projects
+
+TBD
+
+### Classify Hand Gesture Pose in Art
 
 In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.
 
 **Dataset:**  we will use Rijksmuseum dataset, the [Fototeca Zeri data](<http://data.fondazionezeri.unibo.it/query/>) or the [Bibliotheca Hertziana dataset]([http://foto.biblhertz.it](http://foto.biblhertz.it/)).
 
-### Part 3 Audio Recognition of Simple words
+### Audio Recognition of Simple words
 
 In this part, the student will learn how to build a basic speech recognition network that recognizes ten different words:  "yes", "no", "up", "down", "left", "right", "on", "off", "stop", or "go". Real speech and audio recognition systems is much more complex than classify handwritten digits. 
 
 **Dataset**: we will use the [Speech Commands dataset](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), which consists of over 105,000 WAVE audio files of people saying thirty different words. This data was collected by Google and released under a CC-BY license.
 
-### Part 4 Exploring Sentiment in Literature
+### Exploring Sentiment in Literature
 
 In this part, the student will learn how to build use Convolutional Neural Network and Recurrent Neural Network to train a [models](https://github.com/awjuliani/DNN-Sentiment), which will let us exploring Sentiment in Literature.
 
