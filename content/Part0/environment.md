@@ -1,5 +1,7 @@
 # Environment Setup
 
+In this section we’ll setup the development environment needed in this course. I recommend Anaconda to manage Python Package and using Jupyter Lab to support interactive notebook.
+
 ## Anaconda
 
 The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X. It ships with more than 1,000 data packages, the conda command-line tool and with a desktop graphical user interface called Anaconda Navigator.[^1]
@@ -80,7 +82,7 @@ https://www.tensorflow.org/install/pip
 
 ## Jupyter Lab
 
-JupyterLab is a next-generation web-based interface developed by the Jupyter team for the Jupyter project. It is more integrated, flexible, and extensible than the Jupyter Notebook. It supports more than 100 kinds of languages, and supports for multiple documents mutual integration, which realizes the interactive computing new work process.
+JupyterLab is a next-generation web-based interface developed by the Jupyter team for the Jupyter project. It is more integrated, flexible, and extensible than the Jupyter Notebook. It supports more than 100 kinds of languages, and supports for multiple documents mutual integration, which realizes the interactive computing new work process.[^3]
 
 
 As we have installed conda, we use conda to install this package:
@@ -107,3 +109,4 @@ http://data2art.com/Jupyterlab-en.html
 
 [^1]:https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-environments
 [^2]:https://www.tensorflow.org/install
+[^3]: https://jupyter.readthedocs.io/en/latest/
