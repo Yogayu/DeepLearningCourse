@@ -66,7 +66,7 @@ The architecture:
 
 #### Section 2
 
-#### 1. Propagation
+##### 1. Propagation
 
 - Forward Propagation
 - Backward Propagation
@@ -74,7 +74,7 @@ The architecture:
 
 Make animation videos.
 
-#### Learning: Training Neural Networks
+##### 2. Learning: Training Neural Networks
 
 - Example
 - Error loss
