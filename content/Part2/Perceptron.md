@@ -14,13 +14,9 @@ You can't see it with visual image, you can only see it with data.
 
 
 
-
-
 You want to teach a computer a computer. While they do not know what go right a little means, they can only perform specific instructions, like translate 12cm to the right.
 
 So, we build a coordinate system.
-
-
 
 Pictures
 
