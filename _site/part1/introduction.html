@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>1. Introduction</title>
-  <meta name="description" content="Part 1 Introduction: Teach computer to classify handwritten digits">
+  <meta name="description" content="Part 1 Introduction">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///part1/introduction.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///part1/introduction.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="1. Introduction" />
-<meta property="og:description" content="Part 1 Introduction: Teach computer to classify handwritten digits" />
+<meta property="og:description" content="Part 1 Introduction" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "1. Introduction",
   "datePublished":
-    "2019-06-02T22:09:31+08:00",
+    "2019-06-08T19:49:38+08:00",
   "dateModified":
-    "2019-06-02T22:09:31+08:00",
+    "2019-06-08T19:49:38+08:00",
   "description":
-    "Part 1 Introduction: Teach computer to classify handwritten digits",
+    "Part 1 Introduction",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -724,10 +724,10 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/part0/environment.html"
+          href="/part1/Introduction.html"
         >
           
-          0. Environment Setup
+          1. Introduction
         </a>
 
         
@@ -746,10 +746,27 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part0/WhatIsDeepLearning.html"
+                  href="/part1/Introduction.html"
                 >
                   
-                  What is Deep Learning?
+                  Introduction
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/part1/environment.html"
+                >
+                  
+                  Environment Setup
                 </a>
 
                 
@@ -759,27 +776,6 @@ initFunction(initQuery);
               
             
           </ul>
-        
-      </li>
-
-      
-    
-      
-      
-
-      
-      
-
-      
-      
-      <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
-          href="/part1/introduction.html"
-        >
-          
-          1. Introduction
-        </a>
-
         
       </li>
 
@@ -800,8 +796,10 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#what-is-deep-learning">What is Deep Learning</a></li>
-  <li><a href="#mnist-dataset">MNIST DataSet</a></li>
+  <li><a href="#artificial-intelligence">Artificial Intelligence</a></li>
+  <li><a href="#machine-learning">Machine Learning</a></li>
+  <li><a href="#deep-learning">Deep Learning</a></li>
+  <li><a href="#exercises">Exercises</a></li>
 </ul>
     </nav>
   </aside>
@@ -826,25 +824,95 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="part-1-introduction-teach-computer-to-classify-handwritten-digits">Part 1 Introduction: Teach computer to classify handwritten digits</h1>
+              <h1 id="part-1-introduction">Part 1 Introduction</h1>
 
-<h2 id="what-is-deep-learning">What is Deep Learning</h2>
+<blockquote>
+  <p>Can machines think? —— <strong>A. M. Turing</strong><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+</blockquote>
 
-<h2 id="mnist-dataset">MNIST DataSet</h2>
+<h3 id="artificial-intelligence">Artificial Intelligence</h3>
 
+<p>We are born with human intelligence. When you are a baby, you learn to talk by listening to people around you and learn to walk through hundreds of attempts. When you go to school, you can learn why the earth goes around the sun or how to play the guitar. When you are watching a suspense film, you’re trying to figure out who’s really responsible based on the clues that you’ve got. When the New Year comes, you can reflect on the past year and make plans for the next year. As we can see, language, action, learning, reasoning, memory and plan, those are parts of our human intelligence.</p>
+
+<p>For thousands of years, we have tried to understand how human intelligence works and apply it to make intelligent machines. Those machines are able to accomplish more challenging and complex tasks, like play, go game, classify the person in photos, identify the spam email, translate between two languages, figure out what elements have a great influence on cancer and how to write poems.</p>
+
+<p>In computer science, we call this intelligence demonstrated by machines Artificial Intelligence. Colloquially, the term “artificial intelligence” is used to describe machines that mimic “cognitive” functions that humans associate with other human minds, such as “learning” and “problem-solving”.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<h3 id="machine-learning">Machine Learning</h3>
+
+<p>Machine Learning is a subset of Artificial Intelligence. It is a field of study that gives computers the ability to learn from data without explicitly being programmed.</p>
+
+<p>Traditional programs algorithm are based on defining rules and logic. If you have some programming experience, you know that programs contain many logic rules and control conditions. For example, you may quickly write programs to determine whether a year is a leap year.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">year</span> <span class="o">=</span> <span class="mi">2019</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+           <span class="k">print</span><span class="p">(</span><span class="s">"YES"</span><span class="p">)</span>
+       <span class="k">else</span><span class="p">:</span>
+           <span class="k">print</span><span class="p">(</span><span class="s">"NO"</span><span class="p">)</span>
+   <span class="k">else</span><span class="p">:</span>
+       <span class="k">print</span><span class="p">(</span><span class="s">"YES"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">"NO"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is explicitly programmed.</p>
+
+<p>What if we want a computer to identify if there are cats in the picture? How do you tell it by a set of clear, precise rules? An animal with four legs, a tail, and fur is a cat? Don’t dogs have these characteristics too? It’s hard to write those rules.</p>
+
+<p>Think about another way, instead of writing a bunch of rules, like four legs, a tail, a fur, a meow, and so on. To tell a computer what a cat is, we gave it lots of pictures of cats, and lots of pictures of non-cats. Then, machine learning algorithms can train themselves to find <strong>patterns</strong> in these images to <strong>define</strong> what a cat looks like. Finally, when you give it a new picture, it can tell whether the picture contains a cat or not. This means learning from data without explicitly being programmed.</p>
+
+<h3 id="deep-learning">Deep Learning</h3>
+
+<p>Deep Learning is a subfield of machine learning concerned with algorithms inspired by the structure and function of the brain called <strong>artificial neural networks</strong>.</p>
+
+<p>Why are we using deep learning method instead of other machine learning method? In general, machine learning methods require us to manually extract features from the data and then use the features as input to the model. Hand-engineered features are time-consuming, brittle and not scalable in practice. While deep learning can automatically feature learning at multiple levels of abstraction. Suppose we want to know if you like a song. There is already a lot of data about songs you mark as likes or dislikes. We need to manually extract features, which may include: song name, singer, lyrics, type, length, rhythm, audio numeric matrix, etc. With the method of deep learning, most of those feature extraction processes can be omitted.</p>
+
+<p><img src="./img/whatisdp.png" alt="relationship" /></p>
+
+<p>Image from 6.S191: Introduction to Deep Learning<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p>In essence, a computer can do nothing but compute. At first glance, AI is powerful yet mysterious. You may wonder: How can a machine beat the world’s best go player? How can Siri understand what you are saying and respond to you?  Why does YouTube know which video you want to watch? How can the machine drive itself on the road? How could the data science team help Obama win the presidency? How could those things be possible? After this course, things will become clear to you.</p>
+
+<h3 id="exercises">Exercises</h3>
+
+<ol>
+  <li>What is artificial intelligence?</li>
+  <li>What is machine learning?</li>
+  <li>What is deep learning?</li>
+  <li>What’s the relationship of artificial intelligence, machine learning, and deep learning?</li>
+  <li>What’s the difference between traditional programming and machine learning?</li>
+</ol>
+
+<h2 id="reference">Reference</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>https://www.csee.umbc.edu/courses/471/papers/turing.pdf <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>https://en.wikipedia.org/wiki/Artificial_intelligence <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="http://introtodeeplearning.com">6.S191: Introduction to Deep Learning</a> <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/part0/WhatIsDeepLearning">
-      〈 <span class="u-margin-right-tiny"></span> What is Deep Learning?
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="https://github.com/Yogayu/DeepLearningCourse">
+      〈 <span class="u-margin-right-tiny"></span> GitHub repository
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="">
-       <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/part1/Introduction">
+      Introduction <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

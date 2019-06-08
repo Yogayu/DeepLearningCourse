@@ -14,7 +14,7 @@ https://docs.anaconda.com/anaconda/install/
 
 After installing, you can open Anaconda Navigator App.
 
-![conda](./images/conda.png)
+![conda](./img/conda.png)
 
 In the environment tab, all the packages installed are listed.
 
@@ -26,7 +26,7 @@ conda info
 
 Output:
 
-![conda](./images/condainfo.png)
+![conda](./img/condainfo.png)
 
 ### Create a new environment 
 
@@ -97,7 +97,7 @@ Start up JupyterLab:
 jupyter lab
 ```
 
-![conda](./images/jupyterLab.png)
+![conda](./img/jupyterLab.png)
 
 
 For more detail instructions, please refer to this page:
