@@ -4,10 +4,10 @@ redirect_from:
 interact_link: content/part2/Iris.ipynb
 kernel_name: python3
 has_widgets: false
-title: '2. Perceptron'
+title: 'Iris Classification'
 prev_page:
-  url: /part1/environment
-  title: 'Environment Setup'
+  url: /part2/Perceptron
+  title: 'Perceptron'
 next_page:
   url: 
   title: ''
@@ -36,7 +36,11 @@ import numpy as np
 
 ## Question
 
-How could machine learn from data? To answer this question, let's look at an example first: there is a data set witch consists of two species of Iris, how to classify those two species? When given a new Iris, how to predict which Iris category it belongs to?
+How to use a perceptron to classify data? 
+
+To answer this question, let's look at an example first: there is a data set which consists of two species of Iris. Our question are: 
+- How to classify those two species? 
+- When given a new Iris, how to predict which Iris category it belongs to?
 
 ## Data Set
 
@@ -252,13 +256,116 @@ Therefore, in mathematics form, all points above the line are:
 
 $$w_1*x + w_2*y + w_0 > 0$$
 
-and all points below the line are:
+and all points below and on the line are:
 
-$$w_1*x + w_2*y + w_0 < 0$$
+$$w_1*x + w_2*y + w_0 \leq 0$$
+
+
+Actually, this is exactly **how a perceptron looks like when n = 2**:
+
+
+$$
+y=\left\{
+\begin{array}{rcl}
+0       &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n > 0}\\
+1     &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\leq 0}\\
+\end{array} \right.
+$$
+
+let n = 2:
+
+$$
+y=\left\{
+\begin{array}{rcl}
+0       &      & {w_0 + w_1x_1 + w_2x_2 > 0}\\
+1     &      & {w_0 + w_1x_1 + w_2x_2 \leq 0}\\
+\end{array} \right.
+$$
+
 
 Because $f(x,y)$ is a linear function, we call it **a linear classifier**. To find a appropriate linear classifier of Iris, we need to find suitable $w_0,w_1$, and $w_3$.
 
+## Implement a perceptron
+
+
+
+{:.input_area}
+```python
+def classifier(x1,x2):
+    w0 = 2
+    w1 = 0.1
+    w2 = -1
+    
+    value = w0 + w1*x1 + w2*x2
+    print(value)
+    
+    if value > 0:
+        return -1
+    else:
+        return 1
+```
+
+
+
+
+{:.input_area}
+```python
+classifier(5.1,1.4)
+```
+
+
+{:.output .output_stream}
+```
+1.1099999999999999
+
+```
+
+
+
+
+{:.output .output_data_text}
+```
+-1
+```
+
+
+
+## Vector
+
+give some basic vector operation
+
+
+
+{:.input_area}
+```python
+import numpy as np
+x1 = 5.1 
+x2 = 1.4
+
+w1 = 0.1
+w2 = -1
+
+x = np.array([x1,x2])
+w = np.array([w1,w2])
+b = 2
+
+print(np.sum(w*x) + b)
+```
+
+
+{:.output .output_stream}
+```
+1.11
+
+```
+
+
+
+{:.input_area}
+```python
 In next section, we will learn about how to use "Perceptron Learning Algorithm" to find those parameters.
+```
+
 
 ## Reference
 - [Iris data set](https://archive.ics.uci.edu/ml/datasets/Iris/)
