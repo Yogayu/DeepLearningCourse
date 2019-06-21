@@ -1,15 +1,15 @@
 ---
 redirect_from:
   - "/part2/perceptron"
-interact_link: content/part2/Perceptron.ipynb
+interact_link: content/Part2/Perceptron.ipynb
 kernel_name: python3
 has_widgets: false
 title: '2. Perceptron'
 prev_page:
-  url: /part1/environment
+  url: /Part1/environment
   title: 'Environment Setup'
 next_page:
-  url: /part2/Perceptron
+  url: /Part2/Perceptron
   title: 'Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -28,16 +28,15 @@ Let’s first look at the basic unit of a biological brain —— the neuron.
 
 ![pn](./img/pn.png)
 
-In neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical **input values**, $x_1,x_2, x_3,...,x_n$.
+In a neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical **input values**, $x_1,x_2, x_3,...,x_n$.
 
 At the synapses between the dendrite and axons, electrical signals are modulated in various amounts. In the perceptron, this corresponds to each of input value is multiplied by a specific value called the **weight**, $w_0, w_1, w_2,...,w_n$.
 
-Finally, a neuron **triggers** an output only when the total strength of the input signals exceed a certain **threshold**. 
+Finally, a neuron **triggers** an output only when the total strength of the input signals exceeds a certain **threshold**. 
 
 A threshold is like the capacity of a water cup. The cup overflows only when it is filled. It's because neurons don't want to transmit small interfering signals, only strong ones do.
 
 This is simulated by calculating the weighted **sum of the inputs**, $ z = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n$, and applying a **step function** $f(z)$ on the sum to determine its output $y$. 
-
 
 $$
 y=\left\{
@@ -48,7 +47,7 @@ y=\left\{
 $$
 
 
-The simple step function we use may looks like this:
+The simple step function we use may look like this:
 
 
 
@@ -67,15 +66,14 @@ plt.show()
 
 
 
-{:.output .output_data_text}
-```
-<matplotlib.figure.Figure at 0x1054cacf8>
-```
+{:.output .output_png}
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Perceptron_7_0.png)
+
 
 
 The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.
 
-Summary
+In this section, we introduced perceptron. This is the basic building block for building a neural network, like the bricks of a house. In the next section, we will implement a perceptron using a classification example.
 
 ## Reference
 

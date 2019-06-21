@@ -1,10 +1,12 @@
 ---
+redirect_from:
+  - "/part1/environment"
 title: 'Environment Setup'
 prev_page:
-  url: /part1/Introduction
+  url: /Part1/Introduction
   title: 'Introduction'
 next_page:
-  url: /part2/Perceptron
+  url: /Part2/Perceptron
   title: '2. Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

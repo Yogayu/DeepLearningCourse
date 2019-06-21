@@ -1,12 +1,12 @@
 ---
 redirect_from:
   - "/part2/iris"
-interact_link: content/part2/Iris.ipynb
+interact_link: content/Part2/Iris.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Iris Classification'
 prev_page:
-  url: /part2/Perceptron
+  url: /Part2/Perceptron
   title: 'Perceptron'
 next_page:
   url: 
@@ -14,7 +14,7 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-# Iris Flowers Classification
+# Iris Classification
 
 
 
@@ -36,9 +36,8 @@ import numpy as np
 
 ## Question
 
-How to use a perceptron to classify data? 
+In the last section, we learn about perceptron. How to use it to classify data? To answer this question, let's look at an example first: there is a data set which consists of two species of Iris. Our questions are: 
 
-To answer this question, let's look at an example first: there is a data set which consists of two species of Iris. Our question are: 
 - How to classify those two species? 
 - When given a new Iris, how to predict which Iris category it belongs to?
 
@@ -153,21 +152,18 @@ sns.lmplot("sepal length (cm)", "petal length (cm)", data=iris_dataset,fit_reg=F
 
 {:.output .output_data_text}
 ```
-<seaborn.axisgrid.FacetGrid at 0x10d5a8eb8>
+<seaborn.axisgrid.FacetGrid at 0x1a17eac940>
 ```
 
 
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part2/Iris_10_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_10_1.png)
 
 
 
-I believe you can classify those two species category immediately.
-
-Get back to our question: identify which category a new Iris belongs to?
-
+I believe you can classify those two species category immediately with your eye. Do you remember our question: identify which category a new Iris belongs to?
 Suppose the new Iris' sepal length is 5.5 cm and petal length is 3.2. We draw this new Iris point to the plot.
 
 
@@ -184,14 +180,14 @@ sns.lmplot("sepal length (cm)", "petal length (cm)", data=new_iris_dataset,fit_r
 
 {:.output .output_data_text}
 ```
-<seaborn.axisgrid.FacetGrid at 0x1a1f8fecf8>
+<seaborn.axisgrid.FacetGrid at 0x1a17b3d358>
 ```
 
 
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part2/Iris_12_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_12_1.png)
 
 
 
@@ -199,9 +195,9 @@ The unknown dot is the new Iris. Obviously, it belongs to versicolor specie (tar
 
 ### Linear Classifier
 
-This task is easy for us. We can classify them by eyes. However, the computer doesn't has eyes, how can it split those two groups?
+This task is easy for us. We can classify them by our eyes. However, the computer doesn't have eyes. How can they split those two groups?
 
-You may have noticed that this is a two-dimensional plane, and if  want to separate the two classes, we can put a line between them. It looks like the following plot.
+You may have noticed that this is a two-dimensional plane, and if want to separate the two classes, we can put a line between them. It looks like the following plot.
 
 
 
@@ -222,33 +218,33 @@ plt.plot(x, y, '-r')
 
 {:.output .output_data_text}
 ```
-[<matplotlib.lines.Line2D at 0x1a1fc3fcc0>]
+[<matplotlib.lines.Line2D at 0x1a17f214a8>]
 ```
 
 
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/part2/Iris_16_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_16_1.png)
 
 
 
 All the points above the line are setosa category(-1), and all the points below the line are versicolor category(1). When a new Iris comes, a computer can predict which category it falls into by deciding whether it is above or below the line. 
 
-Therefore, **if we can teach computer to find such a kind of line, we can solve our problem!** Let's do it.
+Therefore, **if we can teach the computer to find such a kind of line, we can solve our problem!** Let's do it.
 
-In formal, a line in a two-dimensional plane can be represent as following:
+A line in a two-dimensional plane can be represented as follows:
 
 $$ax + by + c = 0 $$
 
-let:
+Let:
 
 $$w_0 = c$$
 $$w_1 = a$$
 $$w_2 = b$$
 
 
-then it becomes:
+Then it becomes:
 
 $$w_1x + w_2y + w_0 = 0$$
 
@@ -256,7 +252,7 @@ Therefore, in mathematics form, all points above the line are:
 
 $$w_1*x + w_2*y + w_0 > 0$$
 
-and all points below and on the line are:
+And all points below and on the line are:
 
 $$w_1*x + w_2*y + w_0 \leq 0$$
 
@@ -287,17 +283,72 @@ Because $f(x,y)$ is a linear function, we call it **a linear classifier**. To fi
 
 ## Implement a perceptron
 
+To implement a perceptron, we manually choose suitable $w_0,w_1$, and $w_3$ parameters for it.
+
+Let,
+$$
+w_0 = 2
+w_1 = 0.1
+w_2 = -1
+$$
+
+Then the line is:
+$$2 + 0.1x_1 - x_2 = 0$$
+
+The perceptron act like this:
+
+$$
+y=\left\{
+\begin{array}{rcl}
+0       &      & {2 + 0.1x_1 - x_2 > 0}\\
+1     &      & {2 + 0.1x_1 - x_2 \leq 0}\\
+\end{array} \right.
+$$
+
 
 
 {:.input_area}
 ```python
-def classifier(x1,x2):
+x_1 = np.linspace(4,8,18)
+
+w_0 = 2
+w_1 = 0.1
+w_2 = -1
+x_2 = a * x_1 + b
+
+sns.lmplot("sepal length (cm)", "petal length (cm)", data=iris_dataset,fit_reg=False,hue="target_class")
+plt.plot(x_1, x_2, '-r')
+```
+
+
+
+
+
+{:.output .output_data_text}
+```
+[<matplotlib.lines.Line2D at 0x1a180c4400>]
+```
+
+
+
+
+{:.output .output_png}
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_21_1.png)
+
+
+
+Here, we define a function perceptron which takes $x_1,x_2$ as inputs.
+
+
+
+{:.input_area}
+```python
+def perceptron(x1,x2):
     w0 = 2
     w1 = 0.1
     w2 = -1
     
     value = w0 + w1*x1 + w2*x2
-    print(value)
     
     if value > 0:
         return -1
@@ -306,19 +357,15 @@ def classifier(x1,x2):
 ```
 
 
+Now, let use it to predict the new Iris data with 5.1 sepal length and 1.4 petal length.
+
 
 
 {:.input_area}
 ```python
-classifier(5.1,1.4)
+perceptron(5.1,1.4)
 ```
 
-
-{:.output .output_stream}
-```
-1.1099999999999999
-
-```
 
 
 
@@ -330,42 +377,11 @@ classifier(5.1,1.4)
 
 
 
-## Vector
+The output is right. We build a perceptron!
 
-give some basic vector operation
+In this section, we learn about how to use the perceptron to classify Iris data set and implement a simple perceptron.
 
-
-
-{:.input_area}
-```python
-import numpy as np
-x1 = 5.1 
-x2 = 1.4
-
-w1 = 0.1
-w2 = -1
-
-x = np.array([x1,x2])
-w = np.array([w1,w2])
-b = 2
-
-print(np.sum(w*x) + b)
-```
-
-
-{:.output .output_stream}
-```
-1.11
-
-```
-
-
-
-{:.input_area}
-```python
-In next section, we will learn about how to use "Perceptron Learning Algorithm" to find those parameters.
-```
-
+So far, our perceptron is not smart at all, because we manually choose the parameters of the linear classifier. Later in the course, one of the key things to understand is how to teach them automatically learn the appropriate parameters from the data.
 
 ## Reference
 - [Iris data set](https://archive.ics.uci.edu/ml/datasets/Iris/)

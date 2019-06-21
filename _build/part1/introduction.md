@@ -6,7 +6,7 @@ prev_page:
   url: https://github.com/Yogayu/DeepLearningCourse
   title: 'GitHub repository'
 next_page:
-  url: /part1/Introduction
+  url: /Part1/Introduction
   title: 'Introduction'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

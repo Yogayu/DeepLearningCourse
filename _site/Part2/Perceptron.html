@@ -10,10 +10,10 @@
   <title>2. Perceptron</title>
   <meta name="description" content="Perceptron: foundation block of Neural Network">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///part2/Perceptron.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///Part2/Perceptron.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///part2/Perceptron.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///Part2/Perceptron.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="2. Perceptron" />
 <meta property="og:description" content="Perceptron: foundation block of Neural Network" />
@@ -25,13 +25,13 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///part2/Perceptron.html",
+    "https://yogayu.github.io/DeepLearningCourse///Part2/Perceptron.html",
   "headline":
     "2. Perceptron",
   "datePublished":
-    "2019-06-21T10:57:34+08:00",
+    "2019-06-22T00:12:35+08:00",
   "dateModified":
-    "2019-06-21T10:57:34+08:00",
+    "2019-06-22T00:12:35+08:00",
   "description":
     "Perceptron: foundation block of Neural Network",
   "author": {
@@ -724,7 +724,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/part1/Introduction.html"
+          href="/Part1/Introduction.html"
         >
           
           1. Introduction
@@ -746,7 +746,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part1/Introduction.html"
+                  href="/Part1/Introduction.html"
                 >
                   
                   Introduction
@@ -763,7 +763,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part1/environment.html"
+                  href="/Part1/environment.html"
                 >
                   
                   Environment Setup
@@ -791,7 +791,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry c-sidebar__entry--active"
-          href="/part2/Perceptron.html"
+          href="/Part2/Perceptron.html"
         >
           
           2. Perceptron
@@ -813,7 +813,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry c-sidebar__entry--active"
-                  href="/part2/Perceptron.html"
+                  href="/Part2/Perceptron.html"
                 >
                   
                   Perceptron
@@ -830,7 +830,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part2/Iris.html"
+                  href="/Part2/Iris.html"
                 >
                   
                   Iris Classification
@@ -889,7 +889,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/part2/Perceptron.ipynb" download>
+<a href="/content/Part2/Perceptron.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -902,7 +902,7 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2Fpart2%2FPerceptron.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2FPart2%2FPerceptron.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
@@ -923,11 +923,11 @@ initFunction(initQuery);
 
 <p><img src="./img/pn.png" alt="pn" /></p>
 
-<p>In neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical <strong>input values</strong>, $x_1,x_2, x_3,…,x_n$.</p>
+<p>In a neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical <strong>input values</strong>, $x_1,x_2, x_3,…,x_n$.</p>
 
 <p>At the synapses between the dendrite and axons, electrical signals are modulated in various amounts. In the perceptron, this corresponds to each of input value is multiplied by a specific value called the <strong>weight</strong>, $w_0, w_1, w_2,…,w_n$.</p>
 
-<p>Finally, a neuron <strong>triggers</strong> an output only when the total strength of the input signals exceed a certain <strong>threshold</strong>.</p>
+<p>Finally, a neuron <strong>triggers</strong> an output only when the total strength of the input signals exceeds a certain <strong>threshold</strong>.</p>
 
 <p>A threshold is like the capacity of a water cup. The cup overflows only when it is filled. It’s because neurons don’t want to transmit small interfering signals, only strong ones do.</p>
 
@@ -940,7 +940,7 @@ y=\left\{
 1     &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\leq 0}\\
 \end{array} \right. %]]></script>
 
-<p>The simple step function we use may looks like this:</p>
+<p>The simple step function we use may look like this:</p>
 
 <div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
@@ -953,12 +953,11 @@ y=\left\{
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.figure.Figure at 0x1054cacf8&gt;
-</code></pre></div></div>
+<p class="output output_png"><img src="../../_build/images/Part2/Perceptron_7_0.png" alt="png" /></p>
 
 <p>The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.</p>
 
-<p>Summary</p>
+<p>In this section, we introduced perceptron. This is the basic building block for building a neural network, like the bricks of a house. In the next section, we will implement a perceptron using a classification example.</p>
 
 <h2 id="reference">Reference</h2>
 
@@ -980,14 +979,14 @@ y=\left\{
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/part1/environment">
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/Part1/environment">
       〈 <span class="u-margin-right-tiny"></span> Environment Setup
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/part2/Perceptron">
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/Part2/Perceptron">
       Perceptron <span class="u-margin-right-tiny"></span> 〉
     </a>
   

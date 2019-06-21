@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-06-21T10:57:34+08:00",
+    "2019-06-22T00:12:35+08:00",
   "dateModified":
-    "2019-06-21T10:57:34+08:00",
+    "2019-06-22T00:12:35+08:00",
   "description":
     "This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.",
   "author": {
@@ -724,7 +724,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/part1/Introduction.html"
+          href="/Part1/Introduction.html"
         >
           
           1. Introduction
@@ -746,7 +746,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part1/Introduction.html"
+                  href="/Part1/Introduction.html"
                 >
                   
                   Introduction
@@ -763,7 +763,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part1/environment.html"
+                  href="/Part1/environment.html"
                 >
                   
                   Environment Setup
@@ -791,7 +791,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/part2/Perceptron.html"
+          href="/Part2/Perceptron.html"
         >
           
           2. Perceptron
@@ -813,7 +813,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part2/Perceptron.html"
+                  href="/Part2/Perceptron.html"
                 >
                   
                   Perceptron
@@ -830,7 +830,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/part2/Iris.html"
+                  href="/Part2/Iris.html"
                 >
                   
                   Iris Classification
@@ -879,21 +879,13 @@ initFunction(initQuery);
 <script>
     // Add the lunr store since we will now search it
     var store = [{
-        "title": "Home",
-        
-        "excerpt":
-            "Deep Learning course for humanists This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication. Project Mentors: Francis Steen, Mark Turner and Rajesh Kasturirangan. Course Outline Background Knowledge Programming Python Basic Math basic matrix, calculus, and statistics. Chapter 1 Introduction What is deep learning? Relationship: AI-&gt; machine learning -&gt; deep learning What can deep learning do? Environment Setup Setup...",
-        "categories": [],
-        "tags": [],
-        "url": "https://yogayu.github.io/DeepLearningCourse//intro.html",
-        "teaser":null},{
         "title": "1. Introduction",
         
         "excerpt":
             "Part 1 Introduction Can machines think? —— A. M. Turing1 Artificial Intelligence We are born with human intelligence. When you are a baby, you learn to talk by listening to people around you and learn to walk through hundreds of attempts. When you go to school, you can learn why the earth goes around the sun or how to play the guitar. When you are watching a suspense film, you’re trying to figure out who’s really responsible based on the clues that you’ve got. When the New Year comes, you can reflect on the past year and make plans for...",
         "categories": [],
         "tags": [],
-        "url": "https://yogayu.github.io/DeepLearningCourse//part1/Introduction.html",
+        "url": "https://yogayu.github.io/DeepLearningCourse//Part1/Introduction.html",
         "teaser":null},{
         "title": "Environment Setup",
         
@@ -901,23 +893,31 @@ initFunction(initQuery);
             "Environment Setup In this section we’ll setup the development environment needed in this course. I recommend Anaconda to manage Python Package and using Jupyter Lab to support interactive notebook. Anaconda The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X. It ships with more than 1,000 data packages, the conda command-line tool and with a desktop graphical user interface called Anaconda Navigator.1 It contains almost Packages we will use in this course, like scikit-learn, NumPy and pandas. Download and install the version according to your computer operation...",
         "categories": [],
         "tags": [],
-        "url": "https://yogayu.github.io/DeepLearningCourse//part1/environment.html",
+        "url": "https://yogayu.github.io/DeepLearningCourse//Part1/environment.html",
         "teaser":null},{
         "title": "Iris Classification",
         
         "excerpt":
-            "Iris Flowers Classification # dataset from sklearn import datasets # plot import seaborn as sns sns.set_style(\"darkgrid\") import matplotlib.pyplot as plt # data manipulation import pandas as pd import numpy as np # To display image in the jupyter notebook cell %matplotlib inline Question How to use a perceptron to classify data? To answer this question, let’s look at an example first: there is a data set which consists of two species of Iris. Our question are: How to classify those two species? When given a new Iris, how to predict which Iris category it belongs to? Data Set The data...",
+            "Iris Classification # dataset from sklearn import datasets # plot import seaborn as sns sns.set_style(\"darkgrid\") import matplotlib.pyplot as plt # data manipulation import pandas as pd import numpy as np # To display image in the jupyter notebook cell %matplotlib inline Question In the last section, we learn about perceptron. How to use it to classify data? To answer this question, let’s look at an example first: there is a data set which consists of two species of Iris. Our questions are: How to classify those two species? When given a new Iris, how to predict which Iris category it...",
         "categories": [],
         "tags": [],
-        "url": "https://yogayu.github.io/DeepLearningCourse//part2/Iris.html",
+        "url": "https://yogayu.github.io/DeepLearningCourse//Part2/Iris.html",
         "teaser":null},{
         "title": "2. Perceptron",
         
         "excerpt":
-            "Perceptron: foundation block of Neural Network A perceptron is a simple binary classification algorithm, proposed in 1958 at the Cornell Aeronautical Laboratory by Frank Rosenblatt. It’s the most fundamental unit of a deep neural network (also called an artificial neuron), which is developed on biological “neuron models” that conceptually resemble the mechanisms by which real biological neurons transmit signals. Neurons and Perceptron Let’s first look at the basic unit of a biological brain —— the neuron. In neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical input...",
+            "Perceptron: foundation block of Neural Network A perceptron is a simple binary classification algorithm, proposed in 1958 at the Cornell Aeronautical Laboratory by Frank Rosenblatt. It’s the most fundamental unit of a deep neural network (also called an artificial neuron), which is developed on biological “neuron models” that conceptually resemble the mechanisms by which real biological neurons transmit signals. Neurons and Perceptron Let’s first look at the basic unit of a biological brain —— the neuron. In a neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical...",
         "categories": [],
         "tags": [],
-        "url": "https://yogayu.github.io/DeepLearningCourse//part2/Perceptron.html",
+        "url": "https://yogayu.github.io/DeepLearningCourse//Part2/Perceptron.html",
+        "teaser":null},{
+        "title": "Home",
+        
+        "excerpt":
+            "Deep Learning course for humanists This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication. Project Mentors: Francis Steen, Mark Turner and Rajesh Kasturirangan. Course Outline Background Knowledge Programming Python Basic Math basic matrix, calculus, and statistics. Chapter 1 Introduction What is deep learning? Relationship: AI-&gt; machine learning -&gt; deep learning What can deep learning do? Environment Setup Setup...",
+        "categories": [],
+        "tags": [],
+        "url": "https://yogayu.github.io/DeepLearningCourse//intro.html",
         "teaser":null},]
 </script>
               <nav class="c-page__nav">

@@ -105,4 +105,23 @@ fig.tight_layout()
 plt.show()
 ```
 
-↑
+import numpy as np
+x1 = 5.1 
+x2 = 1.4
+
+def perceptron(x1,x2):
+    w_0 = 2
+    w1 = 0.1
+    w2 = -1
+
+    x = np.array([x1,x2]) # input
+    w = np.array([w1,w2]) # weight 
+    value = w_0 + np.sum(w*x)
+    
+    if value > 0:
+        return -1
+    else:
+        return 1
+    return 
+
+perceptron(x1,x2)
