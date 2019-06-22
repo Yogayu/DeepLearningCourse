@@ -48,26 +48,26 @@
 # - header: CONTENTS
 
 - title: 1. Introduction
-  url: /Part1/Introduction
+  url: /01/Introduction
   not_numbered: true
   expand_sections: true
   sections:
     - title: Introduction
-      url: /Part1/Introduction
+      url: /01/Introduction
       not_numbered: false
     - title: Environment Setup
-      url: /Part1/environment
+      url: /01/environment
       not_numbered: false
 - title: 2. Perceptron
-  url: /Part2/Perceptron
+  url: /02/Perceptron
   not_numbered: true
   expand_sections: true
   sections:
     - title: Perceptron
-      url: /Part2/Perceptron
+      url: /02/Perceptron
       not_numbered: false
     - title: Iris Classification
-      url: /Part2/Iris
+      url: /02/Iris
       not_numbered: false
 
 # - title: 2. Classify Hand Gesture Pose in Art

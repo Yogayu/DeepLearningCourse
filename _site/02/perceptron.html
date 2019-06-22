@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>1. Introduction</title>
-  <meta name="description" content="Part 1 Introduction">
+  <title>2. Perceptron</title>
+  <meta name="description" content="Perceptron: foundation block of Neural Network">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///part1/Introduction.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///02/Perceptron.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///part1/Introduction.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///02/Perceptron.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="1. Introduction" />
-<meta property="og:description" content="Part 1 Introduction" />
+<meta property="og:title"       content="2. Perceptron" />
+<meta property="og:description" content="Perceptron: foundation block of Neural Network" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///part1/Introduction.html",
+    "https://yogayu.github.io/DeepLearningCourse///02/Perceptron.html",
   "headline":
-    "1. Introduction",
+    "2. Perceptron",
   "datePublished":
-    "2019-06-22T00:30:04+08:00",
+    "2019-06-22T15:24:54+08:00",
   "dateModified":
-    "2019-06-22T00:30:04+08:00",
+    "2019-06-22T15:24:54+08:00",
   "description":
-    "Part 1 Introduction",
+    "Perceptron: foundation block of Neural Network",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -724,7 +724,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/Part1/Introduction.html"
+          href="/01/Introduction.html"
         >
           
           1. Introduction
@@ -746,7 +746,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/Part1/Introduction.html"
+                  href="/01/Introduction.html"
                 >
                   
                   Introduction
@@ -763,7 +763,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/Part1/environment.html"
+                  href="/01/environment.html"
                 >
                   
                   Environment Setup
@@ -790,8 +790,8 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
-          href="/Part2/Perceptron.html"
+        <a class="c-sidebar__entry c-sidebar__entry--active"
+          href="/02/Perceptron.html"
         >
           
           2. Perceptron
@@ -812,8 +812,8 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
-                  href="/Part2/Perceptron.html"
+                <a class="c-sidebar__entry c-sidebar__entry--active"
+                  href="/02/Perceptron.html"
                 >
                   
                   Perceptron
@@ -830,7 +830,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/Part2/Iris.html"
+                  href="/02/Iris.html"
                 >
                   
                   Iris Classification
@@ -863,10 +863,9 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#artificial-intelligence">Artificial Intelligence</a></li>
-  <li><a href="#machine-learning">Machine Learning</a></li>
-  <li><a href="#deep-learning">Deep Learning</a></li>
-  <li><a href="#exercises">Exercises</a></li>
+  <li><a href="#neurons-and-perceptron">Neurons and Perceptron</a></li>
+  <li><a href="#reference">Reference</a></li>
+  <li><a href="#exercise">Exercise</a></li>
 </ul>
     </nav>
   </aside>
@@ -889,97 +888,106 @@ initFunction(initQuery);
 </div>
 
             
+<div class="buttons">
+<a href="/content/02/Perceptron.ipynb" download>
+<button id="interact-button-download" class="interact-button">Download</button>
+</a>
+
+<button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+
+
+
+
+
+
+
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F02%2FPerceptron.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+
+
+</div>
+
 
             <div class="c-textbook__content">
-              <h1 id="part-1-introduction">Part 1 Introduction</h1>
+              <h1 id="perceptron-foundation-block-of-neural-network">Perceptron: foundation block of Neural Network</h1>
 
-<blockquote>
-  <p>Can machines think? —— <strong>A. M. Turing</strong><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
-</blockquote>
+<p>A perceptron is a simple binary classification algorithm, proposed in 1958 at the Cornell Aeronautical Laboratory by Frank Rosenblatt.</p>
 
-<h3 id="artificial-intelligence">Artificial Intelligence</h3>
+<p>It’s the most fundamental unit of a deep neural network (also called an artificial neuron), which is developed on biological “neuron models” that conceptually resemble the mechanisms by which real biological neurons transmit signals.</p>
 
-<p>We are born with human intelligence. When you are a baby, you learn to talk by listening to people around you and learn to walk through hundreds of attempts. When you go to school, you can learn why the earth goes around the sun or how to play the guitar. When you are watching a suspense film, you’re trying to figure out who’s really responsible based on the clues that you’ve got. When the New Year comes, you can reflect on the past year and make plans for the next year. As we can see, language, action, learning, reasoning, memory and plan, those are parts of our human intelligence.</p>
+<h2 id="neurons-and-perceptron">Neurons and Perceptron</h2>
 
-<p>For thousands of years, we have tried to understand how human intelligence works and apply it to make intelligent machines. Those machines are able to accomplish more challenging and complex tasks, like play, go game, classify the person in photos, identify the spam email, translate between two languages, figure out what elements have a great influence on cancer and how to write poems.</p>
+<p>Let’s first look at the basic unit of a biological brain —— the neuron.</p>
 
-<p>In computer science, we call this intelligence demonstrated by machines Artificial Intelligence. Colloquially, the term “artificial intelligence” is used to describe machines that mimic “cognitive” functions that humans associate with other human minds, such as “learning” and “problem-solving”.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p><img src="./img/Blausen_0657_MultipolarNeuron.png" alt="" /></p>
 
-<h3 id="machine-learning">Machine Learning</h3>
+<p><img src="./img/pn.png" alt="pn" /></p>
 
-<p>Machine Learning is a subset of Artificial Intelligence. It is a field of study that gives computers the ability to learn from data without explicitly being programmed.</p>
+<p>In a neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical <strong>input values</strong>, $x_1,x_2, x_3,…,x_n$.</p>
 
-<p>Traditional programs algorithm are based on defining rules and logic. If you have some programming experience, you know that programs contain many logic rules and control conditions. For example, you may quickly write programs to determine whether a year is a leap year.</p>
+<p>At the synapses between the dendrite and axons, electrical signals are modulated in various amounts. In the perceptron, this corresponds to each of input value is multiplied by a specific value called the <strong>weight</strong>, $w_0, w_1, w_2,…,w_n$.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">year</span> <span class="o">=</span> <span class="mi">2019</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-       <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-           <span class="k">print</span><span class="p">(</span><span class="s">"YES"</span><span class="p">)</span>
-       <span class="k">else</span><span class="p">:</span>
-           <span class="k">print</span><span class="p">(</span><span class="s">"NO"</span><span class="p">)</span>
-   <span class="k">else</span><span class="p">:</span>
-       <span class="k">print</span><span class="p">(</span><span class="s">"YES"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-   <span class="k">print</span><span class="p">(</span><span class="s">"NO"</span><span class="p">)</span>
+<p>Finally, a neuron <strong>triggers</strong> an output only when the total strength of the input signals exceeds a certain <strong>threshold</strong>.</p>
+
+<p>A threshold is like the capacity of a water cup. The cup overflows only when it is filled. It’s because neurons don’t want to transmit small interfering signals, only strong ones do.</p>
+
+<p>This is simulated by calculating the weighted <strong>sum of the inputs</strong>, $ z = w_0 + w_1x_1 + w_2x_2 + … + w_nx_n$, and applying a <strong>step function</strong> $f(z)$ on the sum to determine its output $y$.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+y=\left\{
+\begin{array}{rcl}
+0       &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n > 0}\\
+1     &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\leq 0}\\
+\end{array} \right. %]]></script>
+
+<p>The simple step function we use may look like this:</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Input"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>This is explicitly programmed.</p>
+<p class="output output_png"><img src="../images/02/Perceptron_7_0.png" alt="png" /></p>
 
-<p>What if we want a computer to identify if there are cats in the picture? How do you tell it by a set of clear, precise rules? An animal with four legs, a tail, and fur is a cat? Don’t dogs have these characteristics too? It’s hard to write those rules.</p>
+<p>The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.</p>
 
-<p>Think about another way, instead of writing a bunch of rules, like four legs, a tail, a fur, a meow, and so on. To tell a computer what a cat is, we gave it lots of pictures of cats, and lots of pictures of non-cats. Then, machine learning algorithms can train themselves to find <strong>patterns</strong> in these images to <strong>define</strong> what a cat looks like. Finally, when you give it a new picture, it can tell whether the picture contains a cat or not. This means learning from data without explicitly being programmed.</p>
-
-<h3 id="deep-learning">Deep Learning</h3>
-
-<p>Deep Learning is a subfield of machine learning concerned with algorithms inspired by the structure and function of the brain called <strong>artificial neural networks</strong>.</p>
-
-<p>Why are we using deep learning method instead of other machine learning method? In general, machine learning methods require us to manually extract features from the data and then use the features as input to the model. Hand-engineered features are time-consuming, brittle and not scalable in practice. While deep learning can automatically feature learning at multiple levels of abstraction. Suppose we want to know if you like a song. There is already a lot of data about songs you mark as likes or dislikes. We need to manually extract features, which may include: song name, singer, lyrics, type, length, rhythm, audio numeric matrix, etc. With the method of deep learning, most of those feature extraction processes can be omitted.</p>
-
-<p><img src="./img/whatisdp.png" alt="relationship" /></p>
-
-<p>Image from 6.S191: Introduction to Deep Learning<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
-
-<p>In essence, a computer can do nothing but compute. At first glance, AI is powerful yet mysterious. You may wonder: How can a machine beat the world’s best go player? How can Siri understand what you are saying and respond to you?  Why does YouTube know which video you want to watch? How can the machine drive itself on the road? How could the data science team help Obama win the presidency? How could those things be possible? After this course, things will become clear to you.</p>
-
-<h3 id="exercises">Exercises</h3>
-
-<ol>
-  <li>What is artificial intelligence?</li>
-  <li>What is machine learning?</li>
-  <li>What is deep learning?</li>
-  <li>What’s the relationship of artificial intelligence, machine learning, and deep learning?</li>
-  <li>What’s the difference between traditional programming and machine learning?</li>
-</ol>
+<p>In this section, we introduced perceptron. This is the basic building block for building a neural network, like the bricks of a house. In the next section, we will implement a perceptron using a classification example.</p>
 
 <h2 id="reference">Reference</h2>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>https://www.csee.umbc.edu/courses/471/papers/turing.pdf <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>https://en.wikipedia.org/wiki/Artificial_intelligence <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p><a href="http://introtodeeplearning.com">6.S191: Introduction to Deep Learning</a> <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Neuron">Neuron</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a></li>
+  <li><a href="https://www.cs.cmu.edu/~avrim/ML10/lect0125.pdf">15-859(B) Machine Learning Theory</a></li>
+  <li><a href="https://cs.stanford.edu/people/eroberts/courses/soco/projects/neural-networks/Neuron/index.html">The perceptron</a></li>
+  <li><a href="https://missinglink.ai/guides/neural-network-concepts/perceptrons-and-multi-layer-perceptrons-the-artificial-neuron-at-the-core-of-deep-learning/">the-artificial-neuron-at-the-core-of-deep-learning</a></li>
+</ul>
+
+<h2 id="exercise">Exercise</h2>
+
+<ol>
+  <li>What is Perceptron?</li>
+  <li>What is step function?</li>
+</ol>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="https://github.com/Yogayu/DeepLearningCourse">
-      〈 <span class="u-margin-right-tiny"></span> GitHub repository
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/01/environment">
+      〈 <span class="u-margin-right-tiny"></span> Environment Setup
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/Part1/Introduction">
-      Introduction <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/02/Perceptron">
+      Perceptron <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

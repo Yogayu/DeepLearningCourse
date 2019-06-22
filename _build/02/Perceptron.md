@@ -1,15 +1,15 @@
 ---
 redirect_from:
-  - "/part2/perceptron"
-interact_link: content/Part2/Perceptron.ipynb
+  - "/02/perceptron"
+interact_link: content/02/Perceptron.ipynb
 kernel_name: python3
 has_widgets: false
 title: '2. Perceptron'
 prev_page:
-  url: /Part1/environment
+  url: /01/environment
   title: 'Environment Setup'
 next_page:
-  url: /Part2/Perceptron
+  url: /02/Perceptron
   title: 'Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -67,7 +67,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Perceptron_7_0.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Perceptron_7_0.png)
 
 
 

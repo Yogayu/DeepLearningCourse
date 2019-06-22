@@ -1,12 +1,12 @@
 ---
 redirect_from:
-  - "/part1/introduction"
+  - "/01/introduction"
 title: '1. Introduction'
 prev_page:
   url: https://github.com/Yogayu/DeepLearningCourse
   title: 'GitHub repository'
 next_page:
-  url: /Part1/Introduction
+  url: /01/Introduction
   title: 'Introduction'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

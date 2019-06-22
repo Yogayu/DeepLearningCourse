@@ -1,12 +1,12 @@
 ---
 redirect_from:
-  - "/part2/iris"
-interact_link: content/Part2/Iris.ipynb
+  - "/02/iris"
+interact_link: content/02/Iris.ipynb
 kernel_name: python3
 has_widgets: false
 title: 'Iris Classification'
 prev_page:
-  url: /Part2/Perceptron
+  url: /02/Perceptron
   title: 'Perceptron'
 next_page:
   url: 
@@ -159,7 +159,7 @@ sns.lmplot("sepal length (cm)", "petal length (cm)", data=iris_dataset,fit_reg=F
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_10_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_10_1.png)
 
 
 
@@ -187,7 +187,7 @@ sns.lmplot("sepal length (cm)", "petal length (cm)", data=new_iris_dataset,fit_r
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_12_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_12_1.png)
 
 
 
@@ -225,7 +225,7 @@ plt.plot(x, y, '-r')
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_16_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_16_1.png)
 
 
 
@@ -333,7 +333,7 @@ plt.plot(x_1, x_2, '-r')
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/Part2/Iris_21_1.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_21_1.png)
 
 
 
