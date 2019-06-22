@@ -1,6 +1,6 @@
 # Deep Learning course for humanists
 
-![](../media/logo.png)
+![](./images/logo.png)
 
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).
 
