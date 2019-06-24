@@ -1,1 +1,0 @@
-In this chapter, we will talk about What is deep learning, and the relationship of AI, machine learning and deep learning.
