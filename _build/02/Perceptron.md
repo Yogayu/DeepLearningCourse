@@ -67,11 +67,16 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Perceptron_7_0.png)
+![png](../images/02/Perceptron_7_0.png)
 
 
 
 The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.
+
+TBA: 
+
+1. Natural intelligence is capable of one-shot learning, while Deep Learning requires large training datasets
+2. The neuron model of the brain's information processing has been contradicted by a large number of more recent studies and is outdated
 
 In this section, we introduced perceptron. This is the basic building block for building a neural network, like the bricks of a house. In the next section, we will implement a perceptron using a classification example.
 

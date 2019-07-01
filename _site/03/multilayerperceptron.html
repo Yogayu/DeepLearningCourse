@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>3. Multilayer Perceptron</title>
-  <meta name="description" content="Multilayer Perceptron">
+  <meta name="description" content="Multilayer Perceptron [Draft]">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/MultilayerPerceptron.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/MultilayerPerceptron.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="3. Multilayer Perceptron" />
-<meta property="og:description" content="Multilayer Perceptron" />
+<meta property="og:description" content="Multilayer Perceptron [Draft]" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "3. Multilayer Perceptron",
   "datePublished":
-    "2019-07-02T01:33:31+08:00",
+    "2019-07-02T01:41:19+08:00",
   "dateModified":
-    "2019-07-02T01:33:31+08:00",
+    "2019-07-02T01:41:19+08:00",
   "description":
-    "Multilayer Perceptron",
+    "Multilayer Perceptron [Draft]",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -931,14 +931,13 @@ initFunction(initQuery);
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
   <li><a href="#multi-output-perceptron">Multi Output Perceptron</a></li>
-  <li><a href="#multilayer-perceptron-1">Multilayer perceptron</a></li>
+  <li><a href="#multilayer-perceptron">Multilayer perceptron</a></li>
   <li><a href="#activate-funcation">Activate Funcation</a>
     <ul>
       <li><a href="#step-funcation">Step Funcation</a></li>
       <li><a href="#relu-function">ReLU Function</a></li>
       <li><a href="#sigmoid-function">Sigmoid Function</a></li>
       <li><a href="#tanch-function">TancH function</a></li>
-      <li><a href="#non-linear-activate-function">Non-linear activate function</a></li>
     </ul>
   </li>
   <li><a href="#reference">Reference</a></li>
@@ -985,7 +984,7 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <h1 id="multilayer-perceptron">Multilayer Perceptron</h1>
+              <h1 id="multilayer-perceptron-draft">Multilayer Perceptron [Draft]</h1>
 
 <p>Abstract</p>
 
@@ -997,7 +996,7 @@ initFunction(initQuery);
 
 <p><img src="./img/per.png" alt="pn" /></p>
 
-<h2 id="multilayer-perceptron-1">Multilayer perceptron</h2>
+<h2 id="multilayer-perceptron">Multilayer perceptron</h2>
 
 <p>Multilayer perceptron, also named deep feedforward networks. It adds hidden layers to the previous perceptron.</p>
 
@@ -1067,7 +1066,7 @@ h(x)=\left\{
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p class="output output_png"><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_19_0.png" alt="png" /></p>
+<p class="output output_png"><img src="../images/03/MultilayerPerceptron_19_0.png" alt="png" /></p>
 
 <h3 id="relu-function">ReLU Function</h3>
 
@@ -1094,7 +1093,7 @@ h(x)=\left\{
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p class="output output_png"><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_26_0.png" alt="png" /></p>
+<p class="output output_png"><img src="../images/03/MultilayerPerceptron_26_0.png" alt="png" /></p>
 
 <h3 id="sigmoid-function">Sigmoid Function</h3>
 
@@ -1119,36 +1118,9 @@ h(x)=\left\{
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p class="output output_png"><img src="/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_34_0.png" alt="png" /></p>
+<p class="output output_png"><img src="../images/03/MultilayerPerceptron_34_0.png" alt="png" /></p>
 
 <h3 id="tanch-function">TancH function</h3>
-
-<p>The activate function in neural network must be an non-linearities function.</p>
-
-<p>Why activate function must to be non-linearities function?</p>
-
-<p>Generally speaking, the purpose of activation functions is to introduce non-linearities into the network.</p>
-
-<h3 id="non-linear-activate-function">Non-linear activate function</h3>
-
-<p>The activate function in neural network must be an non-linearities function.</p>
-
-<p>Why activate function must to be non-linearities function?</p>
-
-<p>Generally speaking, the purpose of activation functions is to introduce non-linearities into the network. If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input. The activation function does the non-linear transformation to the input making it capable to learn and perform more complex tasks. From another point of view, without non-linear function, adding more layer to the network would be nonesence.</p>
-
-<p>$h(h(h(x))) = a<em>a</em>a*x$</p>
-
-<p>要知道如何传播，才能知道为什么需要用非线性的计划函数。</p>
-
-<p>线性可分和线性不可分：什么是线性可分</p>
-
-<p>线性分类器叠加在一起还是只是线性的。但是在真实数据中，很多数据都是线性不可分的。所以，我们就需要非线性的激活函数。使得神经网络可以处理复杂的情况。</p>
-
-<ol>
-  <li>如果没有激活函数，那么神经网络的权重、偏置全是线性的仿射变换（affine transformation）。仿射变换是啥？</li>
-  <li>如果是使用线性函数作为激活函数，那么叠加层就没有了意义。为了发挥叠加层带来的优势。</li>
-</ol>
 
 <h2 id="reference">Reference</h2>
 

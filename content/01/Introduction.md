@@ -10,6 +10,8 @@ For thousands of years, we have tried to understand how human intelligence works
 
 In computer science, we call this intelligence demonstrated by machines Artificial Intelligence. Colloquially, the term "artificial intelligence" is used to describe machines that mimic "cognitive" functions that humans associate with other human minds, such as "learning" and "problem-solving".[^2]
 
+TBA: one-shoot learning
+
 ### Machine Learning
 
 Machine Learning is a subset of Artificial Intelligence. It is a field of study that gives computers the ability to learn from data without explicitly being programmed.
