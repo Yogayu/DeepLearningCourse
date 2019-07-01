@@ -69,6 +69,17 @@
     - title: Iris Classification
       url: /02/Iris
       not_numbered: false
+- title: 3. Multilayer Perceptron
+  url: /03/MultilayerPerceptron
+  not_numbered: true
+  expand_sections: true
+  sections:
+    - title: Multilayer Perceptron
+      url: /03/MultilayerPerceptron
+      not_numbered: false
+    - title: Forward Propagation
+      url: /03/ForwardPropagation
+      not_numbered: false
 
 # - title: 2. Classify Hand Gesture Pose in Art
 #   url: /part1/introduction

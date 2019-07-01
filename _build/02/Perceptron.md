@@ -67,7 +67,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/02/Perceptron_7_0.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Perceptron_7_0.png)
 
 
 
