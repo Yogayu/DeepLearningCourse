@@ -199,6 +199,14 @@ plt.show()
 
 ### TancH function
 
+
+
+{:.input_area}
+```python
+Summary 
+```
+
+
 ## Reference
 
 - CHAPTER 1. INTRODUCTION MIT BOOK

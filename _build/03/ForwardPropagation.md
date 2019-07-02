@@ -40,6 +40,10 @@ We start with some random weights and bias:
 
 $b_1 = 0.4$
 
+$b_2 = 0.56$
+
+$b_3 = 0.64$
+
 $w{1,1} = 1$
 
 $w{1,2} = 0.7$
@@ -57,6 +61,9 @@ $w{2,3} = 0.6$
 {:.input_area}
 ```python
 b1 = 0.4 
+b2 = 0.56
+b3 = 0.64
+
 w11 =1.0
 w12 = 0.7
 w13 = 0.34
@@ -81,7 +88,7 @@ def sigmoid(x):
 
 The first layer of nodes is input layer which doing nothing but input signals. Notice that we add a bias node which weight is $b_1$.
 
-Move to the second layer, let's calculate input of first node. The same with perceptron, we 
+Move to the second layer, let's calculate input of first node:
 
 $$a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1$$
 
@@ -114,7 +121,7 @@ $z_1 = sigmod(a_1)$
 
 $ z_1 =  \frac{\mathrm{1} }{\mathrm{1} + e^{-1.1} }  $
 
-$z_1 = 0.7502601055951177$
+$z_1 = 0.7310585786300049$
 
 
 
@@ -138,24 +145,24 @@ The remaining two nodes can be calculated with the same way.
 
 The second node of hidden layer:
 
-$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_1$
+$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$
 
-$a_2 = 0.7 * 0.2 + 0.8* 0.8 + 0.4 = 1.1800000000000002$
+$a_2 = 0.7 * 0.2 + 0.8* 0.8 + 0.4 = 1.3400000000000003$
 
-$z_2 = sigmod(a_2) = 0.7649478037637648$
+$z_2 = sigmod(a_2) = 0.7924899414403644$
 
 
 
 {:.input_area}
 ```python
-a2 = w12 * x1 + w22 * x2 + b1
+a2 = w12 * x1 + w22 * x2 + b2
 print(a2)
 ```
 
 
 {:.output .output_stream}
 ```
-1.1800000000000002
+1.3400000000000003
 
 ```
 
@@ -170,30 +177,30 @@ print(z2)
 
 {:.output .output_stream}
 ```
-0.7649478037637648
+0.7924899414403644
 
 ```
 
 The third node of hidden layer:
 
-$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_1$
+$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$
 
-$a_3 = 0.34 * 0.2 + 0.6 * 0.8 + 0.4 = 0.9480000000000001$
+$a_3 = 0.34 * 0.2 + 0.6 * 0.8 + 0.4 = 1.1880000000000002$
 
-$z_3 = sigmod(a_3) = 0.7207127840500688$
+$z_3 = sigmod(a_3) = 0.7663831750110293$
 
 
 
 {:.input_area}
 ```python
-a3 = w13 * x1 + w23 * x2 + b1
+a3 = w13 * x1 + w23 * x2 + b3
 print(a3)
 ```
 
 
 {:.output .output_stream}
 ```
-0.9480000000000001
+1.1880000000000002
 
 ```
 
@@ -208,7 +215,7 @@ print(z3)
 
 {:.output .output_stream}
 ```
-0.7207127840500688
+0.7663831750110293
 
 ```
 
@@ -278,74 +285,133 @@ A.shape
 
 This is a 2 by 3 array matrix. 2 represent the number of rows, which means the first dimension has 2 elements. 3 represent the number of columns, which means the second dimension has 3 elements.
 
-Now let's see how to multiple Matrix.
+### Multiplying Matrixs
 
-### Multiple Matrix
+Now let's see how to multiple Matrix. When multiply a matrix by another matrix we need to do the **dot product** of rows and columns. Here’s an example of two simple matrixs A and B multiplied together.
 
+To work out the top left element of the answer, let's take the dot product of first row of A and first column of B.
 
+The **Dot Product** means multiply matching members, then sum up:
 
-![](img/matrix1.png)
+$$(2, 4) • (4, 6) = 2×4 + 4×6 = 26$$
+
+We multiply first numbers 2 and 4, likewise for the second numbers 4 and 6, and finally sum them up.
 
 ![](video/m1.gif)
 
+![](img/matrix1.png)
+
+Using the same way, we figure out the top right element of the answer.
+
+![](video/m2.gif)
+
 ![](img/matrix2.png)
+
+That's easy right? Continuing work out the rest numbers by yourself.
 
 ![](img/matrix3.png)
 
 ![](img/matrix4.png)
+
+Finally, we get the result matrix C.
+
+Notice that we can’t multiply any two matrices, they need to be compatible, which means the number of columns in the first must be equal to the number of rows in the second.
+
+This operation can be achieved using Numpy. We create two matrix A and B:
 
 
 
 {:.input_area}
 ```python
 A = np.array([[2,4],[3,7]])
+print(A)
+```
+
+
+{:.output .output_stream}
+```
+[[2 4]
+ [3 7]]
+
+```
+
+
+
+{:.input_area}
+```python
 B = np.array([[1,9],[6,8]])
+print(B)
 ```
 
 
+{:.output .output_stream}
+```
+[[1 9]
+ [6 8]]
 
-
-{:.input_area}
-```python
-A
 ```
 
-
-
-
-
-{:.output .output_data_text}
-```
-array([[2, 4],
-       [3, 7]])
-```
-
-
-
-
-
-{:.input_area}
-```python
-B
-```
-
-
-
-
-
-{:.output .output_data_text}
-```
-array([[1, 9],
-       [6, 8]])
-```
-
-
+Then use **dot** operation to multiply them and assign the result to matrix C:
 
 
 
 {:.input_area}
 ```python
 C = np.dot(A,B)
+print(C)
+```
+
+
+{:.output .output_stream}
+```
+[[26 50]
+ [45 83]]
+
+```
+
+Now that you understand the basics, let's see how we can apply matrix  to neural network computation.
+
+Let's using the variables in our neural networks.
+
+Before, the calculation formula we use is as follows:
+
+$a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1$
+
+$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$
+
+$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$
+
+
+Now, we use matrix to represent:
+
+![x](img/x.png)
+
+![x](img/w.png)
+
+![x](img/b.png)
+
+W is the matrix of weights, X is the matrix of inputs, B is the bias.
+
+The formula for calculating the input of the hidden layer is as follows
+
+$$A = XW + B$$
+
+![xw.png](img/xw.png)
+
+![xw+b.png](img/xw+b.png)
+
+We use a simple matrix operation expression $A = XW + B$ to calculate the input of the hidden layer node. Even if we add more nodes, the formula will be the same. It's pretty neat and powerful.
+
+Let's use Numpy for hidden layer node calculations.
+
+
+
+{:.input_area}
+```python
+import numpy as np
+X = np.array([x1, x2])
+W = np.array([[w11, w12, w13], [w21, w22, w23]])
+B = np.array([b1, b2, b3])
 ```
 
 
@@ -353,7 +419,55 @@ C = np.dot(A,B)
 
 {:.input_area}
 ```python
-C
+A = np.dot(X,W) + B
+print(A)
+```
+
+
+{:.output .output_stream}
+```
+[1.    1.34  1.188]
+
+```
+
+
+
+{:.input_area}
+```python
+Z = sigmoid(A)
+print(Z)
+```
+
+
+{:.output .output_stream}
+```
+[0.73105858 0.79248994 0.76638318]
+
+```
+
+Summary:
+
+
+
+{:.input_area}
+```python
+import numpy as np
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def initNeural():
+    X = np.array([x1, x2])
+    W = np.array([[w11, w12, w13], [w21, w22, w23]])
+    B = np.array([b1, b2, b3])
+
+def forword():
+    A = np.dot(X,W) + B
+    Z = sigmoid(A)
+    return Z
+
+initNeural()
+forword()
 ```
 
 
@@ -362,11 +476,11 @@ C
 
 {:.output .output_data_text}
 ```
-array([[26, 50],
-       [45, 83]])
+array([0.73105858, 0.79248994, 0.76638318])
 ```
 
 
 
 - https://en.wikipedia.org/wiki/Matrix_(mathematics)
 - https://www.youtube.com/watch?v=xyAuNHPsq-g
+- https://www.mathsisfun.com/algebra/matrix-multiplying.html
