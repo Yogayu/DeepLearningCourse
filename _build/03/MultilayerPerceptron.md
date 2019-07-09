@@ -14,45 +14,40 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-# Multilayer Perceptron [Draft]
-
-Abstract
-
-In this chapter, we will ... balabala
+# Multilayer Perceptron
 
 ## Multi Output Perceptron
 
-In last chapter, we learn about the single output perceptron. If we conbine two or more perceptron, we can get a multi output perceptron.
+In the last chapter, we learn about the single output perceptron. If we combine two or more perceptron, we can get a multi-output perceptron. In this way, we can build networks.
 
 ![pn](./img/per.png)
 
 ## Multilayer perceptron
 
-Multilayer perceptron, also named deep feedforward networks. It adds hidden layers to the previous perceptron.
+Multilayer perceptron also named deep feedforward networks. It adds hidden layers to the previous perceptron.
 
-The diagram 3.1 shows an example neural network. To keep the diagram clear, all the weights are unmarked. The leftmost layer 0 is the **input layer**. The right most layer 2 is the **ouput layer**. The middle layer 1 is called **hidden layer**. Here input layer and output layer have 2 nodes and hidden layer has 3 nodes. Although there are three layers, **only two of them has weight**, so we call this network as two layer network.
+Diagram 3.1 shows an example neural network. To keep the diagram clear, all the weights are unmarked. The leftmost layer 0 is the **input layer**. The rightmost layer 2 is the **output layer**. The middle layer 1 is called **hidden layer**. Here the input layer and output layer have 2 nodes and the hidden layer has 3 nodes. Although there are three layers, **only two of them has weight**, so we call this network as a two-layer network.
 
-Why the middle layer is called as hidden layer? The data of input layer and output layer are strictly observable, while the data value of hidden layer are learned by the model. Therefore, we cannot see them in advance. They are "hidden" for us.
+Why the middle layer is called a hidden layer? The data of the input layer and output layer are strictly observable, while the data value of the hidden layer is learned by the model. Therefore, we cannot see them in advance. They are "hidden" for us.
 
 ![](./img/layer.png)
 
 3.1 Neural Network
 
-As shown in the diagram 3.1, each node in input layer is connected with hidden layer, and each node in hidden layer is connected with output layer. We call hidden layer and output layer are **fully connection layer**.
+As shown in diagram 3.1, each node in the input layer is connected with the hidden layer, and each node in the hidden layer is connected with the output layer. We call hidden layer and output layer are **fully connection layer**.
 
-## Activate Funcation
+## Activate function
 
-- What is activate function?
-- The common use active funcation
-- Why neural network have to use none-liner activate function?
+### What is activate function?
 
-Recall that we use a step function in perceptron to transform output i.e. whether or not the neuron should be activated. We call this kind of funcation which take all the inputs to transform an output as **activate function**. 
+Recall that we use a step function in perceptron to transform output i.e. whether or not the neuron should be activated. We call this kind of function which take all the inputs to transform an output as **activate function**. 
+Activate function is one of the key concepts in deep learning. Let's first take a brief look at some common activation functions.
 
-Activate funcation is one of the key concept in deep learning. Let's first take a brief look at some common activation functions.
+### The common active function
 
-### Step Funcation
+### Step Function
 
-The definition of step funcation is:
+The definition of step function is:
 
 
 $$
@@ -63,7 +58,7 @@ h(x)=\left\{
 \end{array} \right.
 $$
 
-Here we use python to implement step function:
+Here we use Python to implement step function:
 
 
 
@@ -77,7 +72,7 @@ def step_func(x):
 ```
 
 
-In the above implementation, $x$ is a input number. Later we will use vector as input, so we can implement this using numpy.
+In the above implementation, $x$ is an input number. Later we will use a vector as input, so we can implement this using Numpy.
 
 Input $x$ as a vector:
 
@@ -92,7 +87,7 @@ def step_func(x):
 ```
 
 
-Here is how this step funcation looks like:
+Here is how this step function looks like:
 
 
 
@@ -113,13 +108,13 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/03/MultilayerPerceptron_19_0.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_19_0.png)
 
 
 
 ###  ReLU Function
 
-The definition of ReLU(rectified linear unit) funcation is:
+The definition of ReLU(rectified linear unit) function is:
 
 $$h(x) = max(x,0)$$
 
@@ -131,6 +126,7 @@ Here we use python to implement ReLU function:
 
 {:.input_area}
 ```python
+import numpy as np
 def relu(x):
     # return the maxium number bwtween 0 an each element of vector x
     return np.maximum(0, x)
@@ -154,7 +150,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/03/MultilayerPerceptron_26_0.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_26_0.png)
 
 
 
@@ -193,7 +189,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/03/MultilayerPerceptron_34_0.png)
+![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_34_0.png)
 
 
 
@@ -203,10 +199,32 @@ plt.show()
 
 {:.input_area}
 ```python
-Summary 
+# TancH function
+def tanh(x):
+    return np.tanh(x)
 ```
 
 
+
+
+{:.input_area}
+```python
+X = np.arange(-5.0, 5.0, 0.1)
+Y = tanh(X)
+plt.plot(X, Y)
+plt.ylim(-1.1, 1.1)
+plt.show()
+```
+
+
+
+{:.output .output_png}
+![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_37_0.png)
+
+
+
+All the activate function we introduced are none-linearities function. Why activate function must to be non-linearities function? Generally speaking, the purpose of activation functions is to introduce non-linearities into the network. Next section, we will deep into Forward Propagation. And then the detailed explanation of why we must use none-linearities will be discussed.
+
 ## Reference
 
-- CHAPTER 1. INTRODUCTION MIT BOOK
+- [Deep Learning Book](http://www.deeplearningbook.org/contents/part_practical.html)

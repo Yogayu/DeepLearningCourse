@@ -16,16 +16,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Forward Propagation
 
-Now we get familiar with the deep feedforward networks's structure, we are going to learn how the single pass through the neuron.
+Now we get familiar with the deep feedforward networks's structure, we are going to learn how the single pass through the network.
 
-
-![image-20190630125057290](img/pt.png)
-
-Here the value of input $x_1$ and $x_2$ are:
-
-$x_1 = 0.2$
-
-$x_2 = 0.8$
+There is a two-layer neural network with one hidden layer. Here the value of input $x_1$ and $x_2$ are:
 
 
 
@@ -36,31 +29,14 @@ x2 = 0.8
 ```
 
 
-We start with some random weights and bias:
-
-$b_1 = 0.4$
-
-$b_2 = 0.56$
-
-$b_3 = 0.64$
-
-$w{1,1} = 1$
-
-$w{1,2} = 0.7$
-
-$w{1,3} = 0.34$
-
-$w{2,1} = 0.5$
-
-$w{2,2} = 0.8$
-
-$w{2,3} = 0.6$
+We start with some random weights and bias from between layer0 and layer1:
 
 
 
 {:.input_area}
 ```python
-b1 = 0.4 
+# Layer 0 to Layer 1
+b1 = 0.4
 b2 = 0.56
 b3 = 0.64
 
@@ -73,7 +49,17 @@ w23 = 0.6
 ```
 
 
-Here we use sigmod function as activate function.
+![initLayer](img/initLayer.png)
+
+This animation shows how the single pass through the network:
+
+![video](video/layer.gif)
+
+A hidden unit in hidden layer looks like this:
+
+![HiddenUnit](img/Node.png)
+
+Here we use sigmod function as activate function h(x).
 
 
 
@@ -94,11 +80,11 @@ $$a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1$$
 
 The input nodes have values of 0.2 and 0.8. The weight of bias node in input layer and the first node in hidden layer is 0.4. The weight from second node in input layer is 0.1. The link weight from third node is 0.5. So the combined $a_1$ input is:
 
-$a_1 = 1 * 0.2 + 0.5 * 0.8 + 0.4$
+$$a_1 = 1 * 0.2 + 0.5 * 0.8 + 0.4$$
 
-$a_1 = 0.2 + 0.4 + 0.4$
+$$a_1 = 0.2 + 0.4 + 0.4$$
 
-$a_1 =1$
+$$a_1 =1$$
 
 
 
@@ -117,11 +103,11 @@ print(a1)
 
 Then we calculate the output of this node using activate function $h(x) = sigmod(x)$.
 
-$z_1 = sigmod(a_1)$
+$$z_1 = sigmod(a_1)$$
 
-$ z_1 =  \frac{\mathrm{1} }{\mathrm{1} + e^{-1.1} }  $
+$$ z_1 =  \frac{\mathrm{1} }{\mathrm{1} + e^{-1.1} }  $$
 
-$z_1 = 0.7310585786300049$
+$$z_1 = 0.7310585786300049$$
 
 
 
@@ -145,11 +131,11 @@ The remaining two nodes can be calculated with the same way.
 
 The second node of hidden layer:
 
-$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$
+$$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$$
 
-$a_2 = 0.7 * 0.2 + 0.8* 0.8 + 0.4 = 1.3400000000000003$
+$$a_2 = 0.7 * 0.2 + 0.8* 0.8 + 0.4 = 1.3400000000000003$$
 
-$z_2 = sigmod(a_2) = 0.7924899414403644$
+$$z_2 = sigmod(a_2) = 0.7924899414403644$$
 
 
 
@@ -183,11 +169,11 @@ print(z2)
 
 The third node of hidden layer:
 
-$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$
+$$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$$
 
-$a_3 = 0.34 * 0.2 + 0.6 * 0.8 + 0.4 = 1.1880000000000002$
+$$a_3 = 0.34 * 0.2 + 0.6 * 0.8 + 0.4 = 1.1880000000000002$$
 
-$z_3 = sigmod(a_3) = 0.7663831750110293$
+$$z_3 = sigmod(a_3) = 0.7663831750110293$$
 
 
 
@@ -369,17 +355,19 @@ print(C)
 
 ```
 
+## Apply matrix to neural network computation
+
 Now that you understand the basics, let's see how we can apply matrix  to neural network computation.
 
 Let's using the variables in our neural networks.
 
 Before, the calculation formula we use is as follows:
 
-$a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1$
+$$a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1$$
 
-$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$
+$$a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2$$
 
-$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$
+$$a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3$$
 
 
 Now, we use matrix to represent:
@@ -445,29 +433,55 @@ print(Z)
 
 ```
 
-Summary:
+The calculation process looks a lot cleaner than it did before.
+
+## Output Layer
+
+Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer.
+
+The node in output layer's structure is the same as the hidden layer's node. However, the choose of the activate function is different according to difference types of questions. 
+
+In machine learning, there are two kind of kinds of problems: **regression** and **classification**. The output values of classification problem are **categorical data**. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are **numerical data**. For example, let's support that we're going to predict what's the probability of rain tomorrow. The probability can be 29%, 29.3%, 98% and so on. It is a numerical value, so it's a regression problem.
+
+For the regression, We can use the **linear function**. The simple one is identity activation function.
+
+$$ f(x) = x $$
+
+![linear](img/linear.png)
+
+For the classification, **softmax** function is a good choose. It squashes the outputs of each unit to be between 0 and 1, and the sum of outputs values is equal to 1. Mathematically the softmax function is shown below.
+
+$$y_{k} = \frac{e^{a^{k}}}{\sum_{i=1}^{n}e^{a^{i}}}$$
+
+$y_k$ is the $kth$ node's output. $n$ is the number of nodes in output layer. $k$ indexes the output units, so $k = 1, 2, ..., n$.
+
+Implementation in Python:
 
 
 
 {:.input_area}
 ```python
 import numpy as np
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c) # avoid overflow
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+    return y
+```
 
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
 
-def initNeural():
-    X = np.array([x1, x2])
-    W = np.array([[w11, w12, w13], [w21, w22, w23]])
-    B = np.array([b1, b2, b3])
+![linear](img/softmax.png)
 
-def forword():
-    A = np.dot(X,W) + B
-    Z = sigmoid(A)
-    return Z
+Suppose we want to predict tomorrow's weather, which has three kinds: sunny, cloudy and rainy. Using softmax as activate function, the final outputs will be the probability of these three categories. For the example image above, the output of the softmax function might look like:
 
-initNeural()
-forword()
+
+
+{:.input_area}
+```python
+a = np.array([1.83,0.96,0.4])
+y = softmax(a)
+y
 ```
 
 
@@ -476,11 +490,20 @@ forword()
 
 {:.output .output_data_text}
 ```
-array([0.73105858, 0.79248994, 0.76638318])
+array([0.60304157, 0.2526452 , 0.14431323])
 ```
 
 
 
+![](img/softmaxexample.png)
+
+For tomorrow's weather, the probability of sunny day is 0.605, cloudy day is 0.153 and rainy day is 0.144. So we forecast tomorrow might be a sunny day.
+
+## Summary
+
+1. Forward propagation sequentially calculates the intermediate variables of neural network from input layer to output layer.
+2. Using matrix dot product make the calculation much more neat and powerful.
+3. When designing the output layer, different activation functions should be selected according to different problems.
+
 - https://en.wikipedia.org/wiki/Matrix_(mathematics)
-- https://www.youtube.com/watch?v=xyAuNHPsq-g
 - https://www.mathsisfun.com/algebra/matrix-multiplying.html

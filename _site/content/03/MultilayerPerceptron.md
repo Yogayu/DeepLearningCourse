@@ -1,2 +1,0 @@
-# Multilayer Perceptron
-
