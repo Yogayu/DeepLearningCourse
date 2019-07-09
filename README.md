@@ -6,36 +6,38 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Read Online](#read-online)
-- [Project Description](#project-description)
-- [Course Outline](#course-outline)
-  - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
-  - [Chapter 1 Introduction](#chapter-1-introduction)
-  - [Chapter 2 Perceptron](#chapter-2-perceptron)
-  - [Chapter 3 Multilayer Perceptron](#chapter-3-multilayer-perceptron)
-    - [Section 1](#section-1)
-      - [1. Neuron](#1-neuron)
-      - [2. Activation function](#2-activation-function)
-      - [3. Two layer Neural Network](#3-two-layer-neural-network)
-    - [Section 2](#section-2)
-    - [1. Propagation](#1-propagation)
-    - [Learning: Training Neural Networks](#learning-training-neural-networks)
+- [An online deep learning  course for humanists (WIP)](#an-online-deep-learning--course-for-humanists-wip)
+  - [Read Online](#read-online)
+  - [Project Description](#project-description)
+  - [Course Outline](#course-outline)
+    - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+    - [Chapter 1 Introduction](#chapter-1-introduction)
+    - [Chapter 2 Perceptron](#chapter-2-perceptron)
+      - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
+      - [Example: Iris Classification](#example-iris-classification)
+    - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
+        - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
+        - [3.2 Forward Propagation](#32-forward-propagation)
+        - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
+        - [3.4 Backward Propagation](#34-backward-propagation)
+            - [Learning: Training Neural Networks](#learning-training-neural-networks)
     - [Physical Experiment](#physical-experiment)
-  - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
-- [Other Projects](#other-projects)
-  - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
-  - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
-  - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
-- [About Me](#about-me)
-- [Reference](#reference)
+    - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+  - [Other Projects](#other-projects)
+    - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
+    - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
+    - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
+  - [About Me](#about-me)
+  - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Read Online
 
 This book is powered by Jekyll Book. So you can read it online: 
-- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
 - [Github Jekyll Book](https://yogayu.github.io/DeepLearningCourse/)
+- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
 
 ## Project Description
 
@@ -45,9 +47,8 @@ The Project goal is to design and develops an online course, to teach deep learn
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
-## Course Outline
-
-### Chapter 0 Background Knowledge
+# Course Outline
+## Chapter 0 Background Knowledge
 
 Programming
 
@@ -57,7 +58,7 @@ Math
 
 - basic matrix, calculus, and statistics.
 
-### Chapter 1 Introduction
+## Chapter 1 Introduction
 
 - [x]  What is deep learning?
 2. [x] Relationship: AI-> machine learning -> deep learning
@@ -65,18 +66,18 @@ Math
 4. [x] [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
 		Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
 
-### Chapter 2 Perceptron
+## Chapter 2 Perceptron
 
-#### Perceptron: a single layer neural network
+### Perceptron: a single layer neural network
 
 - [x] How do we learn? (Biological neuron model)
 - [x] How can machine learn? (Artificial neural->Perceptron)
 
-#### Example: Iris Classification
+### Example: Iris Classification
 - [x] Linear Classifier
 - [x] Implement a perceptron
 
-### Chapter 3 Multilayer Perceptron (deep feedforward networks)
+## Chapter 3 Multilayer Perceptron (deep feedforward networks)
 
 ### 3.1 Multilayer perceptron
 
@@ -108,7 +109,7 @@ Make animation videos(gifs).
 ### 3.4 Backward Propagation
 
 
-##### Learning: Training Neural Networks
+#### Learning: Training Neural Networks
 
 - [ ] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
@@ -120,18 +121,19 @@ Make animation videos(gifs).
       - Local minimum
 - [ ] Optimization
 
-#### Physical Experiment
+## Physical Experiment
 
 - Every student acted as a Neuron
 - Mock Forward Propagation
 - Mock Backward Propagation
 
 
-### Chapter 4 Make your own neural network to classify handwritten digitals
+## Chapter 4 Make your own neural network to classify handwritten digitals
 
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
+
 
 TBD
 
