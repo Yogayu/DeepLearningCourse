@@ -59,70 +59,67 @@ Math
 
 ### Chapter 1 Introduction
 
-1. What is deep learning?
-2. Relationship: AI-> machine learning -> deep learning
-3. What can deep learning do?
-4. [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
+- [x]  What is deep learning?
+2. [x] Relationship: AI-> machine learning -> deep learning
+3. [x] What can deep learning do?
+4. [x] [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
 		Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
 
 ### Chapter 2 Perceptron
 
-1. How do we learn?
-2. How can machine learn?
-3. Perceptron: a single layer neural network
+#### Perceptron: a single layer neural network
 
-### Chapter 3 Multilayer Perceptron
+- [x] How do we learn? (Biological neuron model)
+- [x] How can machine learn? (Artificial neural->Perceptron)
 
-A multi-layer perceptron is called Neural Networks
+#### Example: Iris Classification
+- [x] Linear Classifier
+- [x] Implement a perceptron
 
-#### Section 1
-##### 1. Neuron
+### Chapter 3 Multilayer Perceptron (deep feedforward networks)
 
-- Biological neuron model
-	- Artificial neural
+### 3.1 Multilayer perceptron
 
-##### 2. Activation function
+- [x] The architecture
+    - Nodes
+    - Input/Output
+    - Layer
+        - Input Layer
+        - Output Layer
+        - Hidden Layer: Why we call it hidden layer
+    - Connection
+        - Fully connected
+    - Weights
+- [x] Activation function
+    - What is Activation function
+    - The common active function
 
-- Why need this? None-linearities
-	- Some common activation functions
+### 3.2 Forward Propagation
 
-##### 3. Two layer Neural Network
+- [x] Forward Process
+- [x] Math: Multiplying Matrixs
+- [x] Apply matrix to neural network computation
+- [x] Design the output layer
 
-The architecture:
+Make animation videos(gifs).
 
-- Nodes
-- Input/Output
-- Layer
-	- Input Layer
-	- Output Layer
-	- Hidden Layer: Why we call it hidden layer
-- Connection
-	- Fully connected
-- Weights
+### 3.3 Why we use None-linearities activation function?
 
-#### Section 2
+### 3.4 Backward Propagation
 
-##### 1. Propagation
-
-- Forward Propagation
-- Backward Propagation
-- Math: Matrix Multiplication
-
-Make animation videos.
 
 ##### Learning: Training Neural Networks
 
-- Example
-- Error loss
-    The empirical loss measures the total loss over the dataset
-- Loss Optimization
-	- Loss function is a function of the Weight
-	- Gradient Descent
+- [ ] Error loss function
+    The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
+- [ ] Loss Optimization
+    - [ ] Gradient Descent
       - Greedy algorithm
       - Like Hiking Down a Mountain
-      Make an animation video
+          Make an animation video
       - Local minimum
-- Optimization
+- [ ] Optimization
+
 #### Physical Experiment
 
 - Every student acted as a Neuron

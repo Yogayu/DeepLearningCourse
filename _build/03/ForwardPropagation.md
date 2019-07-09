@@ -9,8 +9,8 @@ prev_page:
   url: /03/MultilayerPerceptron
   title: 'Multilayer Perceptron'
 next_page:
-  url: 
-  title: ''
+  url: /03/ForwardPropagation
+  title: 'Forward Propagation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -435,7 +435,7 @@ print(Z)
 
 The calculation process looks a lot cleaner than it did before.
 
-## Output Layer
+## Design the output layer
 
 Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer.
 
