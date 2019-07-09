@@ -12,14 +12,42 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ![](./images/logo.png)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Deep Learning course for humanists](#deep-learning-course-for-humanists)
+  - [Course Outline](#course-outline)
+    - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+    - [Chapter 1 Introduction](#chapter-1-introduction)
+    - [Chapter 2 Perceptron](#chapter-2-perceptron)
+      - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
+      - [Example: Iris Classification](#example-iris-classification)
+    - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
+        - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
+        - [3.2 Forward Propagation](#32-forward-propagation)
+        - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
+        - [3.4 Backward Propagation](#34-backward-propagation)
+            - [Learning: Training Neural Networks](#learning-training-neural-networks)
+      - [Physical Experiment](#physical-experiment)
+    - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+  - [Other Projects](#other-projects)
+    - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
+    - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
+    - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
+  - [About Me](#about-me)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).
 
 The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication. 
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
-## Course Outline
-### Chapter 0 Background Knowledge
+# Course Outline
+## Chapter 0 Background Knowledge
 
 Programming
 
@@ -29,7 +57,7 @@ Math
 
 - basic matrix, calculus, and statistics.
 
-### Chapter 1 Introduction
+## Chapter 1 Introduction
 
 - [x]  What is deep learning?
 2. [x] Relationship: AI-> machine learning -> deep learning
@@ -37,18 +65,18 @@ Math
 4. [x] [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
 		Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
 
-### Chapter 2 Perceptron
+## Chapter 2 Perceptron
 
-#### Perceptron: a single layer neural network
+### Perceptron: a single layer neural network
 
 - [x] How do we learn? (Biological neuron model)
 - [x] How can machine learn? (Artificial neural->Perceptron)
 
-#### Example: Iris Classification
+### Example: Iris Classification
 - [x] Linear Classifier
 - [x] Implement a perceptron
 
-### Chapter 3 Multilayer Perceptron (deep feedforward networks)
+## Chapter 3 Multilayer Perceptron (deep feedforward networks)
 
 ### 3.1 Multilayer perceptron
 
@@ -80,7 +108,7 @@ Make animation videos(gifs).
 ### 3.4 Backward Propagation
 
 
-##### Learning: Training Neural Networks
+#### Learning: Training Neural Networks
 
 - [ ] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
@@ -92,14 +120,14 @@ Make animation videos(gifs).
       - Local minimum
 - [ ] Optimization
 
-#### Physical Experiment
+## Physical Experiment
 
 - Every student acted as a Neuron
 - Mock Forward Propagation
 - Mock Backward Propagation
 
 
-### Chapter 4 Make your own neural network to classify handwritten digitals
+## Chapter 4 Make your own neural network to classify handwritten digitals
 
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
