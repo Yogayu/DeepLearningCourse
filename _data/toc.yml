@@ -80,6 +80,9 @@
     - title: Forward Propagation
       url: /03/ForwardPropagation
       not_numbered: false
+    - title: Forward Propagation
+      url: /03/ForwardPropagation
+      not_numbered: false
 
 # - title: 2. Classify Hand Gesture Pose in Art
 #   url: /part1/introduction
