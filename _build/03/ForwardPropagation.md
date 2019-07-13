@@ -9,8 +9,8 @@ prev_page:
   url: /03/MultilayerPerceptron
   title: 'Multilayer Perceptron'
 next_page:
-  url: /03/ForwardPropagation
-  title: 'Forward Propagation'
+  url: /03/BackwardPropagation
+  title: 'Backward Propagation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

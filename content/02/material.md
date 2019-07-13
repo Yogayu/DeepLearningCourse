@@ -1,4 +1,5 @@
 ### Non-linear activate function
+
 The activate function in neural network must be an non-linearities function.
 
 Why activate function must to be non-linearities function? 

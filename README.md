@@ -19,7 +19,7 @@
         - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
         - [3.2 Forward Propagation](#32-forward-propagation)
         - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
-        - [3.4 Backward Propagation](#34-backward-propagation)
+        - [3.4 Back Propagation](#34-backward-propagation)
             - [Learning: Training Neural Networks](#learning-training-neural-networks)
     - [Physical Experiment](#physical-experiment)
     - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
@@ -106,7 +106,7 @@ Make animation videos(gifs).
 
 ### 3.3 Why we use None-linearities activation function?
 
-### 3.4 Backward Propagation
+### 3.4 Back Propagation
 
 
 #### Learning: Training Neural Networks
