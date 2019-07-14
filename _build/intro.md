@@ -28,7 +28,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
     - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
     - [3.2 Forward Propagation](#32-forward-propagation)
     - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
-    - [Chapter 4 Learning: Training Neural Networks](#chapter-4-learning-training-neural-networks)
+  - [Chapter 4 Learning: Training Neural Networks](#chapter-4-learning-training-neural-networks)
+    - [4.1 Loss function](#41-loss-function)
+    - [4.2 Loss Optimization](#42-loss-optimization)
+    - [4.3 Back Propagation](#43-back-propagation)
+    - [4.4 Optimization](#44-optimization)
   - [Physical Experiment](#physical-experiment)
   - [Chapter 5 Make your own neural network to classify handwritten digitals](#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals)
   - [Other Projects](#other-projects)
@@ -114,14 +118,14 @@ Make animation videos(gifs).
 
 ### 3.3 Why we use None-linearities activation function?
 
-### Chapter 4 Learning: Training Neural Networks
+## Chapter 4 Learning: Training Neural Networks
 
-#### 4.1 Loss function
+### 4.1 Loss function
 
-- [ ] Error loss function
+- [x] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
 
-#### 4.2 Loss Optimization
+### 4.2 Loss Optimization
 
 - [ ] Gradient Descent
   - Greedy algorithm
@@ -129,11 +133,11 @@ Make animation videos(gifs).
       Make an animation video
   - Local minimum
 
-#### 4.3 Back Propagation
+### 4.3 Back Propagation
 
 - [ ] Back Propagation
 
-#### 4.4 Optimization
+### 4.4 Optimization
  
 - [ ] Early stop
 

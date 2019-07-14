@@ -6,11 +6,11 @@
 
 We are born with human intelligence. When you are a baby, you learn to talk by listening to people around you and learn to walk through hundreds of attempts. When you go to school, you can learn why the earth goes around the sun or how to play the guitar. When you are watching a suspense film, you're trying to figure out who's really responsible based on the clues that you've got. When the New Year comes, you can reflect on the past year and make plans for the next year. As we can see, language, action, learning, reasoning, memory and plan, those are parts of our human intelligence.
 
-For thousands of years, we have tried to understand how human intelligence works and apply it to make intelligent machines. Those machines are able to accomplish more challenging and complex tasks, like play, go game, classify the person in photos, identify the spam email, translate between two languages, figure out what elements have a great influence on cancer and how to write poems. 
+For thousands of years, we have tried to understand how human intelligence works and apply it to make intelligent machines. Those machines are able to accomplish more challenging and complex tasks, like play go game, classify the person in photos, identify the spam email, translate between two languages, figure out what elements have a great influence on cancer and how to write poems. 
 
 In computer science, we call this intelligence demonstrated by machines Artificial Intelligence. Colloquially, the term "artificial intelligence" is used to describe machines that mimic "cognitive" functions that humans associate with other human minds, such as "learning" and "problem-solving".[^2]
 
-TBA: one-shoot learning
+One of the characteristics of human learning is that we can learn new things from a few examples. For example, if you teach baby to recognize a cat, you simply have to show them a live cat. The next time they see a cat, a dog, and a sheep, it would be easy for them to distinguish the car among other animals. This kind of learning can be called as one-shot learning. Unlike humans, the traditional artificial intelligence needs a huge dataset to train them to recognize a cat. There are also studies that use one-shot learning to strengthens the ability of AI machines without the need for a huge dataset to train on. If you're interested, you might be able to contribute to this field.
 
 ### Machine Learning
 
@@ -65,3 +65,4 @@ In essence, a computer can do nothing but compute. At first glance, AI is powerf
 [^1]: https://www.csee.umbc.edu/courses/471/papers/turing.pdf
 [^2]: https://en.wikipedia.org/wiki/Artificial_intelligence
 [^3]: [6.S191: Introduction to Deep Learning](http://introtodeeplearning.com)
+- [One Shot Learning: Solution to your low data problem](https://hub.packtpub.com/one-shot-learning-solution-low-data-problem/)

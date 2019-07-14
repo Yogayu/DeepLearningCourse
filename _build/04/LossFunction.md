@@ -41,6 +41,8 @@ $$E = \sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )$$
 
 Here, $n$ is the number of output nodes. $y_{i}$ is the output value of neural network and $t_{i}$ is the target training value.
 
+[add image]
+
 Using this loss function, each node's error is:
 
 | Node | Actual value by network | Target training values | Error |
@@ -72,6 +74,8 @@ $$E =\frac{1}{n} \sum_{i=1}^{n}\left | y_{i} - t_{i} \right |$$
 
 $$E = 0.1 + 0.1 + 0.15 + 0.15$$
 $$E = 0.6$$
+
+[add image]
 
 In this way, the above problem will be solved.
 
@@ -108,6 +112,8 @@ print(e)
 There is one more common loss function: Mean Squared Error(MSE).
 
 $$E = \frac{1}{n}\sum_{i=1}^{k}\left ( y_{k} - t_{k} \right )^2$$
+
+[add image]
 
 
 

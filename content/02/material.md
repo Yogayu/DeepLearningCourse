@@ -6,10 +6,6 @@ Why activate function must to be non-linearities function?
 
 Generally speaking, the purpose of activation functions is to introduce non-linearities into the network.
 
-The activate function in neural network must be an non-linearities function.
-
-Why activate function must to be non-linearities function? 
-
 Generally speaking, the purpose of activation functions is to introduce non-linearities into the network. If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input. The activation function does the non-linear transformation to the input making it capable to learn and perform more complex tasks. From another point of view, without non-linear function, adding more layer to the network would be nonesence.
 
 
