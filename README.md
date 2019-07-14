@@ -108,14 +108,14 @@ Make animation videos(gifs).
 
 ### 3.3 Why we use None-linearities activation function?
 
-### Chapter 4 Learning: Training Neural Networks
+## Chapter 4 Learning: Training Neural Networks
 
-#### 4.1 Loss function
+### 4.1 Loss function
 
 - [x] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
 
-#### 4.2 Loss Optimization
+### 4.2 Loss Optimization
 
 - [ ] Gradient Descent
   - Greedy algorithm
@@ -123,11 +123,11 @@ Make animation videos(gifs).
       Make an animation video
   - Local minimum
 
-#### 4.3 Back Propagation
+### 4.3 Back Propagation
 
 - [ ] Back Propagation
 
-#### 4.4 Optimization
+### 4.4 Optimization
  
 - [ ] Early stop
 
