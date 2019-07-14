@@ -67,16 +67,17 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../_build/images/02/Perceptron_7_0.png)
+![png](../02/Iris/Perceptron_7_0.png)
 
 
 
 The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.
 
-TBA: 
+## Powerful neurons
 
-1. Natural intelligence is capable of one-shot learning, while Deep Learning requires large training datasets
-2. The neuron model of the brain's information processing has been contradicted by a large number of more recent studies and is outdated
+It's worth noting that, historically, the perceptron model is originally inspired by neurons. However, they are very different now. Researchers have discovered there is a great deal of computational capacity within a single neuron. The ability of single neurons to perform complex tasks, perhaps as complex as person recognition, indicates that the neuron in fact contains far more internal structure than the perceptron model suggests. This could again provide a door to new forms of AI.
+
+## Summary
 
 In this section, we introduced perceptron. This is the basic building block for building a neural network, like the bricks of a house. In the next section, we will implement a perceptron using a classification example.
 
