@@ -10,35 +10,44 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 # Deep Learning course for humanists
 
-![](./images/logo.png)
+![log](media/logo.png)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Deep Learning course for humanists](#deep-learning-course-for-humanists)
-  - [Course Outline](#course-outline)
-    - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
-    - [Chapter 1 Introduction](#chapter-1-introduction)
-    - [Chapter 2 Perceptron](#chapter-2-perceptron)
-      - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
-      - [Example: Iris Classification](#example-iris-classification)
-    - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
-        - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
-        - [3.2 Forward Propagation](#32-forward-propagation)
-        - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
-        - [3.4 Backward Propagation](#34-backward-propagation)
-            - [Learning: Training Neural Networks](#learning-training-neural-networks)
-      - [Physical Experiment](#physical-experiment)
-    - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+  - [Read Online](#read-online)
+  - [Project Description](#project-description)
+- [Course Outline](#course-outline)
+  - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+  - [Chapter 1 Introduction](#chapter-1-introduction)
+  - [Chapter 2 Perceptron](#chapter-2-perceptron)
+    - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
+    - [Example: Iris Classification](#example-iris-classification)
+  - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
+    - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
+    - [3.2 Forward Propagation](#32-forward-propagation)
+    - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
+    - [Chapter 4 Learning: Training Neural Networks](#chapter-4-learning-training-neural-networks)
+  - [Physical Experiment](#physical-experiment)
+  - [Chapter 5 Make your own neural network to classify handwritten digitals](#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals)
   - [Other Projects](#other-projects)
     - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
     - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
     - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
   - [About Me](#about-me)
+  - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
+## Read Online
+
+This book is powered by Jekyll Book. So you can read it online: 
+- [Github Jekyll Book](https://yogayu.github.io/DeepLearningCourse/)
+- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
+
+## Project Description
 
 This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/projects/#6543412331806720) Project with [Red Hen Lab](http://www.redhenlab.org/).
 
@@ -105,20 +114,28 @@ Make animation videos(gifs).
 
 ### 3.3 Why we use None-linearities activation function?
 
-### 3.4 Backward Propagation
+### Chapter 4 Learning: Training Neural Networks
 
-
-#### Learning: Training Neural Networks
+#### 4.1 Loss function
 
 - [ ] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
-- [ ] Loss Optimization
-    - [ ] Gradient Descent
-      - Greedy algorithm
-      - Like Hiking Down a Mountain
-          Make an animation video
-      - Local minimum
-- [ ] Optimization
+
+#### 4.2 Loss Optimization
+
+- [ ] Gradient Descent
+  - Greedy algorithm
+  - Like Hiking Down a Mountain
+      Make an animation video
+  - Local minimum
+
+#### 4.3 Back Propagation
+
+- [ ] Back Propagation
+
+#### 4.4 Optimization
+ 
+- [ ] Early stop
 
 ## Physical Experiment
 
@@ -126,14 +143,14 @@ Make animation videos(gifs).
 - Mock Forward Propagation
 - Mock Backward Propagation
 
-
-## Chapter 4 Make your own neural network to classify handwritten digitals
+## Chapter 5 Make your own neural network to classify handwritten digitals
 
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
 
 
+TBD
 
 ## Other Projects
 
@@ -168,3 +185,11 @@ In this part, the student will learn how to build use Convolutional Neural Netwo
 - **Resume**: [youxinyu.me](http://youxinyu.me)
 
 If there are any problems, please feel free to contact me.
+
+## Reference
+
+- https://elitedatascience.com/machine-learning-projects-for-beginners
+- https://github.com/gkchai/GestureRecognition
+- https://www.tensorflow.org/tutorials/sequences/audio_recognition
+- https://medium.com/@awjuliani/exploring-sentiment-in-literature-with-deep-learning-30366aff578e
+- http://awjuliani.github.io/books/

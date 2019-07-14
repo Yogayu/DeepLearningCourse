@@ -108,7 +108,7 @@ Make animation videos(gifs).
 
 #### 4.1 Loss function
 
-- [ ] Error loss function
+- [x] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
 
 #### 4.2 Loss Optimization
@@ -132,7 +132,6 @@ Make animation videos(gifs).
 - Every student acted as a Neuron
 - Mock Forward Propagation
 - Mock Backward Propagation
-
 
 ## Chapter 5 Make your own neural network to classify handwritten digitals
 

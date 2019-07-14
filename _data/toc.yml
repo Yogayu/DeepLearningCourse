@@ -80,10 +80,19 @@
     - title: Forward Propagation
       url: /03/ForwardPropagation
       not_numbered: false
-    - title: Back Propagation
-      url: /03/BackPropagation
-      not_numbered: false
 
+- title: 4. Training Neural Networks
+  url: /04/Intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+    - title: Loss Function
+      url: /04/LossFunction
+      not_numbered: false
+  sections:
+    - title: Loss Function
+      url: /04/LossFunction
+      not_numbered: false
 # - title: 2. Classify Hand Gesture Pose in Art
 #   url: /part1/introduction
 #   not_numbered: true
