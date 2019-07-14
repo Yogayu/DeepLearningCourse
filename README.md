@@ -1,4 +1,4 @@
-# An online deep learning  course for humanists (WIP)
+# An online deep learning course for humanists (WIP)
 
 ![log](media/logo.png)
 
@@ -6,23 +6,25 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [An online deep learning  course for humanists (WIP)](#an-online-deep-learning--course-for-humanists-wip)
   - [Read Online](#read-online)
   - [Project Description](#project-description)
-  - [Course Outline](#course-outline)
-    - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
-    - [Chapter 1 Introduction](#chapter-1-introduction)
-    - [Chapter 2 Perceptron](#chapter-2-perceptron)
-      - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
-      - [Example: Iris Classification](#example-iris-classification)
-    - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
-        - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
-        - [3.2 Forward Propagation](#32-forward-propagation)
-        - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
-        - [3.4 Back Propagation](#34-backward-propagation)
-            - [Learning: Training Neural Networks](#learning-training-neural-networks)
-    - [Physical Experiment](#physical-experiment)
-    - [Chapter 4 Make your own neural network to classify handwritten digitals](#chapter-4-make-your-own-neural-network-to-classify-handwritten-digitals)
+- [Course Outline](#course-outline)
+  - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
+  - [Chapter 1 Introduction](#chapter-1-introduction)
+  - [Chapter 2 Perceptron](#chapter-2-perceptron)
+    - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
+    - [Example: Iris Classification](#example-iris-classification)
+  - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
+    - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
+    - [3.2 Forward Propagation](#32-forward-propagation)
+    - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
+    - [Chapter 4 Learning: Training Neural Networks](#chapter-4-learning-training-neural-networks)
+      - [4.1 Loss function](#41-loss-function)
+      - [4.2 Loss Optimization](#42-loss-optimization)
+      - [4.3 Back Propagation](#43-back-propagation)
+      - [4.4 Optimization](#44-optimization)
+  - [Physical Experiment](#physical-experiment)
+  - [Chapter 5 Make your own neural network to classify handwritten digitals](#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals)
   - [Other Projects](#other-projects)
     - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
     - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
@@ -106,20 +108,28 @@ Make animation videos(gifs).
 
 ### 3.3 Why we use None-linearities activation function?
 
-### 3.4 Back Propagation
+### Chapter 4 Learning: Training Neural Networks
 
-
-#### Learning: Training Neural Networks
+#### 4.1 Loss function
 
 - [ ] Error loss function
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
-- [ ] Loss Optimization
-    - [ ] Gradient Descent
-      - Greedy algorithm
-      - Like Hiking Down a Mountain
-          Make an animation video
-      - Local minimum
-- [ ] Optimization
+
+#### 4.2 Loss Optimization
+
+- [ ] Gradient Descent
+  - Greedy algorithm
+  - Like Hiking Down a Mountain
+      Make an animation video
+  - Local minimum
+
+#### 4.3 Back Propagation
+
+- [ ] Back Propagation
+
+#### 4.4 Optimization
+ 
+- [ ] Early stop
 
 ## Physical Experiment
 
@@ -128,7 +138,7 @@ Make animation videos(gifs).
 - Mock Backward Propagation
 
 
-## Chapter 4 Make your own neural network to classify handwritten digitals
+## Chapter 5 Make your own neural network to classify handwritten digitals
 
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
