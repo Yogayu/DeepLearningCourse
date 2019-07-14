@@ -9,8 +9,8 @@ prev_page:
   url: /03/MultilayerPerceptron
   title: 'Multilayer Perceptron'
 next_page:
-  url: /03/BackwardPropagation
-  title: 'Backward Propagation'
+  url: /04/Intro
+  title: '4. Training Neural Networks'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
