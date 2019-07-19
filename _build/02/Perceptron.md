@@ -66,16 +66,17 @@ plt.show()
 
 
 
-{:.output .output_png}
-![png](../02/Iris/Perceptron_7_0.png)
-
+{:.output .output_data_text}
+```
+<Figure size 640x480 with 1 Axes>
+```
 
 
 The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.
 
 ## Powerful neurons
 
-It's worth noting that, historically, the perceptron model is originally inspired by neurons. However, they are very different now. Researchers have discovered there is a great deal of computational capacity within a single neuron. The ability of single neurons to perform complex tasks, perhaps as complex as person recognition, indicates that the neuron in fact contains far more internal structure than the perceptron model suggests. This could again provide a door to new forms of AI.
+It's worth noting that, historically, the perceptron model is originally inspired by neurons. However, they are very different now. Researchers have discovered there is a great deal of computational capacity within a single neuron. The ability of single neurons to perform complex tasks, perhaps as complex as person recognition, indicates that the neuron, in fact, contains far more internal structure than the perceptron model suggests. This could again provide a door to new forms of AI.
 
 ## Summary
 

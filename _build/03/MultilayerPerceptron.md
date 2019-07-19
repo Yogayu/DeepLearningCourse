@@ -108,7 +108,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_19_0.png)
+![png](../images/03/MultilayerPerceptron_19_0.png)
 
 
 
@@ -150,7 +150,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_26_0.png)
+![png](../images/03/MultilayerPerceptron_26_0.png)
 
 
 
@@ -189,7 +189,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_34_0.png)
+![png](../images/03/MultilayerPerceptron_34_0.png)
 
 
 
@@ -219,7 +219,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/yogayu/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_37_0.png)
+![png](../images/03/MultilayerPerceptron_37_0.png)
 
 
 
