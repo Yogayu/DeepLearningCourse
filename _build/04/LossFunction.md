@@ -4,21 +4,19 @@ redirect_from:
 interact_link: content/04/LossFunction.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'Loss Function'
+title: 'How well does the neural network predict? Loss function'
 prev_page:
   url: /04/Intro
   title: '4. Training Neural Networks'
 next_page:
-  url: 
-  title: ''
+  url: /04/GradientDescent
+  title: 'Learning to minimize error gradient descent algorithm'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-# Loss Function
+# How well does the neural network predict: Loss function
 
 Everyone makes mistakes. The wise are not people who never make mistakes, but those who forgive themselves and learn from their mistakes. —— Ajahn Brahm
-
-## How well does the neural network predict?
 
 When you take a math test, the teacher will mark you down for the mistakes you made. Your friend ask you how's your test? You may say: well, not bad. I made two mistakes and deducted 6 points. Then you learn from your mistakes and perform better the next time. The score you get on a test is an indicator.
 
@@ -224,7 +222,7 @@ Here MAE is a **loss function** (or cost function). There are many other functio
 
 As you can see, the positive and negative errors cancel each other out. So the total error become 0 which suggest the neural network makes no mistakes. However, that's not true.
 
-## Why we use squared error instead of row error?
+## Why we use squared error instead of raw error?
 
 Suppose we have a set of data.
 
