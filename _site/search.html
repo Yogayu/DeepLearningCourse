@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "dateModified":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "description":
     "This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.",
   "author": {
@@ -727,7 +727,9 @@ initFunction(initQuery);
           href="/01/Intro.html"
         >
           
-          1. Introduction
+            1.
+          
+          Introduction
         </a>
 
         
@@ -749,6 +751,8 @@ initFunction(initQuery);
                   href="/01/Introduction.html"
                 >
                   
+                    1.1
+                  
                   Introduction
                 </a>
 
@@ -765,6 +769,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/01/environment.html"
                 >
+                  
+                    1.2
                   
                   Environment Setup
                 </a>
@@ -794,7 +800,9 @@ initFunction(initQuery);
           href="/02/Intro.html"
         >
           
-          2. Perceptron
+            2.
+          
+          Perceptron
         </a>
 
         
@@ -816,7 +824,9 @@ initFunction(initQuery);
                   href="/02/Perceptron.html"
                 >
                   
-                  Perceptron
+                    2.1
+                  
+                  Foundation block of Neural Network—Perceptron
                 </a>
 
                 
@@ -832,6 +842,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/02/Iris.html"
                 >
+                  
+                    2.2
                   
                   Iris Classification
                 </a>
@@ -861,7 +873,9 @@ initFunction(initQuery);
           href="/03/MultilayerPerceptron.html"
         >
           
-          3. Multilayer Perceptron
+            3.
+          
+          Multilayer Perceptron
         </a>
 
         
@@ -883,7 +897,28 @@ initFunction(initQuery);
                   href="/03/MultilayerPerceptron.html"
                 >
                   
+                    3.1
+                  
                   Multilayer Perceptron
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ActivateFunction.html"
+                >
+                  
+                    3.2
+                  
+                  Activate Function
                 </a>
 
                 
@@ -900,7 +935,47 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                  Forward Propagation
+                    3.3
+                  
+                  How the single pass through the network—Forward Propagation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/Matrix.html"
+                >
+                  
+                    3.4
+                  
+                  Efficient Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/OutputLayer.html"
+                >
+                  
+                    3.5
+                  
+                  Design the Output Layer
                 </a>
 
                 
@@ -928,7 +1003,9 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-          4. Training Neural Networks
+            4.
+          
+          Training Neural Networks
         </a>
 
         
@@ -950,7 +1027,9 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                  How well does the neural network predict? Loss function
+                    4.1
+                  
+                  How well does the neural network predict?—Loss Function
                 </a>
 
                 
@@ -967,7 +1046,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                  Learning to minimize error gradient descent algorithm
+                    4.2
+                  
+                  Learning to minimize error—Gradient Descent Algorithm
                 </a>
 
                 
@@ -1021,7 +1102,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//01/Intro.html",
         "teaser":null},{
-        "title": "1. Introduction",
+        "title": "Introduction",
         
         "excerpt":
             "Part 1 Introduction Can machines think? —— A. M. Turing1 Artificial Intelligence We are born with human intelligence. When you are a baby, you learn to talk by listening to people around you and learn to walk through hundreds of attempts. When you go to school, you can learn why the earth goes around the sun or how to play the guitar. When you are watching a suspense film, you’re trying to figure out who’s really responsible based on the clues that you’ve got. When the New Year comes, you can reflect on the past year and make plans for...",
@@ -1053,7 +1134,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//02/Iris.html",
         "teaser":null},{
-        "title": "2. Perceptron",
+        "title": "Foundation block of Neural Network—Perceptron",
         
         "excerpt":
             "Perceptron: foundation block of Neural Network A perceptron is a simple binary classification algorithm, proposed in 1958 at the Cornell Aeronautical Laboratory by Frank Rosenblatt. It’s the most fundamental unit of a deep neural network (also called an artificial neuron), which is developed on biological “neuron models” that conceptually resemble the mechanisms by which real biological neurons transmit signals. Neurons and Perceptron Let’s first look at the basic unit of a biological brain —— the neuron. In a neuron, the dendrite receives electrical signals from the axons of other neurons. In the perceptron, these electrical signals are represented as numerical...",
@@ -1061,13 +1142,29 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//02/Perceptron.html",
         "teaser":null},{
-        "title": "Forward Propagation",
+        "title": "Activate Function",
+        
+        "excerpt":
+            "Activate function What is activate function? Recall that we use a step function in perceptron to transform output i.e. whether or not the neuron should be activated. We call this kind of function which take all the inputs to transform an output as activate function. Activate function is one of the key concepts in deep learning. Let’s first take a brief look at some common activation functions. Common used active function Step Function The definition of step function is: Here we use Python to implement step function: def step_func(x): if x &gt; 0: return 1 else: return 0 In the...",
+        "categories": [],
+        "tags": [],
+        "url": "https://yogayu.github.io/DeepLearningCourse//03/ActivateFunction.html",
+        "teaser":null},{
+        "title": "How the single pass through the network—Forward Propagation",
         
         "excerpt":
             "Forward Propagation Now we get familiar with the deep feedforward networks’s structure, we are going to learn how the single pass through the network. There is a two-layer neural network with one hidden layer. Here the value of input $x_1$ and $x_2$ are: x1 = 0.2 x2 = 0.8 We start with some random weights and bias from between layer0 and layer1: # Layer 0 to Layer 1 b1 = 0.4 b2 = 0.56 b3 = 0.64 w11 =1.0 w12 = 0.7 w13 = 0.34 w21 = 0.5 w22 = 0.8 w23 = 0.6 This animation shows how the single...",
         "categories": [],
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/ForwardPropagation.html",
+        "teaser":null},{
+        "title": "Efficient Matrix",
+        
+        "excerpt":
+            "Matrix In mathematics, a matrix (plural: matrices) is a table, a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. In python, we can use two-dimensional array to represent it. For example, the dimension of the matrix below is 2 by 3, because there are two rows and three columns: In Python, we usually use Numpy to represent and evaluate matrices. A = np.array([[2,4,5],[3,7,9]]) We use ndim funcation to get the dimension of the matrix: np.ndim(A) 2 Shown as the ouput, this is a two dimension matrix. And we can use shape function to get shape: A.shape...",
+        "categories": [],
+        "tags": [],
+        "url": "https://yogayu.github.io/DeepLearningCourse//03/Matrix.html",
         "teaser":null},{
         "title": "3. Multilayer Perceptron",
         
@@ -1077,7 +1174,15 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/MultilayerPerceptron.html",
         "teaser":null},{
-        "title": "Learning to minimize error gradient descent algorithm",
+        "title": "Design the Output Layer",
+        
+        "excerpt":
+            "Design the output layer Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer. The node in output layer’s structure is the same as the hidden layer’s node. However, the choose of the activate function is different according to difference types of questions. In machine learning, there are two kind of kinds of problems: regression and classification. The output values of classification problem are categorical data. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are numerical data. For...",
+        "categories": [],
+        "tags": [],
+        "url": "https://yogayu.github.io/DeepLearningCourse//03/OutputLayer.html",
+        "teaser":null},{
+        "title": "Learning to minimize error—Gradient Descent Algorithm",
         
         "excerpt":
             "Learning to minimize error: gradient descent Minimize error The error is a function of the network weights and biases. We call it loss function which we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function. In last section, we have introduced MAE loss function: [……] What is Gradient Descent? Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you...",
@@ -1093,7 +1198,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//04/Intro.html",
         "teaser":null},{
-        "title": "How well does the neural network predict? Loss function",
+        "title": "How well does the neural network predict?—Loss Function",
         
         "excerpt":
             "How well does the neural network predict: Loss function Everyone makes mistakes. The wise are not people who never make mistakes, but those who forgive themselves and learn from their mistakes. —— Ajahn Brahm When you take a math test, the teacher will mark you down for the mistakes you made. Your friend ask you how’s your test? You may say: well, not bad. I made two mistakes and deducted 6 points. Then you learn from your mistakes and perform better the next time. The score you get on a test is an indicator. For neural network, there is such...",

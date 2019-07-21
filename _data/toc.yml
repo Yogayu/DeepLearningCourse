@@ -47,9 +47,9 @@
 # Add a header and sample content section
 # - header: CONTENTS
 
-- title: 1. Introduction
+- title: Introduction
   url: /01/Intro
-  not_numbered: true
+  not_numbered: false
   expand_sections: true
   sections:
     - title: Introduction
@@ -58,37 +58,46 @@
     - title: Environment Setup
       url: /01/environment
       not_numbered: false
-- title: 2. Perceptron
+- title: Perceptron
   url: /02/Intro
-  not_numbered: true
+  not_numbered: false
   expand_sections: true
   sections:
-    - title: foundation block of Neural Network
+    - title: Foundation block of Neural Network—Perceptron
       url: /02/Perceptron
       not_numbered: false
     - title: Iris Classification
       url: /02/Iris
       not_numbered: false
-- title: 3. Multilayer Perceptron
+- title: Multilayer Perceptron
   url: /03/MultilayerPerceptron
-  not_numbered: true
+  not_numbered: false
   expand_sections: true
   sections:
     - title: Multilayer Perceptron
       url: /03/MultilayerPerceptron
       not_numbered: false
-    - title: Forward Propagation
+    - title: Activate Function
+      url: /03/ActivateFunction
+      not_numbered: false
+    - title: How the single pass through the network—Forward Propagation
       url: /03/ForwardPropagation
       not_numbered: false
-- title: 4. Training Neural Networks
+    - title: Efficient Matrix
+      url: /03/Matrix
+      not_numbered: false
+    - title: Design the Output Layer
+      url: /03/OutputLayer
+      not_numbered: false   
+- title: Training Neural Networks
   url: /04/Intro
-  not_numbered: true
+  not_numbered: false
   expand_sections: true
   sections:
-    - title: How well does the neural network predict? Loss function
+    - title: How well does the neural network predict?—Loss Function
       url: /04/LossFunction
       not_numbered: false
-    - title: Learning to minimize error gradient descent algorithm
+    - title: Learning to minimize error—Gradient Descent Algorithm
       url: /04/GradientDescent
       not_numbered: false
 

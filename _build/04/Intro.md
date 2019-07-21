@@ -6,11 +6,11 @@ kernel_name: python3
 has_widgets: false
 title: '4. Training Neural Networks'
 prev_page:
-  url: /03/ForwardPropagation
-  title: 'Forward Propagation'
+  url: /03/OutputLayer
+  title: 'Design the Output Layer'
 next_page:
   url: /04/LossFunction
-  title: 'How well does the neural network predict? Loss function'
+  title: 'How well does the neural network predict?—Loss Function'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

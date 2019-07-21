@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Learning to minimize error—Gradient Descent Algorithm</title>
-  <meta name="description" content="Learning to minimize error: gradient descent">
+  <title>Design the Output Layer</title>
+  <meta name="description" content="Design the output layer">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/OutputLayer.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/OutputLayer.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Learning to minimize error—Gradient Descent Algorithm" />
-<meta property="og:description" content="Learning to minimize error: gradient descent" />
+<meta property="og:title"       content="Design the Output Layer" />
+<meta property="og:description" content="Design the output layer" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html",
+    "https://yogayu.github.io/DeepLearningCourse///03/OutputLayer.html",
   "headline":
-    "Learning to minimize error—Gradient Descent Algorithm",
+    "Design the Output Layer",
   "datePublished":
     "2019-07-22T00:26:20+08:00",
   "dateModified":
     "2019-07-22T00:26:20+08:00",
   "description":
-    "Learning to minimize error: gradient descent",
+    "Design the output layer",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -969,7 +969,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/OutputLayer.html"
                 >
                   
@@ -1042,7 +1042,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/04/GradientDescent.html"
                 >
                   
@@ -1078,13 +1078,8 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#minimize-error">Minimize error</a></li>
-  <li><a href="#what-is-gradient-descent">What is Gradient Descent?</a>
-    <ul>
-      <li><a href="#example">Example</a></li>
-      <li><a href="#avoid-overshooting">Avoid Overshooting</a></li>
-    </ul>
-  </li>
+  <li><a href="#design-the-output-layer">Design the output layer</a></li>
+  <li><a href="#summary">Summary</a></li>
 </ul>
     </nav>
   </aside>
@@ -1108,7 +1103,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/04/GradientDescent.ipynb" download>
+<a href="/content/03/OutputLayer.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1121,105 +1116,85 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F04%2FGradientDescent.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F03%2FOutputLayer.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
 
 
             <div class="c-textbook__content">
-              <h1 id="learning-to-minimize-error-gradient-descent">Learning to minimize error: gradient descent</h1>
+              <h2 id="design-the-output-layer">Design the output layer</h2>
 
-<h2 id="minimize-error">Minimize error</h2>
+<p>Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer.</p>
 
-<p>The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
+<p>The node in output layer’s structure is the same as the hidden layer’s node. However, the choose of the activate function is different according to difference types of questions.</p>
 
-<p><img src="img/GA0.png" alt="" /></p>
+<p>In machine learning, there are two kind of kinds of problems: <strong>regression</strong> and <strong>classification</strong>. The output values of classification problem are <strong>categorical data</strong>. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are <strong>numerical data</strong>. For example, let’s support that we’re going to predict what’s the probability of rain tomorrow. The probability can be 29%, 29.3%, 98% and so on. It is a numerical value, so it’s a regression problem.</p>
 
-<p>In last section, we have introduced MAE loss function:</p>
+<p>For the regression, We can use the <strong>linear function</strong>. The simple one is identity activation function.</p>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )^2</script>
+<script type="math/tex; mode=display">f(x) = x</script>
 
-<script type="math/tex; mode=display">y_i = \sigma (w_ix_i+b_i)</script>
+<p><img src="img/linear.png" alt="linear" /></p>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2</script>
+<p>For the classification, <strong>softmax</strong> function is a good choose. It squashes the outputs of each unit to be between 0 and 1, and the sum of outputs values is equal to 1. Mathematically the softmax function is shown below.</p>
 
-<p>[……]</p>
+<script type="math/tex; mode=display">y_{k} = \frac{e^{a^{k}}}{\sum_{i=1}^{n}e^{a^{i}}}</script>
 
-<h2 id="what-is-gradient-descent">What is Gradient Descent?</h2>
+<p>$y_k$ is the $kth$ node’s output. $n$ is the number of nodes in output layer. $k$ indexes the output units, so $k = 1, 2, …, n$.</p>
 
-<p>Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you have zero visibility to see where you are headed. The only thing you have is a torch to see a short distance. So, what approach will you take to reach the lake? Take a few minutes to think about this.</p>
+<p>Implementation in Python:</p>
 
-<p>You may use the torch to look around the ground beneath your feet. Then you can figure out where it is going downward and take small steps in that direction. In this way, you keep following the path that is descending, step by step, you’re likely to reach the lake at the valley.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">exp_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="c"># avoid overflow</span>
+    <span class="n">sum_exp_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">exp_a</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">exp_a</span> <span class="o">/</span> <span class="n">sum_exp_a</span>
+    <span class="k">return</span> <span class="n">y</span>
+</code></pre></div></div>
 
-<p><img src="img/mountain.png" alt="" /></p>
+<p><img src="img/softmax.png" alt="linear" /></p>
 
-<blockquote>
-  <p>Photo by Matt Lamers on Unsplash</p>
-</blockquote>
+<p>Suppose we want to predict tomorrow’s weather, which has three kinds: sunny, cloudy and rainy. Using softmax as activate function, the final outputs will be the probability of these three categories. For the example image above, the output of the softmax function might look like:</p>
 
-<p>This method in mathematic is called gradient descent. The gradient means the slope of the ground.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.83</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">y</span>
+</code></pre></div></div>
 
-<p>What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error!</p>
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.60304157, 0.2526452 , 0.14431323])
+</code></pre></div></div>
 
-<h3 id="example">Example</h3>
+<p><img src="img/softmaxexample.png" alt="" /></p>
 
-<p>Here we still begin with this simple neural network.</p>
+<p>For tomorrow’s weather, the probability of sunny day is 0.605, cloudy day is 0.153 and rainy day is 0.144. So we forecast tomorrow might be a sunny day.</p>
 
-<p><img src="img/0.png" alt="" /></p>
+<h2 id="summary">Summary</h2>
 
-<p>Say the following graph shows a function where $y$ is the error, we are going to find the $w$ to minimize it.</p>
+<ol>
+  <li>Forward propagation sequentially calculates the intermediate variables of neural network from input layer to output layer.</li>
+  <li>Using matrix dot product make the calculation much more neat and powerful.</li>
+  <li>When designing the output layer, different activation functions should be selected according to different problems.</li>
+</ol>
 
-<p><img src="img/gd1.png" alt="" /></p>
-
-<p>The dotted circle is where error equal to $0$ and that’s where we want to be as close as possible.</p>
-
-<p>To start, we randomly choose a value of $w$. The blue dot represent current weight and error. Now, let’s look around to see which direction should we go. The slope help us to do that. This is a negative gradient, so we increase the $w$ a little.</p>
-
-<p><img src="img/gd2.png" alt="" /></p>
-
-<p>Again, this is a negative slope, we continue increase $w$.</p>
-
-<p><img src="img/gd3.png" alt="" /></p>
-
-<p>Each time, we adjust the weight the same size step by step. In this way, if we’re lucky, we’re probably arrived at the bottom.</p>
-
-<p><img src="img/gd5.png" alt="" /></p>
-
-<h3 id="avoid-overshooting">Avoid Overshooting</h3>
-
-<p>However, we are likely to overshooting the minimum and forever bouncing around it.</p>
-
-<p><img src="img/gd4.png" alt="" /></p>
-
-<p>To avoid overshooting, what should we do?</p>
-
-<p>Well, as you can see, in order not to overshooting through the minimum, we have to take smaller and smaller step towards the end.</p>
-
-<p><img src="img/gd6.png" alt="" /></p>
-
-<p>You may have notice that the steeper the slope, the larger our step and the flatter the slope, the smaller our step.</p>
-
-<p>On the whole, we randomly choose a weight and then changed it in a direction opposite to the gradient. Besides, as we get close to the local bottom, we change the step size according to how steep the slope is. We can use mathematical expression to express the process of weight updating each time.</p>
-
-<p><img src="img/gd7.png" alt="" /></p>
-
-<p>If the slope is negative, we increase the weight. Otherwise, we decrease the weight. So use a minus sign when you update. The step size also varies with each change in the slope. Moreover, the learning rate is a factor to control the intensity of updates.</p>
-
-<p>Congratulations! You have learned how to update weights to minimize errors which is a big step forward.</p>
+<ul>
+  <li>https://en.wikipedia.org/wiki/Matrix_(mathematics)</li>
+  <li>https://www.mathsisfun.com/algebra/matrix-multiplying.html</li>
+</ul>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/04/LossFunction">
-      〈 <span class="u-margin-right-tiny"></span> How well does the neural network p...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/Matrix">
+      〈 <span class="u-margin-right-tiny"></span> Efficient Matrix
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="">
-       <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/04/Intro">
+      4. Training Neural Networks <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Learning to minimize error—Gradient Descent Algorithm</title>
-  <meta name="description" content="Learning to minimize error: gradient descent">
+  <title>Efficient Matrix</title>
+  <meta name="description" content="Matrix">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/Matrix.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/Matrix.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Learning to minimize error—Gradient Descent Algorithm" />
-<meta property="og:description" content="Learning to minimize error: gradient descent" />
+<meta property="og:title"       content="Efficient Matrix" />
+<meta property="og:description" content="Matrix" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html",
+    "https://yogayu.github.io/DeepLearningCourse///03/Matrix.html",
   "headline":
-    "Learning to minimize error—Gradient Descent Algorithm",
+    "Efficient Matrix",
   "datePublished":
     "2019-07-22T00:26:20+08:00",
   "dateModified":
     "2019-07-22T00:26:20+08:00",
   "description":
-    "Learning to minimize error: gradient descent",
+    "Matrix",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -950,7 +950,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/Matrix.html"
                 >
                   
@@ -1042,7 +1042,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/04/GradientDescent.html"
                 >
                   
@@ -1078,13 +1078,8 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#minimize-error">Minimize error</a></li>
-  <li><a href="#what-is-gradient-descent">What is Gradient Descent?</a>
-    <ul>
-      <li><a href="#example">Example</a></li>
-      <li><a href="#avoid-overshooting">Avoid Overshooting</a></li>
-    </ul>
-  </li>
+  <li><a href="#multiplying-matrixs">Multiplying Matrixs</a></li>
+  <li><a href="#apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</a></li>
 </ul>
     </nav>
   </aside>
@@ -1108,7 +1103,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/04/GradientDescent.ipynb" download>
+<a href="/content/03/Matrix.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1121,105 +1116,181 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F04%2FGradientDescent.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F03%2FMatrix.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
 
 
             <div class="c-textbook__content">
-              <h1 id="learning-to-minimize-error-gradient-descent">Learning to minimize error: gradient descent</h1>
+              <h1 id="matrix">Matrix</h1>
 
-<h2 id="minimize-error">Minimize error</h2>
+<p>In mathematics, a <strong>matrix</strong> (plural: <strong>matrices</strong>) is a table, a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. In python, we can use two-dimensional array to represent it.</p>
 
-<p>The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
+<p>For example, the dimension of the matrix below is 2 by 3, because there are two rows and three columns:</p>
 
-<p><img src="img/GA0.png" alt="" /></p>
+<p><img src="img/matrix.png" alt="matrixSample" /></p>
 
-<p>In last section, we have introduced MAE loss function:</p>
+<p>In Python, we usually use Numpy to represent and evaluate matrices.</p>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )^2</script>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+</code></pre></div></div>
 
-<script type="math/tex; mode=display">y_i = \sigma (w_ix_i+b_i)</script>
+<p>We use ndim funcation to get the dimension of the matrix:</p>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2</script>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>[……]</p>
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+</code></pre></div></div>
 
-<h2 id="what-is-gradient-descent">What is Gradient Descent?</h2>
+<p>Shown as the ouput, this is a two dimension matrix.</p>
 
-<p>Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you have zero visibility to see where you are headed. The only thing you have is a torch to see a short distance. So, what approach will you take to reach the lake? Take a few minutes to think about this.</p>
+<p>And we can use shape function to get shape:</p>
 
-<p>You may use the torch to look around the ground beneath your feet. Then you can figure out where it is going downward and take small steps in that direction. In this way, you keep following the path that is descending, step by step, you’re likely to reach the lake at the valley.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
 
-<p><img src="img/mountain.png" alt="" /></p>
+<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2, 3)
+</code></pre></div></div>
 
-<blockquote>
-  <p>Photo by Matt Lamers on Unsplash</p>
-</blockquote>
+<p>This is a 2 by 3 array matrix. 2 represent the number of rows, which means the first dimension has 2 elements. 3 represent the number of columns, which means the second dimension has 3 elements.</p>
 
-<p>This method in mathematic is called gradient descent. The gradient means the slope of the ground.</p>
+<h2 id="multiplying-matrixs">Multiplying Matrixs</h2>
 
-<p>What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error!</p>
+<p>Now let’s see how to multiple Matrix. When multiply a matrix by another matrix we need to do the <strong>dot product</strong> of rows and columns. Here’s an example of two simple matrixs A and B multiplied together.</p>
 
-<h3 id="example">Example</h3>
+<p>To work out the top left element of the answer, let’s take the dot product of first row of A and first column of B.</p>
 
-<p>Here we still begin with this simple neural network.</p>
+<p>The <strong>Dot Product</strong> means multiply matching members, then sum up:</p>
 
-<p><img src="img/0.png" alt="" /></p>
+<script type="math/tex; mode=display">(2, 4) • (4, 6) = 2×4 + 4×6 = 26</script>
 
-<p>Say the following graph shows a function where $y$ is the error, we are going to find the $w$ to minimize it.</p>
+<p>We multiply first numbers 2 and 4, likewise for the second numbers 4 and 6, and finally sum them up.</p>
 
-<p><img src="img/gd1.png" alt="" /></p>
+<p><img src="video/m1.gif" alt="" /></p>
 
-<p>The dotted circle is where error equal to $0$ and that’s where we want to be as close as possible.</p>
+<p><img src="img/matrix1.png" alt="" /></p>
 
-<p>To start, we randomly choose a value of $w$. The blue dot represent current weight and error. Now, let’s look around to see which direction should we go. The slope help us to do that. This is a negative gradient, so we increase the $w$ a little.</p>
+<p>Using the same way, we figure out the top right element of the answer.</p>
 
-<p><img src="img/gd2.png" alt="" /></p>
+<p><img src="video/m2.gif" alt="" /></p>
 
-<p>Again, this is a negative slope, we continue increase $w$.</p>
+<p><img src="img/matrix2.png" alt="" /></p>
 
-<p><img src="img/gd3.png" alt="" /></p>
+<p>That’s easy right? Continuing work out the rest numbers by yourself.</p>
 
-<p>Each time, we adjust the weight the same size step by step. In this way, if we’re lucky, we’re probably arrived at the bottom.</p>
+<p><img src="img/matrix3.png" alt="" /></p>
 
-<p><img src="img/gd5.png" alt="" /></p>
+<p><img src="img/matrix4.png" alt="" /></p>
 
-<h3 id="avoid-overshooting">Avoid Overshooting</h3>
+<p>Finally, we get the result matrix C.</p>
 
-<p>However, we are likely to overshooting the minimum and forever bouncing around it.</p>
+<p>Notice that we can’t multiply any two matrices, they need to be compatible, which means the number of columns in the first must be equal to the number of rows in the second.</p>
 
-<p><img src="img/gd4.png" alt="" /></p>
+<p>This operation can be achieved using Numpy. We create two matrix A and B:</p>
 
-<p>To avoid overshooting, what should we do?</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Well, as you can see, in order not to overshooting through the minimum, we have to take smaller and smaller step towards the end.</p>
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[2 4]
+ [3 7]]
 
-<p><img src="img/gd6.png" alt="" /></p>
+</code></pre></div></div>
 
-<p>You may have notice that the steeper the slope, the larger our step and the flatter the slope, the smaller our step.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>On the whole, we randomly choose a weight and then changed it in a direction opposite to the gradient. Besides, as we get close to the local bottom, we change the step size according to how steep the slope is. We can use mathematical expression to express the process of weight updating each time.</p>
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1 9]
+ [6 8]]
 
-<p><img src="img/gd7.png" alt="" /></p>
+</code></pre></div></div>
 
-<p>If the slope is negative, we increase the weight. Otherwise, we decrease the weight. So use a minus sign when you update. The step size also varies with each change in the slope. Moreover, the learning rate is a factor to control the intensity of updates.</p>
+<p>Then use <strong>dot</strong> operation to multiply them and assign the result to matrix C:</p>
 
-<p>Congratulations! You have learned how to update weights to minimize errors which is a big step forward.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[26 50]
+ [45 83]]
+
+</code></pre></div></div>
+
+<h2 id="apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</h2>
+
+<p>Now that you understand the basics, let’s see how we can apply matrix  to neural network computation.</p>
+
+<p>Let’s using the variables in our neural networks.</p>
+
+<p>Before, the calculation formula we use is as follows:</p>
+
+<script type="math/tex; mode=display">a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1</script>
+
+<script type="math/tex; mode=display">a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2</script>
+
+<script type="math/tex; mode=display">a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3</script>
+
+<p>Now, we use matrix to represent:</p>
+
+<p><img src="img/x.png" alt="x" /></p>
+
+<p><img src="img/w.png" alt="x" /></p>
+
+<p><img src="img/b.png" alt="x" /></p>
+
+<p>W is the matrix of weights, X is the matrix of inputs, B is the bias.</p>
+
+<p>The formula for calculating the input of the hidden layer is as follows</p>
+
+<script type="math/tex; mode=display">A = XW + B</script>
+
+<p><img src="img/xw.png" alt="xw.png" /></p>
+
+<p><img src="img/xw+b.png" alt="xw+b.png" /></p>
+
+<p>We use a simple matrix operation expression $A = XW + B$ to calculate the input of the hidden layer node. Even if we add more nodes, the formula will be the same. It’s pretty neat and powerful.</p>
+
+<p>Let’s use Numpy for hidden layer node calculations.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">])</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">w11</span><span class="p">,</span> <span class="n">w12</span><span class="p">,</span> <span class="n">w13</span><span class="p">],</span> <span class="p">[</span><span class="n">w21</span><span class="p">,</span> <span class="n">w22</span><span class="p">,</span> <span class="n">w23</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.    1.34  1.188]
+
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Z</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.73105858 0.79248994 0.76638318]
+
+</code></pre></div></div>
+
+<p>The calculation process looks a lot cleaner than it did before.</p>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/04/LossFunction">
-      〈 <span class="u-margin-right-tiny"></span> How well does the neural network p...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/ForwardPropagation">
+      〈 <span class="u-margin-right-tiny"></span> How the single pass through the ne...
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="">
-       <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/OutputLayer">
+      Design the Output Layer <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

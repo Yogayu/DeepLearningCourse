@@ -4,13 +4,13 @@ redirect_from:
 interact_link: content/02/Perceptron.ipynb
 kernel_name: python3
 has_widgets: false
-title: '2. Perceptron'
+title: 'Foundation block of Neural Network—Perceptron'
 prev_page:
-  url: /01/environment
-  title: 'Environment Setup'
+  url: /02/Intro
+  title: '2. Perceptron'
 next_page:
-  url: /02/Perceptron
-  title: 'Perceptron'
+  url: /02/Iris
+  title: 'Iris Classification'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

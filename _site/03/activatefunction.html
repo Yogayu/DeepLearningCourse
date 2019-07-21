@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Learning to minimize error—Gradient Descent Algorithm</title>
-  <meta name="description" content="Learning to minimize error: gradient descent">
+  <title>Activate Function</title>
+  <meta name="description" content="Activate function">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/ActivateFunction.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/ActivateFunction.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Learning to minimize error—Gradient Descent Algorithm" />
-<meta property="og:description" content="Learning to minimize error: gradient descent" />
+<meta property="og:title"       content="Activate Function" />
+<meta property="og:description" content="Activate function" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html",
+    "https://yogayu.github.io/DeepLearningCourse///03/ActivateFunction.html",
   "headline":
-    "Learning to minimize error—Gradient Descent Algorithm",
+    "Activate Function",
   "datePublished":
     "2019-07-22T00:26:20+08:00",
   "dateModified":
     "2019-07-22T00:26:20+08:00",
   "description":
-    "Learning to minimize error: gradient descent",
+    "Activate function",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -912,7 +912,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/ActivateFunction.html"
                 >
                   
@@ -1042,7 +1042,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/04/GradientDescent.html"
                 >
                   
@@ -1078,11 +1078,13 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#minimize-error">Minimize error</a></li>
-  <li><a href="#what-is-gradient-descent">What is Gradient Descent?</a>
+  <li><a href="#what-is-activate-function">What is activate function?</a></li>
+  <li><a href="#common-used-active-function">Common used active function</a>
     <ul>
-      <li><a href="#example">Example</a></li>
-      <li><a href="#avoid-overshooting">Avoid Overshooting</a></li>
+      <li><a href="#step-function">Step Function</a></li>
+      <li><a href="#relu-function">ReLU Function</a></li>
+      <li><a href="#sigmoid-function">Sigmoid Function</a></li>
+      <li><a href="#tanch-function">TancH function</a></li>
     </ul>
   </li>
 </ul>
@@ -1108,7 +1110,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/04/GradientDescent.ipynb" download>
+<a href="/content/03/ActivateFunction.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1121,105 +1123,151 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F04%2FGradientDescent.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F03%2FActivateFunction.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
 
 
             <div class="c-textbook__content">
-              <h1 id="learning-to-minimize-error-gradient-descent">Learning to minimize error: gradient descent</h1>
+              <h1 id="activate-function">Activate function</h1>
 
-<h2 id="minimize-error">Minimize error</h2>
+<h2 id="what-is-activate-function">What is activate function?</h2>
 
-<p>The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
+<p>Recall that we use a step function in perceptron to transform output i.e. whether or not the neuron should be activated. We call this kind of function which take all the inputs to transform an output as <strong>activate function</strong>. 
+Activate function is one of the key concepts in deep learning. Let’s first take a brief look at some common activation functions.</p>
 
-<p><img src="img/GA0.png" alt="" /></p>
+<h2 id="common-used-active-function">Common used active function</h2>
 
-<p>In last section, we have introduced MAE loss function:</p>
+<h3 id="step-function">Step Function</h3>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )^2</script>
+<p>The definition of step function is:</p>
 
-<script type="math/tex; mode=display">y_i = \sigma (w_ix_i+b_i)</script>
+<script type="math/tex; mode=display">% <![CDATA[
+h(x)=\left\{
+\begin{array}{rcl}
+1       &      & {x > 0}\\
+0     &      & {x\leq 0}\\
+\end{array} \right. %]]></script>
 
-<script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2</script>
+<p>Here we use Python to implement step function:</p>
 
-<p>[……]</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">step_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></div>
 
-<h2 id="what-is-gradient-descent">What is Gradient Descent?</h2>
+<p>In the above implementation, $x$ is an input number. Later we will use a vector as input, so we can implement this using Numpy.</p>
 
-<p>Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you have zero visibility to see where you are headed. The only thing you have is a torch to see a short distance. So, what approach will you take to reach the lake? Take a few minutes to think about this.</p>
+<p>Input $x$ as a vector:</p>
 
-<p>You may use the torch to look around the ground beneath your feet. Then you can figure out where it is going downward and take small steps in that direction. In this way, you keep following the path that is descending, step by step, you’re likely to reach the lake at the valley.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">step_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c"># for each element in x, determine weather it positive</span>
+    <span class="c"># return the result as int array type</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p><img src="img/mountain.png" alt="" /></p>
+<p>Here is how this step function looks like:</p>
 
-<blockquote>
-  <p>Photo by Matt Lamers on Unsplash</p>
-</blockquote>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-<p>This method in mathematic is called gradient descent. The gradient means the slope of the ground.</p>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Input"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)</span>
 
-<p>What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error!</p>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
 
-<h3 id="example">Example</h3>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<p>Here we still begin with this simple neural network.</p>
+<p class="output output_png"><img src="../images/03/ActivateFunction_11_0.png" alt="png" /></p>
 
-<p><img src="img/0.png" alt="" /></p>
+<h3 id="relu-function">ReLU Function</h3>
 
-<p>Say the following graph shows a function where $y$ is the error, we are going to find the $w$ to minimize it.</p>
+<p>The definition of ReLU(rectified linear unit) function is:</p>
 
-<p><img src="img/gd1.png" alt="" /></p>
+<script type="math/tex; mode=display">h(x) = max(x,0)</script>
 
-<p>The dotted circle is where error equal to $0$ and that’s where we want to be as close as possible.</p>
+<p>This means that the ReLU function only remain positive elements and setting all negative elements nodes to 0. It provides a very simple nonlinear transformation.</p>
 
-<p>To start, we randomly choose a value of $w$. The blue dot represent current weight and error. Now, let’s look around to see which direction should we go. The slope help us to do that. This is a negative gradient, so we increase the $w$ a little.</p>
+<p>Here we use python to implement ReLU function:</p>
 
-<p><img src="img/gd2.png" alt="" /></p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c"># return the maxium number bwtween 0 an each element of vector x</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Again, this is a negative slope, we continue increase $w$.</p>
+<p>Let’s plot it.</p>
 
-<p><img src="img/gd3.png" alt="" /></p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<p>Each time, we adjust the weight the same size step by step. In this way, if we’re lucky, we’re probably arrived at the bottom.</p>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<p><img src="img/gd5.png" alt="" /></p>
+<p class="output output_png"><img src="../images/03/ActivateFunction_18_0.png" alt="png" /></p>
 
-<h3 id="avoid-overshooting">Avoid Overshooting</h3>
+<h3 id="sigmoid-function">Sigmoid Function</h3>
 
-<p>However, we are likely to overshooting the minimum and forever bouncing around it.</p>
+<p>The definition of sigmoid function is:</p>
 
-<p><img src="img/gd4.png" alt="" /></p>
+<script type="math/tex; mode=display">h(x) =  \frac{\mathrm{1} }{\mathrm{1} + e^{-x} }</script>
 
-<p>To avoid overshooting, what should we do?</p>
+<p>The letter e is a mathematical constant approximate 2.71828.</p>
 
-<p>Well, as you can see, in order not to overshooting through the minimum, we have to take smaller and smaller step towards the end.</p>
+<p>The implementation of sigmoid function in Python:</p>
 
-<p><img src="img/gd6.png" alt="" /></p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
 
-<p>You may have notice that the steeper the slope, the larger our step and the flatter the slope, the smaller our step.</p>
+<p>Sigmoid function is a S-shaped function.</p>
 
-<p>On the whole, we randomly choose a weight and then changed it in a direction opposite to the gradient. Besides, as we get close to the local bottom, we change the step size according to how steep the slope is. We can use mathematical expression to express the process of weight updating each time.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<p><img src="img/gd7.png" alt="" /></p>
+<p class="output output_png"><img src="../images/03/ActivateFunction_26_0.png" alt="png" /></p>
 
-<p>If the slope is negative, we increase the weight. Otherwise, we decrease the weight. So use a minus sign when you update. The step size also varies with each change in the slope. Moreover, the learning rate is a factor to control the intensity of updates.</p>
+<h3 id="tanch-function">TancH function</h3>
 
-<p>Congratulations! You have learned how to update weights to minimize errors which is a big step forward.</p>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TancH function</span>
+<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p class="output output_png"><img src="../images/03/ActivateFunction_29_0.png" alt="png" /></p>
+
+<p>All the activate function we introduced are none-linearities function. Why activate function must to be non-linearities function? Generally speaking, the purpose of activation functions is to introduce non-linearities into the network. Next section, we will deep into Forward Propagation. And then the detailed explanation of why we must use none-linearities will be discussed.</p>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/04/LossFunction">
-      〈 <span class="u-margin-right-tiny"></span> How well does the neural network p...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/MultilayerPerceptron">
+      〈 <span class="u-margin-right-tiny"></span> Multilayer Perceptron
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="">
-       <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/ForwardPropagation">
+      How the single pass through the ne... <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

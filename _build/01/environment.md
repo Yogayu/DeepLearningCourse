@@ -4,7 +4,7 @@ prev_page:
   url: /01/Introduction
   title: 'Introduction'
 next_page:
-  url: /02/Perceptron
+  url: /02/Intro
   title: '2. Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---

@@ -4,13 +4,13 @@ redirect_from:
 interact_link: content/04/LossFunction.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'How well does the neural network predict? Loss function'
+title: 'How well does the neural network predict?—Loss Function'
 prev_page:
   url: /04/Intro
   title: '4. Training Neural Networks'
 next_page:
   url: /04/GradientDescent
-  title: 'Learning to minimize error gradient descent algorithm'
+  title: 'Learning to minimize error—Gradient Descent Algorithm'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

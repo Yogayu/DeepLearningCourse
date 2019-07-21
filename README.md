@@ -8,6 +8,9 @@
 
   - [Read Online](#read-online)
   - [Project Description](#project-description)
+- [An online deep learning course for humanists (WIP)](#an-online-deep-learning-course-for-humanists-wip)
+  - [Read Online](#read-online)
+  - [Project Description](#project-description)
 - [Course Outline](#course-outline)
   - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
   - [Chapter 1 Introduction](#chapter-1-introduction)

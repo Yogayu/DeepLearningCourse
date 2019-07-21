@@ -4,10 +4,10 @@ redirect_from:
 interact_link: content/04/GradientDescent.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'Learning to minimize error gradient descent algorithm'
+title: 'Learning to minimize error—Gradient Descent Algorithm'
 prev_page:
   url: /04/LossFunction
-  title: 'How well does the neural network predict? Loss function'
+  title: 'How well does the neural network predict?—Loss Function'
 next_page:
   url: 
   title: ''

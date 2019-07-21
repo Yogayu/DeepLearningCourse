@@ -29,9 +29,9 @@
   "headline":
     "3. Multilayer Perceptron",
   "datePublished":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "dateModified":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "description":
     "Multilayer Perceptron",
   "author": {
@@ -727,7 +727,9 @@ initFunction(initQuery);
           href="/01/Intro.html"
         >
           
-          1. Introduction
+            1.
+          
+          Introduction
         </a>
 
         
@@ -749,6 +751,8 @@ initFunction(initQuery);
                   href="/01/Introduction.html"
                 >
                   
+                    1.1
+                  
                   Introduction
                 </a>
 
@@ -765,6 +769,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/01/environment.html"
                 >
+                  
+                    1.2
                   
                   Environment Setup
                 </a>
@@ -794,7 +800,9 @@ initFunction(initQuery);
           href="/02/Intro.html"
         >
           
-          2. Perceptron
+            2.
+          
+          Perceptron
         </a>
 
         
@@ -816,7 +824,9 @@ initFunction(initQuery);
                   href="/02/Perceptron.html"
                 >
                   
-                  Perceptron
+                    2.1
+                  
+                  Foundation block of Neural Network—Perceptron
                 </a>
 
                 
@@ -832,6 +842,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/02/Iris.html"
                 >
+                  
+                    2.2
                   
                   Iris Classification
                 </a>
@@ -861,7 +873,9 @@ initFunction(initQuery);
           href="/03/MultilayerPerceptron.html"
         >
           
-          3. Multilayer Perceptron
+            3.
+          
+          Multilayer Perceptron
         </a>
 
         
@@ -883,7 +897,28 @@ initFunction(initQuery);
                   href="/03/MultilayerPerceptron.html"
                 >
                   
+                    3.1
+                  
                   Multilayer Perceptron
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ActivateFunction.html"
+                >
+                  
+                    3.2
+                  
+                  Activate Function
                 </a>
 
                 
@@ -900,7 +935,47 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                  Forward Propagation
+                    3.3
+                  
+                  How the single pass through the network—Forward Propagation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/Matrix.html"
+                >
+                  
+                    3.4
+                  
+                  Efficient Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/OutputLayer.html"
+                >
+                  
+                    3.5
+                  
+                  Design the Output Layer
                 </a>
 
                 
@@ -928,7 +1003,9 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-          4. Training Neural Networks
+            4.
+          
+          Training Neural Networks
         </a>
 
         
@@ -950,7 +1027,9 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                  How well does the neural network predict? Loss function
+                    4.1
+                  
+                  How well does the neural network predict?—Loss Function
                 </a>
 
                 
@@ -967,7 +1046,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                  Learning to minimize error gradient descent algorithm
+                    4.2
+                  
+                  Learning to minimize error—Gradient Descent Algorithm
                 </a>
 
                 
@@ -999,16 +1080,6 @@ initFunction(initQuery);
       <ul class="toc__menu">
   <li><a href="#multi-output-perceptron">Multi Output Perceptron</a></li>
   <li><a href="#multilayer-perceptron-1">Multilayer perceptron</a></li>
-  <li><a href="#activate-function">Activate function</a>
-    <ul>
-      <li><a href="#what-is-activate-function">What is activate function?</a></li>
-      <li><a href="#the-common-active-function">The common active function</a></li>
-      <li><a href="#step-function">Step Function</a></li>
-      <li><a href="#relu-function">ReLU Function</a></li>
-      <li><a href="#sigmoid-function">Sigmoid Function</a></li>
-      <li><a href="#tanch-function">TancH function</a></li>
-    </ul>
-  </li>
   <li><a href="#reference">Reference</a></li>
 </ul>
     </nav>
@@ -1074,132 +1145,6 @@ initFunction(initQuery);
 <p>3.1 Neural Network</p>
 
 <p>As shown in diagram 3.1, each node in the input layer is connected with the hidden layer, and each node in the hidden layer is connected with the output layer. We call hidden layer and output layer are <strong>fully connection layer</strong>.</p>
-
-<h2 id="activate-function">Activate function</h2>
-
-<h3 id="what-is-activate-function">What is activate function?</h3>
-
-<p>Recall that we use a step function in perceptron to transform output i.e. whether or not the neuron should be activated. We call this kind of function which take all the inputs to transform an output as <strong>activate function</strong>. 
-Activate function is one of the key concepts in deep learning. Let’s first take a brief look at some common activation functions.</p>
-
-<h3 id="the-common-active-function">The common active function</h3>
-
-<h3 id="step-function">Step Function</h3>
-
-<p>The definition of step function is:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-h(x)=\left\{
-\begin{array}{rcl}
-1       &      & {x > 0}\\
-0     &      & {x\leq 0}\\
-\end{array} \right. %]]></script>
-
-<p>Here we use Python to implement step function:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">step_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-</code></pre></div></div>
-
-<p>In the above implementation, $x$ is an input number. Later we will use a vector as input, so we can implement this using Numpy.</p>
-
-<p>Input $x$ as a vector:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">step_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="c"># for each element in x, determine weather it positive</span>
-    <span class="c"># return the result as int array type</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Here is how this step function looks like:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Input"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Output"</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_19_0.png" alt="png" /></p>
-
-<h3 id="relu-function">ReLU Function</h3>
-
-<p>The definition of ReLU(rectified linear unit) function is:</p>
-
-<script type="math/tex; mode=display">h(x) = max(x,0)</script>
-
-<p>This means that the ReLU function only remain positive elements and setting all negative elements nodes to 0. It provides a very simple nonlinear transformation.</p>
-
-<p>Here we use python to implement ReLU function:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="c"># return the maxium number bwtween 0 an each element of vector x</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Let’s plot it.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_26_0.png" alt="png" /></p>
-
-<h3 id="sigmoid-function">Sigmoid Function</h3>
-
-<p>The definition of sigmoid function is:</p>
-
-<script type="math/tex; mode=display">h(x) =  \frac{\mathrm{1} }{\mathrm{1} + e^{-x} }</script>
-
-<p>The letter e is a mathematical constant approximate 2.71828.</p>
-
-<p>The implementation of sigmoid function in Python:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>Sigmoid function is a S-shaped function.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_34_0.png" alt="png" /></p>
-
-<h3 id="tanch-function">TancH function</h3>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TancH function</span>
-<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/MultilayerPerceptron_37_0.png" alt="png" /></p>
-
-<p>All the activate function we introduced are none-linearities function. Why activate function must to be non-linearities function? Generally speaking, the purpose of activation functions is to introduce non-linearities into the network. Next section, we will deep into Forward Propagation. And then the detailed explanation of why we must use none-linearities will be discussed.</p>
 
 <h2 id="reference">Reference</h2>
 

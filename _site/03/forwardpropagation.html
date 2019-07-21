@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Forward Propagation</title>
+  <title>How the single pass through the network—Forward Propagation</title>
   <meta name="description" content="Forward Propagation">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/ForwardPropagation.html">
@@ -15,7 +15,7 @@
 
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/ForwardPropagation.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Forward Propagation" />
+<meta property="og:title"       content="How the single pass through the network—Forward Propagation" />
 <meta property="og:description" content="Forward Propagation" />
 <meta property="og:image"       content="" />
 
@@ -27,11 +27,11 @@
   "mainEntityOfPage":
     "https://yogayu.github.io/DeepLearningCourse///03/ForwardPropagation.html",
   "headline":
-    "Forward Propagation",
+    "How the single pass through the network—Forward Propagation",
   "datePublished":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "dateModified":
-    "2019-07-21T23:50:02+08:00",
+    "2019-07-22T00:26:20+08:00",
   "description":
     "Forward Propagation",
   "author": {
@@ -727,7 +727,9 @@ initFunction(initQuery);
           href="/01/Intro.html"
         >
           
-          1. Introduction
+            1.
+          
+          Introduction
         </a>
 
         
@@ -749,6 +751,8 @@ initFunction(initQuery);
                   href="/01/Introduction.html"
                 >
                   
+                    1.1
+                  
                   Introduction
                 </a>
 
@@ -765,6 +769,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/01/environment.html"
                 >
+                  
+                    1.2
                   
                   Environment Setup
                 </a>
@@ -794,7 +800,9 @@ initFunction(initQuery);
           href="/02/Intro.html"
         >
           
-          2. Perceptron
+            2.
+          
+          Perceptron
         </a>
 
         
@@ -816,7 +824,9 @@ initFunction(initQuery);
                   href="/02/Perceptron.html"
                 >
                   
-                  Perceptron
+                    2.1
+                  
+                  Foundation block of Neural Network—Perceptron
                 </a>
 
                 
@@ -832,6 +842,8 @@ initFunction(initQuery);
                 <a class="c-sidebar__entry "
                   href="/02/Iris.html"
                 >
+                  
+                    2.2
                   
                   Iris Classification
                 </a>
@@ -861,7 +873,9 @@ initFunction(initQuery);
           href="/03/MultilayerPerceptron.html"
         >
           
-          3. Multilayer Perceptron
+            3.
+          
+          Multilayer Perceptron
         </a>
 
         
@@ -883,7 +897,28 @@ initFunction(initQuery);
                   href="/03/MultilayerPerceptron.html"
                 >
                   
+                    3.1
+                  
                   Multilayer Perceptron
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ActivateFunction.html"
+                >
+                  
+                    3.2
+                  
+                  Activate Function
                 </a>
 
                 
@@ -900,7 +935,47 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                  Forward Propagation
+                    3.3
+                  
+                  How the single pass through the network—Forward Propagation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/Matrix.html"
+                >
+                  
+                    3.4
+                  
+                  Efficient Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/OutputLayer.html"
+                >
+                  
+                    3.5
+                  
+                  Design the Output Layer
                 </a>
 
                 
@@ -928,7 +1003,9 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-          4. Training Neural Networks
+            4.
+          
+          Training Neural Networks
         </a>
 
         
@@ -950,7 +1027,9 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                  How well does the neural network predict? Loss function
+                    4.1
+                  
+                  How well does the neural network predict?—Loss Function
                 </a>
 
                 
@@ -967,7 +1046,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                  Learning to minimize error gradient descent algorithm
+                    4.2
+                  
+                  Learning to minimize error—Gradient Descent Algorithm
                 </a>
 
                 
@@ -992,22 +1073,6 @@ initFunction(initQuery);
 
 <!-- TOC will only show up if it has at least one item -->
 
-
-  <aside class="sidebar__right">
-    <nav class="onthispage">
-      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
-      <ul class="toc__menu">
-  <li><a href="#matrix">Matrix</a>
-    <ul>
-      <li><a href="#multiplying-matrixs">Multiplying Matrixs</a></li>
-    </ul>
-  </li>
-  <li><a href="#apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</a></li>
-  <li><a href="#design-the-output-layer">Design the output layer</a></li>
-  <li><a href="#summary">Summary</a></li>
-</ul>
-    </nav>
-  </aside>
 
 
       
@@ -1182,236 +1247,20 @@ initFunction(initQuery);
 
 <p>For each node we need to write the corresponding calculation formula, now we just handwritten three nodes, you are likely to get the wrong index. In the future, our network will become more and more complex, and there may be hundreds or thousands of nodes. If we still use such a way, it would be difficult to ensure that nothing goes wrong, isn’t it?</p>
 
-<p>So how do we simplify this? Actually using the matrix in mathematics can simplify and speed up the node’s calculation of the computer. Let’s see what’s going on.</p>
-
-<h2 id="matrix">Matrix</h2>
-
-<p>In mathematics, a <strong>matrix</strong> (plural: <strong>matrices</strong>) is a table, a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. In python, we can use two-dimensional array to represent it.</p>
-
-<p>For example, the dimension of the matrix below is 2 by 3, because there are two rows and three columns:</p>
-
-<p><img src="img/matrix.png" alt="matrixSample" /></p>
-
-<p>In Python, we usually use Numpy to represent and evaluate matrices.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
-</code></pre></div></div>
-
-<p>We use ndim funcation to get the dimension of the matrix:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
-</code></pre></div></div>
-
-<p>Shown as the ouput, this is a two dimension matrix.</p>
-
-<p>And we can use shape function to get shape:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2, 3)
-</code></pre></div></div>
-
-<p>This is a 2 by 3 array matrix. 2 represent the number of rows, which means the first dimension has 2 elements. 3 represent the number of columns, which means the second dimension has 3 elements.</p>
-
-<h3 id="multiplying-matrixs">Multiplying Matrixs</h3>
-
-<p>Now let’s see how to multiple Matrix. When multiply a matrix by another matrix we need to do the <strong>dot product</strong> of rows and columns. Here’s an example of two simple matrixs A and B multiplied together.</p>
-
-<p>To work out the top left element of the answer, let’s take the dot product of first row of A and first column of B.</p>
-
-<p>The <strong>Dot Product</strong> means multiply matching members, then sum up:</p>
-
-<script type="math/tex; mode=display">(2, 4) • (4, 6) = 2×4 + 4×6 = 26</script>
-
-<p>We multiply first numbers 2 and 4, likewise for the second numbers 4 and 6, and finally sum them up.</p>
-
-<p><img src="video/m1.gif" alt="" /></p>
-
-<p><img src="img/matrix1.png" alt="" /></p>
-
-<p>Using the same way, we figure out the top right element of the answer.</p>
-
-<p><img src="video/m2.gif" alt="" /></p>
-
-<p><img src="img/matrix2.png" alt="" /></p>
-
-<p>That’s easy right? Continuing work out the rest numbers by yourself.</p>
-
-<p><img src="img/matrix3.png" alt="" /></p>
-
-<p><img src="img/matrix4.png" alt="" /></p>
-
-<p>Finally, we get the result matrix C.</p>
-
-<p>Notice that we can’t multiply any two matrices, they need to be compatible, which means the number of columns in the first must be equal to the number of rows in the second.</p>
-
-<p>This operation can be achieved using Numpy. We create two matrix A and B:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[2 4]
- [3 7]]
-
-</code></pre></div></div>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1 9]
- [6 8]]
-
-</code></pre></div></div>
-
-<p>Then use <strong>dot</strong> operation to multiply them and assign the result to matrix C:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[26 50]
- [45 83]]
-
-</code></pre></div></div>
-
-<h2 id="apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</h2>
-
-<p>Now that you understand the basics, let’s see how we can apply matrix  to neural network computation.</p>
-
-<p>Let’s using the variables in our neural networks.</p>
-
-<p>Before, the calculation formula we use is as follows:</p>
-
-<script type="math/tex; mode=display">a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1</script>
-
-<script type="math/tex; mode=display">a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2</script>
-
-<script type="math/tex; mode=display">a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3</script>
-
-<p>Now, we use matrix to represent:</p>
-
-<p><img src="img/x.png" alt="x" /></p>
-
-<p><img src="img/w.png" alt="x" /></p>
-
-<p><img src="img/b.png" alt="x" /></p>
-
-<p>W is the matrix of weights, X is the matrix of inputs, B is the bias.</p>
-
-<p>The formula for calculating the input of the hidden layer is as follows</p>
-
-<script type="math/tex; mode=display">A = XW + B</script>
-
-<p><img src="img/xw.png" alt="xw.png" /></p>
-
-<p><img src="img/xw+b.png" alt="xw+b.png" /></p>
-
-<p>We use a simple matrix operation expression $A = XW + B$ to calculate the input of the hidden layer node. Even if we add more nodes, the formula will be the same. It’s pretty neat and powerful.</p>
-
-<p>Let’s use Numpy for hidden layer node calculations.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">])</span>
-<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">w11</span><span class="p">,</span> <span class="n">w12</span><span class="p">,</span> <span class="n">w13</span><span class="p">],</span> <span class="p">[</span><span class="n">w21</span><span class="p">,</span> <span class="n">w22</span><span class="p">,</span> <span class="n">w23</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">])</span>
-</code></pre></div></div>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span>
-<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.    1.34  1.188]
-
-</code></pre></div></div>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Z</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.73105858 0.79248994 0.76638318]
-
-</code></pre></div></div>
-
-<p>The calculation process looks a lot cleaner than it did before.</p>
-
-<h2 id="design-the-output-layer">Design the output layer</h2>
-
-<p>Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer.</p>
-
-<p>The node in output layer’s structure is the same as the hidden layer’s node. However, the choose of the activate function is different according to difference types of questions.</p>
-
-<p>In machine learning, there are two kind of kinds of problems: <strong>regression</strong> and <strong>classification</strong>. The output values of classification problem are <strong>categorical data</strong>. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are <strong>numerical data</strong>. For example, let’s support that we’re going to predict what’s the probability of rain tomorrow. The probability can be 29%, 29.3%, 98% and so on. It is a numerical value, so it’s a regression problem.</p>
-
-<p>For the regression, We can use the <strong>linear function</strong>. The simple one is identity activation function.</p>
-
-<script type="math/tex; mode=display">f(x) = x</script>
-
-<p><img src="img/linear.png" alt="linear" /></p>
-
-<p>For the classification, <strong>softmax</strong> function is a good choose. It squashes the outputs of each unit to be between 0 and 1, and the sum of outputs values is equal to 1. Mathematically the softmax function is shown below.</p>
-
-<script type="math/tex; mode=display">y_{k} = \frac{e^{a^{k}}}{\sum_{i=1}^{n}e^{a^{i}}}</script>
-
-<p>$y_k$ is the $kth$ node’s output. $n$ is the number of nodes in output layer. $k$ indexes the output units, so $k = 1, 2, …, n$.</p>
-
-<p>Implementation in Python:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">exp_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="c"># avoid overflow</span>
-    <span class="n">sum_exp_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">exp_a</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">exp_a</span> <span class="o">/</span> <span class="n">sum_exp_a</span>
-    <span class="k">return</span> <span class="n">y</span>
-</code></pre></div></div>
-
-<p><img src="img/softmax.png" alt="linear" /></p>
-
-<p>Suppose we want to predict tomorrow’s weather, which has three kinds: sunny, cloudy and rainy. Using softmax as activate function, the final outputs will be the probability of these three categories. For the example image above, the output of the softmax function might look like:</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.83</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">y</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([0.60304157, 0.2526452 , 0.14431323])
-</code></pre></div></div>
-
-<p><img src="img/softmaxexample.png" alt="" /></p>
-
-<p>For tomorrow’s weather, the probability of sunny day is 0.605, cloudy day is 0.153 and rainy day is 0.144. So we forecast tomorrow might be a sunny day.</p>
-
-<h2 id="summary">Summary</h2>
-
-<ol>
-  <li>Forward propagation sequentially calculates the intermediate variables of neural network from input layer to output layer.</li>
-  <li>Using matrix dot product make the calculation much more neat and powerful.</li>
-  <li>When designing the output layer, different activation functions should be selected according to different problems.</li>
-</ol>
-
-<ul>
-  <li>https://en.wikipedia.org/wiki/Matrix_(mathematics)</li>
-  <li>https://www.mathsisfun.com/algebra/matrix-multiplying.html</li>
-</ul>
+<p>So how do we simplify this? Actually using the matrix in mathematics can simplify and speed up the node’s calculation of the computer. Let’s see what’s going on in next section.</p>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/MultilayerPerceptron">
-      〈 <span class="u-margin-right-tiny"></span> Multilayer Perceptron
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/ActivateFunction">
+      〈 <span class="u-margin-right-tiny"></span> Activate Function
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/04/Intro">
-      4. Training Neural Networks <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/Matrix">
+      Efficient Matrix <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

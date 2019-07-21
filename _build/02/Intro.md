@@ -7,7 +7,7 @@ prev_page:
   title: 'Environment Setup'
 next_page:
   url: /02/Perceptron
-  title: 'Perceptron'
+  title: 'Foundation block of Neural Network—Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Introduction
