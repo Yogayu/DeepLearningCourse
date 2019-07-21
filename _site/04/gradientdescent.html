@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Learning to minimize error gradient descent algorithm</title>
-  <meta name="description" content="Learning to minimize error: gradient descent algorithm">
+  <meta name="description" content="Learning to minimize error: gradient descent">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Learning to minimize error gradient descent algorithm" />
-<meta property="og:description" content="Learning to minimize error: gradient descent algorithm" />
+<meta property="og:description" content="Learning to minimize error: gradient descent" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "Learning to minimize error gradient descent algorithm",
   "datePublished":
-    "2019-07-20T22:34:18+08:00",
+    "2019-07-21T23:50:02+08:00",
   "dateModified":
-    "2019-07-20T22:34:18+08:00",
+    "2019-07-21T23:50:02+08:00",
   "description":
-    "Learning to minimize error: gradient descent algorithm",
+    "Learning to minimize error: gradient descent",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -724,7 +724,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/01/Introduction.html"
+          href="/01/Intro.html"
         >
           
           1. Introduction
@@ -791,7 +791,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/02/Perceptron.html"
+          href="/02/Intro.html"
         >
           
           2. Perceptron
@@ -993,6 +993,21 @@ initFunction(initQuery);
 <!-- TOC will only show up if it has at least one item -->
 
 
+  <aside class="sidebar__right">
+    <nav class="onthispage">
+      <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
+      <ul class="toc__menu">
+  <li><a href="#minimize-error">Minimize error</a></li>
+  <li><a href="#what-is-gradient-descent">What is Gradient Descent?</a>
+    <ul>
+      <li><a href="#example">Example</a></li>
+      <li><a href="#avoid-overshooting">Avoid Overshooting</a></li>
+    </ul>
+  </li>
+</ul>
+    </nav>
+  </aside>
+
 
       
       <main class="c-textbook__page" tabindex="-1">
@@ -1032,15 +1047,13 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <h1 id="learning-to-minimize-error-gradient-descent-algorithm">Learning to minimize error: gradient descent algorithm</h1>
+              <h1 id="learning-to-minimize-error-gradient-descent">Learning to minimize error: gradient descent</h1>
 
-<p>The goal of neural network is adjust the weight to minimize error. The error is a function of the network weights and biases.</p>
+<h2 id="minimize-error">Minimize error</h2>
+
+<p>The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
 
 <p><img src="img/GA0.png" alt="" /></p>
-
-<p>The error is a function of the network weights and biases.</p>
-
-<p>So our goal of training is to find weights and biases which minimize the cost function.</p>
 
 <p>In last section, we have introduced MAE loss function:</p>
 
@@ -1050,30 +1063,69 @@ initFunction(initQuery);
 
 <script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2</script>
 
-<p>L 是关于 w，b 的函数。在此，我们不通过代数的方法去找到 L 最小值时，w、b的取值，因为对于该函数，那样太复杂。</p>
+<p>[……]</p>
 
-<p>我们会使用梯度下降的方法，让我们一起开始了解吧。</p>
+<h2 id="what-is-gradient-descent">What is Gradient Descent?</h2>
 
-<p>我们来看一个简单的神经网络，一共有两层，每一层中都只有一个节点。</p>
+<p>Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you have zero visibility to see where you are headed. The only thing you have is a torch to see a short distance. So, what approach will you take to reach the lake? Take a few minutes to think about this.</p>
 
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numerical_gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span>
-    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zero_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
-        <span class="n">tmp_val</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">+</span> <span class="n">h</span>
-        <span class="n">fxh1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        
-        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">-</span> <span class="n">h</span>
-        <span class="n">fxh2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        
-        <span class="n">grad</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fxh1</span> <span class="o">-</span><span class="n">fxh2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span>
-        
-    <span class="k">return</span> <span class="n">grad</span>
-</code></pre></div></div>
+<p>You may use the torch to look around the ground beneath your feet. Then you can figure out where it is going downward and take small steps in that direction. In this way, you keep following the path that is descending, step by step, you’re likely to reach the lake at the valley.</p>
 
+<p><img src="img/mountain.png" alt="" /></p>
+
+<blockquote>
+  <p>Photo by Matt Lamers on Unsplash</p>
+</blockquote>
+
+<p>This method in mathematic is called gradient descent. The gradient means the slope of the ground.</p>
+
+<p>What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error!</p>
+
+<h3 id="example">Example</h3>
+
+<p>Here we still begin with this simple neural network.</p>
+
+<p><img src="img/0.png" alt="" /></p>
+
+<p>Say the following graph shows a function where $y$ is the error, we are going to find the $w$ to minimize it.</p>
+
+<p><img src="img/gd1.png" alt="" /></p>
+
+<p>The dotted circle is where error equal to $0$ and that’s where we want to be as close as possible.</p>
+
+<p>To start, we randomly choose a value of $w$. The blue dot represent current weight and error. Now, let’s look around to see which direction should we go. The slope help us to do that. This is a negative gradient, so we increase the $w$ a little.</p>
+
+<p><img src="img/gd2.png" alt="" /></p>
+
+<p>Again, this is a negative slope, we continue increase $w$.</p>
+
+<p><img src="img/gd3.png" alt="" /></p>
+
+<p>Each time, we adjust the weight the same size step by step. In this way, if we’re lucky, we’re probably arrived at the bottom.</p>
+
+<p><img src="img/gd5.png" alt="" /></p>
+
+<h3 id="avoid-overshooting">Avoid Overshooting</h3>
+
+<p>However, we are likely to overshooting the minimum and forever bouncing around it.</p>
+
+<p><img src="img/gd4.png" alt="" /></p>
+
+<p>To avoid overshooting, what should we do?</p>
+
+<p>Well, as you can see, in order not to overshooting through the minimum, we have to take smaller and smaller step towards the end.</p>
+
+<p><img src="img/gd6.png" alt="" /></p>
+
+<p>You may have notice that the steeper the slope, the larger our step and the flatter the slope, the smaller our step.</p>
+
+<p>On the whole, we randomly choose a weight and then changed it in a direction opposite to the gradient. Besides, as we get close to the local bottom, we change the step size according to how steep the slope is. We can use mathematical expression to express the process of weight updating each time.</p>
+
+<p><img src="img/gd7.png" alt="" /></p>
+
+<p>If the slope is negative, we increase the weight. Otherwise, we decrease the weight. So use a minus sign when you update. The step size also varies with each change in the slope. Moreover, the learning rate is a factor to control the intensity of updates.</p>
+
+<p>Congratulations! You have learned how to update weights to minimize errors which is a big step forward.</p>
 
               <nav class="c-page__nav">
   

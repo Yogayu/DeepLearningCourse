@@ -10,7 +10,7 @@ prev_page:
   title: 'Forward Propagation'
 next_page:
   url: /04/LossFunction
-  title: 'Loss Function'
+  title: 'How well does the neural network predict? Loss function'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
