@@ -86,7 +86,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/ActivateFunction_11_0.png)
+![png](../images/03/ActivateFunction_11_0.png)
 
 
 
@@ -128,7 +128,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/ActivateFunction_18_0.png)
+![png](../images/03/ActivateFunction_18_0.png)
 
 
 
@@ -167,7 +167,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/ActivateFunction_26_0.png)
+![png](../images/03/ActivateFunction_26_0.png)
 
 
 
@@ -197,7 +197,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/03/ActivateFunction_29_0.png)
+![png](../images/03/ActivateFunction_29_0.png)
 
 
 
