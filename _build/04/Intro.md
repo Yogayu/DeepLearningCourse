@@ -4,7 +4,7 @@ redirect_from:
 interact_link: content/04/Intro.ipynb
 kernel_name: python3
 has_widgets: false
-title: '4. Training Neural Networks'
+title: 'Training Neural Networks'
 prev_page:
   url: /03/OutputLayer
   title: 'Design the Output Layer'

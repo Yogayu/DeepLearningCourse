@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Learning to minimize error—Gradient Descent Algorithm</title>
-  <meta name="description" content="Learning to minimize error: gradient descent">
+  <title>Learning to minimize error—Gradient Descent Method</title>
+  <meta name="description" content="Learning to minimize error: Gradient Descent Method">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Learning to minimize error—Gradient Descent Algorithm" />
-<meta property="og:description" content="Learning to minimize error: gradient descent" />
+<meta property="og:title"       content="Learning to minimize error—Gradient Descent Method" />
+<meta property="og:description" content="Learning to minimize error: Gradient Descent Method" />
 <meta property="og:image"       content="" />
 
 
@@ -27,13 +27,13 @@
   "mainEntityOfPage":
     "https://yogayu.github.io/DeepLearningCourse///04/GradientDescent.html",
   "headline":
-    "Learning to minimize error—Gradient Descent Algorithm",
+    "Learning to minimize error—Gradient Descent Method",
   "datePublished":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "dateModified":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "description":
-    "Learning to minimize error: gradient descent",
+    "Learning to minimize error: Gradient Descent Method",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -927,6 +927,41 @@ initFunction(initQuery);
               </li>
               
             
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/03/ForwardPropagation.html"
+        >
+          
+            4.
+          
+          Forward Propagation
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
               
               
 
@@ -935,7 +970,7 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                    3.3
+                    4.1
                   
                   How the single pass through the network—Forward Propagation
                 </a>
@@ -954,9 +989,28 @@ initFunction(initQuery);
                   href="/03/Matrix.html"
                 >
                   
-                    3.4
+                    4.2
                   
-                  Efficient Matrix
+                  Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ApplyMatrix.html"
+                >
+                  
+                    4.3
+                  
+                  Apply matrix to neural network computation
                 </a>
 
                 
@@ -973,7 +1027,7 @@ initFunction(initQuery);
                   href="/03/OutputLayer.html"
                 >
                   
-                    3.5
+                    4.4
                   
                   Design the Output Layer
                 </a>
@@ -1003,7 +1057,7 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-            4.
+            5.
           
           Training Neural Networks
         </a>
@@ -1027,7 +1081,7 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                    4.1
+                    5.1
                   
                   How well does the neural network predict?—Loss Function
                 </a>
@@ -1046,9 +1100,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                    4.2
+                    5.2
                   
-                  Learning to minimize error—Gradient Descent Algorithm
+                  Learning to minimize error—Gradient Descent Method
                 </a>
 
                 
@@ -1128,11 +1182,11 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <h1 id="learning-to-minimize-error-gradient-descent">Learning to minimize error: gradient descent</h1>
+              <h1 id="learning-to-minimize-error-gradient-descent-method">Learning to minimize error: Gradient Descent Method</h1>
 
 <h2 id="minimize-error">Minimize error</h2>
 
-<p>The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
+<p>The error is a function of the network’s weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.</p>
 
 <p><img src="img/GA0.png" alt="" /></p>
 
@@ -1140,11 +1194,15 @@ initFunction(initQuery);
 
 <script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )^2</script>
 
+<p>Here, we can calculate $y_i$ with input, weights and biases.</p>
+
 <script type="math/tex; mode=display">y_i = \sigma (w_ix_i+b_i)</script>
+
+<p>If I substitute y into this equation:</p>
 
 <script type="math/tex; mode=display">L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2</script>
 
-<p>[……]</p>
+<p>So it’s clear that The error is a function of the network’s weights and biases.</p>
 
 <h2 id="what-is-gradient-descent">What is Gradient Descent?</h2>
 

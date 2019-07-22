@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "dateModified":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "description":
     "This is my Google Summer of Code 2019 Project with Red Hen Lab. The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.",
   "author": {
@@ -927,6 +927,41 @@ initFunction(initQuery);
               </li>
               
             
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/03/ForwardPropagation.html"
+        >
+          
+            4.
+          
+          Forward Propagation
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
               
               
 
@@ -935,7 +970,7 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                    3.3
+                    4.1
                   
                   How the single pass through the network—Forward Propagation
                 </a>
@@ -954,9 +989,28 @@ initFunction(initQuery);
                   href="/03/Matrix.html"
                 >
                   
-                    3.4
+                    4.2
                   
-                  Efficient Matrix
+                  Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ApplyMatrix.html"
+                >
+                  
+                    4.3
+                  
+                  Apply matrix to neural network computation
                 </a>
 
                 
@@ -973,7 +1027,7 @@ initFunction(initQuery);
                   href="/03/OutputLayer.html"
                 >
                   
-                    3.5
+                    4.4
                   
                   Design the Output Layer
                 </a>
@@ -1003,7 +1057,7 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-            4.
+            5.
           
           Training Neural Networks
         </a>
@@ -1027,7 +1081,7 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                    4.1
+                    5.1
                   
                   How well does the neural network predict?—Loss Function
                 </a>
@@ -1046,9 +1100,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                    4.2
+                    5.2
                   
-                  Learning to minimize error—Gradient Descent Algorithm
+                  Learning to minimize error—Gradient Descent Method
                 </a>
 
                 
@@ -1094,7 +1148,7 @@ initFunction(initQuery);
 <script>
     // Add the lunr store since we will now search it
     var store = [{
-        "title": "1. Introduction",
+        "title": "Introduction",
         
         "excerpt":
             "Introduction   In this chapter, we will first introduce artificial intelligence, machine learning, deep learning and their relationship. Then, teach how to set up the environment needed for the course.      Introduction   Environment Setup  ",
@@ -1118,7 +1172,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//01/environment.html",
         "teaser":null},{
-        "title": "2. Perceptron",
+        "title": "Perceptron",
         
         "excerpt":
             "Introduction   In this chapter, we will dive into the most fundamental unit of a deep neural network —— perceptron. Following with an Iris Classification Example to show how perceptron world.      Perceptron: foundation block of Neural Network   Environment Setup   ",
@@ -1150,7 +1204,15 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/ActivateFunction.html",
         "teaser":null},{
-        "title": "How the single pass through the network—Forward Propagation",
+        "title": "Apply matrix to neural network computation",
+        
+        "excerpt":
+            "Apply matrix to neural network computation Now that you understand the basics, let’s see how we can apply matrix to neural network computation. Let’s using the variables in our neural networks. Before, the calculation formula we use is as follows: Now, we use matrix to represent: W is the matrix of weights, X is the matrix of inputs, B is the bias. The formula for calculating the input of the hidden layer is as follows We use a simple matrix operation expression $A = XW + B$ to calculate the input of the hidden layer node. Even if we add more nodes,...",
+        "categories": [],
+        "tags": [],
+        "url": "https://yogayu.github.io/DeepLearningCourse//03/ApplyMatrix.html",
+        "teaser":null},{
+        "title": "Forward Propagation",
         
         "excerpt":
             "Forward Propagation Now we get familiar with the deep feedforward networks’s structure, we are going to learn how the single pass through the network. There is a two-layer neural network with one hidden layer. Here the value of input $x_1$ and $x_2$ are: x1 = 0.2 x2 = 0.8 We start with some random weights and bias from between layer0 and layer1: # Layer 0 to Layer 1 b1 = 0.4 b2 = 0.56 b3 = 0.64 w11 =1.0 w12 = 0.7 w13 = 0.34 w21 = 0.5 w22 = 0.8 w23 = 0.6 This animation shows how the single...",
@@ -1158,7 +1220,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/ForwardPropagation.html",
         "teaser":null},{
-        "title": "Efficient Matrix",
+        "title": "Matrix",
         
         "excerpt":
             "Matrix In mathematics, a matrix (plural: matrices) is a table, a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. In python, we can use two-dimensional array to represent it. For example, the dimension of the matrix below is 2 by 3, because there are two rows and three columns: In Python, we usually use Numpy to represent and evaluate matrices. A = np.array([[2,4,5],[3,7,9]]) We use ndim funcation to get the dimension of the matrix: np.ndim(A) 2 Shown as the ouput, this is a two dimension matrix. And we can use shape function to get shape: A.shape...",
@@ -1166,7 +1228,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/Matrix.html",
         "teaser":null},{
-        "title": "3. Multilayer Perceptron",
+        "title": "Multilayer Perceptron",
         
         "excerpt":
             "Multilayer Perceptron Multi Output Perceptron In the last chapter, we learn about the single output perceptron. If we combine two or more perceptron, we can get a multi-output perceptron. In this way, we can build networks. Multilayer perceptron Multilayer perceptron also named deep feedforward networks. It adds hidden layers to the previous perceptron. Diagram 3.1 shows an example neural network. To keep the diagram clear, all the weights are unmarked. The leftmost layer 0 is the input layer. The rightmost layer 2 is the output layer. The middle layer 1 is called hidden layer. Here the input layer and output...",
@@ -1177,20 +1239,20 @@ initFunction(initQuery);
         "title": "Design the Output Layer",
         
         "excerpt":
-            "Design the output layer Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer. The node in output layer’s structure is the same as the hidden layer’s node. However, the choose of the activate function is different according to difference types of questions. In machine learning, there are two kind of kinds of problems: regression and classification. The output values of classification problem are categorical data. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are numerical data. For...",
+            "Design the Output Layer Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer. The node in output layer’s structure is the same as the hidden layer’s node. However, the choose of the activate function is different according to difference types of questions. In machine learning, there are two kind of kinds of problems: regression and classification. The output values of classification problem are categorical data. The Iris classification problem we mentioned earlier falls into this category. While the output values of regression problem are numerical data. For...",
         "categories": [],
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//03/OutputLayer.html",
         "teaser":null},{
-        "title": "Learning to minimize error—Gradient Descent Algorithm",
+        "title": "Learning to minimize error—Gradient Descent Method",
         
         "excerpt":
-            "Learning to minimize error: gradient descent Minimize error The error is a function of the network weights and biases. We call it loss function which we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function. In last section, we have introduced MAE loss function: [……] What is Gradient Descent? Let’s start with the classic mountaineering example to explain the gradient descent. Suppose you are at the peek of a mountain and need to reach a lake which is in the valley of the mountain. It’s on dark nights and you...",
+            "Learning to minimize error: Gradient Descent Method Minimize error The error is a function of the network’s weights and biases. We call it loss function which we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function. In last section, we have introduced MAE loss function: Here, we can calculate $y_i$ with input, weights and biases. If I substitute y into this equation: So it’s clear that The error is a function of the network’s weights and biases. What is Gradient Descent? Let’s start with the classic mountaineering example to explain...",
         "categories": [],
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//04/GradientDescent.html",
         "teaser":null},{
-        "title": "4. Training Neural Networks",
+        "title": "Training Neural Networks",
         
         "excerpt":
             "Chapter 4 Learning: Training Neural Networks   So far, we learned about the structure of MLP and how the forward propagation works. This chapter introduce how to teach neural network to learn form data. Here learning means chooseing the best weights and bais for our network to minimum the loss function. The method we’ll use is gradient descent.   This the core of neural network. Don’t worry those new special terms seems difficult at first. You’ll to understand those gradually. After that the neural network will no longer mysterious to you.  ",
@@ -1209,7 +1271,7 @@ initFunction(initQuery);
         "title": "Home",
         
         "excerpt":
-            "Deep Learning course for humanists Table of Contents generated with DocToc Read Online Project Description Course Outline Chapter 0 Background Knowledge Chapter 1 Introduction Chapter 2 Perceptron Perceptron: a single layer neural network Example: Iris Classification Chapter 3 Multilayer Perceptron (deep feedforward networks) 3.1 Multilayer perceptron 3.2 Forward Propagation 3.3 Why we use None-linearities activation function? Chapter 4 Learning: Training Neural Networks 4.1 Loss function 4.2 Loss Optimization 4.3 Back Propagation 4.4 Optimization Physical Experiment Chapter 5 Make your own neural network to classify handwritten digitals Other Projects Classify Hand Gesture Pose in Art Audio Recognition of Simple words Exploring...",
+            "An online deep learning course for humanists (WIP) Table of Contents generated with DocToc Read Online Project Description An online deep learning course for humanists (WIP) Read Online Project Description Course Outline Chapter 0 Background Knowledge Chapter 1 Introduction Chapter 2 Perceptron Perceptron: foundation block of Neural Network Iris Classification Example Chapter 3 Multilayer Perceptron (deep feedforward networks) The architecture of Multilayer perceptron Activation function Design Output Layer Chapter 4 Forward Propagation Forward Process Matrixs Apply Matrix to Neural Network computation Design the Output Layer Why we use None-linearities activation function? Chapter 5 Learning: Training Neural Networks Loss function Learning...",
         "categories": [],
         "tags": [],
         "url": "https://yogayu.github.io/DeepLearningCourse//intro.html",

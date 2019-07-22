@@ -1,7 +1,7 @@
 ---
 redirect_from:
   - "/01/intro"
-title: '1. Introduction'
+title: 'Introduction'
 prev_page:
   url: https://github.com/Yogayu/DeepLearningCourse
   title: 'GitHub repository'

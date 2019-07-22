@@ -80,11 +80,18 @@
     - title: Activate Function
       url: /03/ActivateFunction
       not_numbered: false
+- title: Forward Propagation
+  url: /03/ForwardPropagation
+  not_numbered: false
+  sections:
     - title: How the single pass through the network—Forward Propagation
       url: /03/ForwardPropagation
       not_numbered: false
-    - title: Efficient Matrix
+    - title: Matrix
       url: /03/Matrix
+      not_numbered: false
+    - title: Apply matrix to neural network computation
+      url: /03/ApplyMatrix
       not_numbered: false
     - title: Design the Output Layer
       url: /03/OutputLayer
@@ -97,7 +104,7 @@
     - title: How well does the neural network predict?—Loss Function
       url: /04/LossFunction
       not_numbered: false
-    - title: Learning to minimize error—Gradient Descent Algorithm
+    - title: Learning to minimize error—Gradient Descent Method
       url: /04/GradientDescent
       not_numbered: false
 

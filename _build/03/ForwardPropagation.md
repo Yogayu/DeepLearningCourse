@@ -4,13 +4,13 @@ redirect_from:
 interact_link: content/03/ForwardPropagation.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'How the single pass through the network—Forward Propagation'
+title: 'Forward Propagation'
 prev_page:
   url: /03/ActivateFunction
   title: 'Activate Function'
 next_page:
-  url: /03/Matrix
-  title: 'Efficient Matrix'
+  url: /03/ForwardPropagation
+  title: 'How the single pass through the network—Forward Propagation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

@@ -7,7 +7,7 @@ has_widgets: false
 title: 'Foundation block of Neural Network—Perceptron'
 prev_page:
   url: /02/Intro
-  title: '2. Perceptron'
+  title: 'Perceptron'
 next_page:
   url: /02/Iris
   title: 'Iris Classification'

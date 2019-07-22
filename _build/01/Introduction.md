@@ -4,7 +4,7 @@ redirect_from:
 title: 'Introduction'
 prev_page:
   url: /01/Intro
-  title: '1. Introduction'
+  title: 'Introduction'
 next_page:
   url: /01/environment
   title: 'Environment Setup'

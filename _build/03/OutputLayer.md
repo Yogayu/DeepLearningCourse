@@ -6,15 +6,15 @@ kernel_name: python3
 has_widgets: false
 title: 'Design the Output Layer'
 prev_page:
-  url: /03/Matrix
-  title: 'Efficient Matrix'
+  url: /03/ApplyMatrix
+  title: 'Apply matrix to neural network computation'
 next_page:
   url: /04/Intro
-  title: '4. Training Neural Networks'
+  title: 'Training Neural Networks'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## Design the output layer
+# Design the Output Layer
 
 Applying the same signal calculation flow between input layer and hidden layer, we can calculate signal between hidden layer and output layer.
 

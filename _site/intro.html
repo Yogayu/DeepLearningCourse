@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Home</title>
-  <meta name="description" content="Deep Learning course for humanists">
+  <meta name="description" content="An online deep learning course for humanists (WIP)">
 
   <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///intro.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Home" />
-<meta property="og:description" content="Deep Learning course for humanists" />
+<meta property="og:description" content="An online deep learning course for humanists (WIP)" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "Home",
   "datePublished":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "dateModified":
-    "2019-07-22T00:26:20+08:00",
+    "2019-07-22T16:17:32+08:00",
   "description":
-    "Deep Learning course for humanists",
+    "An online deep learning course for humanists (WIP)",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -927,6 +927,41 @@ initFunction(initQuery);
               </li>
               
             
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/03/ForwardPropagation.html"
+        >
+          
+            4.
+          
+          Forward Propagation
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
               
               
 
@@ -935,7 +970,7 @@ initFunction(initQuery);
                   href="/03/ForwardPropagation.html"
                 >
                   
-                    3.3
+                    4.1
                   
                   How the single pass through the network—Forward Propagation
                 </a>
@@ -954,9 +989,28 @@ initFunction(initQuery);
                   href="/03/Matrix.html"
                 >
                   
-                    3.4
+                    4.2
                   
-                  Efficient Matrix
+                  Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/03/ApplyMatrix.html"
+                >
+                  
+                    4.3
+                  
+                  Apply matrix to neural network computation
                 </a>
 
                 
@@ -973,7 +1027,7 @@ initFunction(initQuery);
                   href="/03/OutputLayer.html"
                 >
                   
-                    3.5
+                    4.4
                   
                   Design the Output Layer
                 </a>
@@ -1003,7 +1057,7 @@ initFunction(initQuery);
           href="/04/Intro.html"
         >
           
-            4.
+            5.
           
           Training Neural Networks
         </a>
@@ -1027,7 +1081,7 @@ initFunction(initQuery);
                   href="/04/LossFunction.html"
                 >
                   
-                    4.1
+                    5.1
                   
                   How well does the neural network predict?—Loss Function
                 </a>
@@ -1046,9 +1100,9 @@ initFunction(initQuery);
                   href="/04/GradientDescent.html"
                 >
                   
-                    4.2
+                    5.2
                   
-                  Learning to minimize error—Gradient Descent Algorithm
+                  Learning to minimize error—Gradient Descent Method
                 </a>
 
                 
@@ -1084,27 +1138,36 @@ initFunction(initQuery);
   <li><a href="#chapter-1-introduction">Chapter 1 Introduction</a></li>
   <li><a href="#chapter-2-perceptron">Chapter 2 Perceptron</a>
     <ul>
-      <li><a href="#perceptron-a-single-layer-neural-network">Perceptron: a single layer neural network</a></li>
-      <li><a href="#example-iris-classification">Example: Iris Classification</a></li>
+      <li><a href="#perceptron-foundation-block-of-neural-network">Perceptron: foundation block of Neural Network</a></li>
+      <li><a href="#iris-classification-example">Iris Classification Example</a></li>
     </ul>
   </li>
   <li><a href="#chapter-3-multilayer-perceptron-deep-feedforward-networks">Chapter 3 Multilayer Perceptron (deep feedforward networks)</a>
     <ul>
-      <li><a href="#31-multilayer-perceptron">3.1 Multilayer perceptron</a></li>
-      <li><a href="#32-forward-propagation">3.2 Forward Propagation</a></li>
-      <li><a href="#33-why-we-use-none-linearities-activation-function">3.3 Why we use None-linearities activation function?</a></li>
+      <li><a href="#the-architecture-of-multilayer-perceptron">The architecture of Multilayer perceptron</a></li>
+      <li><a href="#activation-function">Activation function</a></li>
+      <li><a href="#design-output-layer">Design Output Layer</a></li>
     </ul>
   </li>
-  <li><a href="#chapter-4-learning-training-neural-networks">Chapter 4 Learning: Training Neural Networks</a>
+  <li><a href="#chapter-4-forward-propagation">Chapter 4 Forward Propagation</a>
     <ul>
-      <li><a href="#41-loss-function">4.1 Loss function</a></li>
-      <li><a href="#42-loss-optimization">4.2 Loss Optimization</a></li>
-      <li><a href="#43-back-propagation">4.3 Back Propagation</a></li>
-      <li><a href="#44-optimization">4.4 Optimization</a></li>
+      <li><a href="#forward-process">Forward Process</a></li>
+      <li><a href="#matrixs">Matrixs</a></li>
+      <li><a href="#apply-matrix-to-neural-network-computation">Apply Matrix to Neural Network computation</a></li>
+      <li><a href="#design-the-output-layer">Design the Output Layer</a></li>
+      <li><a href="#why-we-use-none-linearities-activation-function">Why we use None-linearities activation function?</a></li>
+    </ul>
+  </li>
+  <li><a href="#chapter-5-learning-training-neural-networks">Chapter 5 Learning: Training Neural Networks</a>
+    <ul>
+      <li><a href="#loss-function">Loss function</a></li>
+      <li><a href="#learning-to-minimize-error-gradient-descent-method">Learning to minimize error: Gradient Descent method</a></li>
+      <li><a href="#back-propagation">Back Propagation</a></li>
+      <li><a href="#optimization">Optimization</a></li>
     </ul>
   </li>
   <li><a href="#physical-experiment">Physical Experiment</a></li>
-  <li><a href="#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 5 Make your own neural network to classify handwritten digitals</a></li>
+  <li><a href="#chapter-6-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 6 Make your own neural network to classify handwritten digitals</a></li>
   <li><a href="#other-projects">Other Projects</a>
     <ul>
       <li><a href="#classify-hand-gesture-pose-in-art">Classify Hand Gesture Pose in Art</a></li>
@@ -1138,9 +1201,9 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="deep-learning-course-for-humanists">Deep Learning course for humanists</h1>
+              <h1 id="an-online-deep-learning-course-for-humanists-wip">An online deep learning course for humanists (WIP)</h1>
 
-<p><img src="media/logo.png" alt="log" /></p>
+<p><img src="../media/logo.png" alt="log" /></p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -1149,33 +1212,48 @@ initFunction(initQuery);
 <ul>
   <li><a href="#read-online">Read Online</a></li>
   <li><a href="#project-description">Project Description</a></li>
+  <li><a href="#an-online-deep-learning-course-for-humanists-wip">An online deep learning course for humanists (WIP)</a>
+    <ul>
+      <li><a href="#read-online">Read Online</a></li>
+      <li><a href="#project-description">Project Description</a></li>
+    </ul>
+  </li>
   <li><a href="#course-outline">Course Outline</a>
     <ul>
       <li><a href="#chapter-0-background-knowledge">Chapter 0 Background Knowledge</a></li>
       <li><a href="#chapter-1-introduction">Chapter 1 Introduction</a></li>
       <li><a href="#chapter-2-perceptron">Chapter 2 Perceptron</a>
         <ul>
-          <li><a href="#perceptron-a-single-layer-neural-network">Perceptron: a single layer neural network</a></li>
-          <li><a href="#example-iris-classification">Example: Iris Classification</a></li>
+          <li><a href="#perceptron-foundation-block-of-neural-network">Perceptron: foundation block of Neural Network</a></li>
+          <li><a href="#iris-classification-example">Iris Classification Example</a></li>
         </ul>
       </li>
       <li><a href="#chapter-3-multilayer-perceptron-deep-feedforward-networks">Chapter 3 Multilayer Perceptron (deep feedforward networks)</a>
         <ul>
-          <li><a href="#31-multilayer-perceptron">3.1 Multilayer perceptron</a></li>
-          <li><a href="#32-forward-propagation">3.2 Forward Propagation</a></li>
-          <li><a href="#33-why-we-use-none-linearities-activation-function">3.3 Why we use None-linearities activation function?</a></li>
+          <li><a href="#the-architecture-of-multilayer-perceptron">The architecture of Multilayer perceptron</a></li>
+          <li><a href="#activation-function">Activation function</a></li>
+          <li><a href="#design-output-layer">Design Output Layer</a></li>
         </ul>
       </li>
-      <li><a href="#chapter-4-learning-training-neural-networks">Chapter 4 Learning: Training Neural Networks</a>
+      <li><a href="#chapter-4-forward-propagation">Chapter 4 Forward Propagation</a>
         <ul>
-          <li><a href="#41-loss-function">4.1 Loss function</a></li>
-          <li><a href="#42-loss-optimization">4.2 Loss Optimization</a></li>
-          <li><a href="#43-back-propagation">4.3 Back Propagation</a></li>
-          <li><a href="#44-optimization">4.4 Optimization</a></li>
+          <li><a href="#forward-process">Forward Process</a></li>
+          <li><a href="#matrixs">Matrixs</a></li>
+          <li><a href="#apply-matrix-to-neural-network-computation">Apply Matrix to Neural Network computation</a></li>
+          <li><a href="#design-the-output-layer">Design the Output Layer</a></li>
+          <li><a href="#why-we-use-none-linearities-activation-function">Why we use None-linearities activation function?</a></li>
+        </ul>
+      </li>
+      <li><a href="#chapter-5-learning-training-neural-networks">Chapter 5 Learning: Training Neural Networks</a>
+        <ul>
+          <li><a href="#loss-function">Loss function</a></li>
+          <li><a href="#learning-to-minimize-error-gradient-descent-method">Learning to minimize error: Gradient Descent method</a></li>
+          <li><a href="#back-propagation">Back Propagation</a></li>
+          <li><a href="#optimization">Optimization</a></li>
         </ul>
       </li>
       <li><a href="#physical-experiment">Physical Experiment</a></li>
-      <li><a href="#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 5 Make your own neural network to classify handwritten digitals</a></li>
+      <li><a href="#chapter-6-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 6 Make your own neural network to classify handwritten digitals</a></li>
       <li><a href="#other-projects">Other Projects</a>
         <ul>
           <li><a href="#classify-hand-gesture-pose-in-art">Classify Hand Gesture Pose in Art</a></li>
@@ -1225,119 +1303,141 @@ initFunction(initQuery);
 <h2 id="chapter-1-introduction">Chapter 1 Introduction</h2>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What is deep learning?
-    <ol class="task-list">
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Relationship: AI-&gt; machine learning -&gt; deep learning</li>
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What can deep learning do?</li>
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /><a href="https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup">Environment Setup</a>
-   Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.</li>
-    </ol>
-  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What is artificial intelligence, machine learning, deep learning and their relationship?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Environment Setup
+    Anaconda, TensorFlow and Jupyter Lab.</li>
 </ul>
 
 <h2 id="chapter-2-perceptron">Chapter 2 Perceptron</h2>
 
-<h3 id="perceptron-a-single-layer-neural-network">Perceptron: a single layer neural network</h3>
+<h3 id="perceptron-foundation-block-of-neural-network">Perceptron: foundation block of Neural Network</h3>
 
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />How do we learn? (Biological neuron model)</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />How can machine learn? (Artificial neural-&gt;Perceptron)</li>
 </ul>
 
-<h3 id="example-iris-classification">Example: Iris Classification</h3>
+<h3 id="iris-classification-example">Iris Classification Example</h3>
+
 <ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Question and Dataset</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Linear Classifier</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement a perceptron</li>
 </ul>
 
 <h2 id="chapter-3-multilayer-perceptron-deep-feedforward-networks">Chapter 3 Multilayer Perceptron (deep feedforward networks)</h2>
 
-<h3 id="31-multilayer-perceptron">3.1 Multilayer perceptron</h3>
+<h3 id="the-architecture-of-multilayer-perceptron">The architecture of Multilayer perceptron</h3>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />The architecture
+<ul>
+  <li>Nodes</li>
+  <li>Input/Output</li>
+  <li>Layer
     <ul>
-      <li>Nodes</li>
-      <li>Input/Output</li>
-      <li>Layer
-        <ul>
-          <li>Input Layer</li>
-          <li>Output Layer</li>
-          <li>Hidden Layer: Why we call it hidden layer</li>
-        </ul>
-      </li>
-      <li>Connection
-        <ul>
-          <li>Fully connected</li>
-        </ul>
-      </li>
-      <li>Weights</li>
+      <li>Input Layer</li>
+      <li>Output Layer</li>
+      <li>Hidden Layer: Why we call it hidden layer</li>
     </ul>
   </li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Activation function
+  <li>Connection
     <ul>
-      <li>What is Activation function</li>
-      <li>The common active function</li>
+      <li>Fully connected</li>
+    </ul>
+  </li>
+  <li>Weights</li>
+</ul>
+
+<h3 id="activation-function">Activation function</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What is Activation function?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />The common active function</li>
+</ul>
+
+<h3 id="design-output-layer">Design Output Layer</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Regression and classification</li>
+</ul>
+
+<h2 id="chapter-4-forward-propagation">Chapter 4 Forward Propagation</h2>
+
+<h3 id="forward-process">Forward Process</h3>
+
+<h3 id="matrixs">Matrixs</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What is Matrix</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Multiplying Matrixs</li>
+</ul>
+
+<h3 id="apply-matrix-to-neural-network-computation">Apply Matrix to Neural Network computation</h3>
+<p>[x] Apply Matrix to Neural Network computation</p>
+
+<h3 id="design-the-output-layer">Design the Output Layer</h3>
+<p>[x] Design the Output Layer</p>
+<h3 id="why-we-use-none-linearities-activation-function">Why we use None-linearities activation function?</h3>
+
+<h2 id="chapter-5-learning-training-neural-networks">Chapter 5 Learning: Training Neural Networks</h2>
+
+<h3 id="loss-function">Loss function</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />How well does the neural network predict: Loss Function
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Example</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Loss function: Mean Squared Error</li>
+      <li class="task-list-item">
+        <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Why we use squared error instead of raw error?</p>
+
+        <p>The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.</p>
+      </li>
     </ul>
   </li>
 </ul>
 
-<h3 id="32-forward-propagation">3.2 Forward Propagation</h3>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Forward Process</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Math: Multiplying Matrixs</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Apply matrix to neural network computation</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Design the output layer</li>
-</ul>
-
-<p>Make animation videos(gifs).</p>
-
-<h3 id="33-why-we-use-none-linearities-activation-function">3.3 Why we use None-linearities activation function?</h3>
-
-<h2 id="chapter-4-learning-training-neural-networks">Chapter 4 Learning: Training Neural Networks</h2>
-
-<h3 id="41-loss-function">4.1 Loss function</h3>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Error loss function
-  The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.</li>
-</ul>
-
-<h3 id="42-loss-optimization">4.2 Loss Optimization</h3>
+<h3 id="learning-to-minimize-error-gradient-descent-method">Learning to minimize error: Gradient Descent method</h3>
 
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Gradient Descent
-    <ul>
-      <li>Greedy algorithm</li>
-      <li>Like Hiking Down a Mountain
-  Make an animation video</li>
-      <li>Local minimum</li>
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Minimize error</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />What is Gradient Descent?
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Greedy algorithm</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Like Hiking Down a Mountain</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Simple Example</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Local minimum</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
 
-<h3 id="43-back-propagation">4.3 Back Propagation</h3>
+<h3 id="back-propagation">Back Propagation</h3>
 
 <ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chain Rule</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Back Propagation</li>
 </ul>
 
-<h3 id="44-optimization">4.4 Optimization</h3>
+<p>The error is propagated backwards to the other layers.</p>
+
+<h3 id="optimization">Optimization</h3>
 
 <ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mini-Batch</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Early stop</li>
 </ul>
 
 <h2 id="physical-experiment">Physical Experiment</h2>
 
 <ul>
-  <li>Every student acted as a Neuron</li>
+  <li>Each student acted as a Neuron</li>
   <li>Mock Forward Propagation</li>
   <li>Mock Backward Propagation</li>
 </ul>
 
-<h2 id="chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 5 Make your own neural network to classify handwritten digitals</h2>
+<h2 id="chapter-6-make-your-own-neural-network-to-classify-handwritten-digitals">Chapter 6 Make your own neural network to classify handwritten digitals</h2>
 
 <p>In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.</p>
 

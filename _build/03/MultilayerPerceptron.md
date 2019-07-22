@@ -4,7 +4,7 @@ redirect_from:
 interact_link: content/03/MultilayerPerceptron.ipynb
 kernel_name: python3
 has_widgets: false
-title: '3. Multilayer Perceptron'
+title: 'Multilayer Perceptron'
 prev_page:
   url: /02/Iris
   title: 'Iris Classification'

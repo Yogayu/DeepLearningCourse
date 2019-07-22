@@ -4,7 +4,7 @@ redirect_from:
 interact_link: content/04/GradientDescent.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'Learning to minimize error—Gradient Descent Algorithm'
+title: 'Learning to minimize error—Gradient Descent Method'
 prev_page:
   url: /04/LossFunction
   title: 'How well does the neural network predict?—Loss Function'
@@ -14,11 +14,11 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-# Learning to minimize error: gradient descent
+# Learning to minimize error: Gradient Descent Method
 
 ## Minimize error
 
-The error is a function of the network weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.
+The error is a function of the network's weights and biases. We call it loss function which  we introduced last section. The goal of neural network is adjust the weight to minimize the output of loss function.
 
 ![](img/GA0.png)
 
@@ -26,11 +26,16 @@ In last section, we have introduced MAE loss function:
 
 $$L(w, b) = \frac{1}{n}\sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )^2$$
 
+Here, we can calculate $y_i$ with input, weights and biases.
+
 $$y_i = \sigma (w_ix_i+b_i)$$
+
+If I substitute y into this equation:
+
 
 $$L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2$$
 
-[......]
+So it's clear that The error is a function of the network's weights and biases.
 
 ## What is Gradient Descent?
 

@@ -7,10 +7,10 @@ has_widgets: false
 title: 'How well does the neural network predict?—Loss Function'
 prev_page:
   url: /04/Intro
-  title: '4. Training Neural Networks'
+  title: 'Training Neural Networks'
 next_page:
   url: /04/GradientDescent
-  title: 'Learning to minimize error—Gradient Descent Algorithm'
+  title: 'Learning to minimize error—Gradient Descent Method'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

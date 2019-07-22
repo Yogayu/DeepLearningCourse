@@ -5,7 +5,7 @@ prev_page:
   title: 'Introduction'
 next_page:
   url: /02/Intro
-  title: '2. Perceptron'
+  title: 'Perceptron'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Environment Setup

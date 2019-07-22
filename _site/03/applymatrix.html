@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Iris Classification</title>
-  <meta name="description" content="Iris Classification">
+  <title>Apply matrix to neural network computation</title>
+  <meta name="description" content="Apply matrix to neural network computation">
 
-  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///02/Iris.html">
+  <link rel="canonical" href="https://yogayu.github.io/DeepLearningCourse///03/ApplyMatrix.html">
   <link rel="alternate" type="application/rss+xml" title="Deep Learning course for humanists" href="https://yogayu.github.io/DeepLearningCourse///feed.xml">
 
-  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///02/Iris.html" />
+  <meta property="og:url"         content="https://yogayu.github.io/DeepLearningCourse///03/ApplyMatrix.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Iris Classification" />
-<meta property="og:description" content="Iris Classification" />
+<meta property="og:title"       content="Apply matrix to neural network computation" />
+<meta property="og:description" content="Apply matrix to neural network computation" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://yogayu.github.io/DeepLearningCourse///02/Iris.html",
+    "https://yogayu.github.io/DeepLearningCourse///03/ApplyMatrix.html",
   "headline":
-    "Iris Classification",
+    "Apply matrix to neural network computation",
   "datePublished":
     "2019-07-22T16:17:32+08:00",
   "dateModified":
     "2019-07-22T16:17:32+08:00",
   "description":
-    "Iris Classification",
+    "Apply matrix to neural network computation",
   "author": {
     "@type": "Person",
     "name": "Xinyu You"
@@ -839,7 +839,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/02/Iris.html"
                 >
                   
@@ -960,7 +960,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1004,7 +1004,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/ApplyMatrix.html"
                 >
                   
@@ -1132,15 +1132,7 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#question">Question</a></li>
-  <li><a href="#data-set">Data Set</a></li>
-  <li><a href="#classification">Classification</a>
-    <ul>
-      <li><a href="#linear-classifier">Linear Classifier</a></li>
-    </ul>
-  </li>
-  <li><a href="#implement-a-perceptron">Implement a perceptron</a></li>
-  <li><a href="#reference">Reference</a></li>
+  <li><a href="#apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</a></li>
 </ul>
     </nav>
   </aside>
@@ -1164,7 +1156,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/content/02/Iris.ipynb" download>
+<a href="/content/03/ApplyMatrix.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1177,301 +1169,85 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F02%2FIris.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/yogayu/DeepLearningCourse/master?filepath=content%2F03%2FApplyMatrix.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
 
 
             <div class="c-textbook__content">
-              <h1 id="iris-classification">Iris Classification</h1>
+              <h2 id="apply-matrix-to-neural-network-computation">Apply matrix to neural network computation</h2>
 
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># dataset</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="c"># plot</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s">"darkgrid"</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="c"># data manipulation</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="c"># To display image in the jupyter notebook cell</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<p>Now that you understand the basics, let’s see how we can apply matrix  to neural network computation.</p>
+
+<p>Let’s using the variables in our neural networks.</p>
+
+<p>Before, the calculation formula we use is as follows:</p>
+
+<script type="math/tex; mode=display">a_1 = w_{1,1}x_1+w_{2,1}x_2 + b_1</script>
+
+<script type="math/tex; mode=display">a_2 = w_{1,2}x_1+w_{2,2}x_2 + b_2</script>
+
+<script type="math/tex; mode=display">a_3 = w_{1,3}x_1+w_{2,3}x_2 + b_3</script>
+
+<p>Now, we use matrix to represent:</p>
+
+<p><img src="img/x.png" alt="x" /></p>
+
+<p><img src="img/w.png" alt="x" /></p>
+
+<p><img src="img/b.png" alt="x" /></p>
+
+<p>W is the matrix of weights, X is the matrix of inputs, B is the bias.</p>
+
+<p>The formula for calculating the input of the hidden layer is as follows</p>
+
+<script type="math/tex; mode=display">A = XW + B</script>
+
+<p><img src="img/xw.png" alt="xw.png" /></p>
+
+<p><img src="img/xw+b.png" alt="xw+b.png" /></p>
+
+<p>We use a simple matrix operation expression $A = XW + B$ to calculate the input of the hidden layer node. Even if we add more nodes, the formula will be the same. It’s pretty neat and powerful.</p>
+
+<p>Let’s use Numpy for hidden layer node calculations.</p>
+
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">])</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">w11</span><span class="p">,</span> <span class="n">w12</span><span class="p">,</span> <span class="n">w13</span><span class="p">],</span> <span class="p">[</span><span class="n">w21</span><span class="p">,</span> <span class="n">w22</span><span class="p">,</span> <span class="n">w23</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b3</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h2 id="question">Question</h2>
-
-<p>In the last section, we learn about perceptron. How to use it to classify data? To answer this question, let’s look at an example first: there is a data set which consists of two species of Iris. Our questions are:</p>
-
-<ul>
-  <li>How to classify those two species?</li>
-  <li>When given a new Iris, how to predict which Iris category it belongs to?</li>
-</ul>
-
-<h2 id="data-set">Data Set</h2>
-
-<p>The data set we will use is modified from the Iris dataset which can be found on the <a href="https://archive.ics.uci.edu/ml/datasets/Iris/">UCI Machine Learning Repository</a>. It consists of 50 samples from each of <strong>two species</strong> of Iris (Iris setosa, Iris virginica). <strong>Two features</strong> were measured from each sample: the length of the sepals and petals, in centimeters.</p>
-
-<p>Let’s get a close look at the dataset.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># read csv file</span>
-<span class="n">iris_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"iris_data.csv"</span><span class="p">)</span>
-<span class="c"># show the first 5 lines</span>
-<span class="n">iris_dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="output output_html">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1.    1.34  1.188]
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>petal length (cm)</th>
-      <th>target_class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>1.4</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>1.4</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>1.3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>1.5</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>1.4</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-<p>The columns in this dataset are:</p>
-<ul>
-  <li>sepal length in cm</li>
-  <li>petal length in cm</li>
-  <li>Species
-    <ul>
-      <li>target_class 1: setosa</li>
-      <li>target_class -1: versicolor</li>
-    </ul>
-  </li>
-</ul>
-
-<p><img src="./img/iris.png" alt="" /></p>
-
-<p><em>Image source</em> <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_versicolor_3.jpg">1</a> <a href="http://www.twofrog.com/images/iris38a.jpg">2</a></p>
-
-<h2 id="classification">Classification</h2>
-
-<p>The following graph showing the measured sepal length and sepal length of Iris.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="s">"sepal length (cm)"</span><span class="p">,</span> <span class="s">"petal length (cm)"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">iris_dataset</span><span class="p">,</span><span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"target_class"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;seaborn.axisgrid.FacetGrid at 0x1a17eac940&gt;
+<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Z</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_10_1.png" alt="png" /></p>
+<div class="output output_stream highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.73105858 0.79248994 0.76638318]
 
-<p>I believe you can classify those two species category immediately with your eye. Do you remember our question: identify which category a new Iris belongs to?
-Suppose the new Iris’ sepal length is 5.5 cm and petal length is 3.2. We draw this new Iris point to the plot.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_iris_dataset</span> <span class="o">=</span> <span class="n">iris_dataset</span><span class="o">.</span><span class="n">append</span><span class="p">([{</span><span class="s">"sepal length (cm)"</span><span class="p">:</span><span class="mf">5.5</span><span class="p">,</span> <span class="s">"petal length (cm)"</span><span class="p">:</span><span class="mf">3.2</span><span class="p">,</span><span class="s">"target_class"</span><span class="p">:</span><span class="s">"unknown"</span><span class="p">}])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="s">"sepal length (cm)"</span><span class="p">,</span> <span class="s">"petal length (cm)"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">new_iris_dataset</span><span class="p">,</span><span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"target_class"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;seaborn.axisgrid.FacetGrid at 0x1a17b3d358&gt;
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_12_1.png" alt="png" /></p>
-
-<p>The unknown dot is the new Iris. Obviously, it belongs to versicolor specie (target_clss=-1).</p>
-
-<h3 id="linear-classifier">Linear Classifier</h3>
-
-<p>This task is easy for us. We can classify them by our eyes. However, the computer doesn’t have eyes. How can they split those two groups?</p>
-
-<p>You may have noticed that this is a two-dimensional plane, and if want to separate the two classes, we can put a line between them. It looks like the following plot.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="s">"sepal length (cm)"</span><span class="p">,</span> <span class="s">"petal length (cm)"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">iris_dataset</span><span class="p">,</span><span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"target_class"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'-r'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1a17f214a8&gt;]
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_16_1.png" alt="png" /></p>
-
-<p>All the points above the line are setosa category(-1), and all the points below the line are versicolor category(1). When a new Iris comes, a computer can predict which category it falls into by deciding whether it is above or below the line.</p>
-
-<p>Therefore, <strong>if we can teach the computer to find such a kind of line, we can solve our problem!</strong> Let’s do it.</p>
-
-<p>A line in a two-dimensional plane can be represented as follows:</p>
-
-<script type="math/tex; mode=display">ax + by + c = 0</script>
-
-<p>Let:</p>
-
-<p><script type="math/tex">w_0 = c</script>
-<script type="math/tex">w_1 = a</script>
-<script type="math/tex">w_2 = b</script></p>
-
-<p>Then it becomes:</p>
-
-<script type="math/tex; mode=display">w_1x + w_2y + w_0 = 0</script>
-
-<p>Therefore, in mathematics form, all points above the line are:</p>
-
-<script type="math/tex; mode=display">w_1*x + w_2*y + w_0 > 0</script>
-
-<p>And all points below and on the line are:</p>
-
-<script type="math/tex; mode=display">w_1*x + w_2*y + w_0 \leq 0</script>
-
-<p>Actually, this is exactly <strong>how a perceptron looks like when n = 2</strong>:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-y=\left\{
-\begin{array}{rcl}
-0       &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n > 0}\\
-1     &      & {w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\leq 0}\\
-\end{array} \right. %]]></script>
-
-<p>let n = 2:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-y=\left\{
-\begin{array}{rcl}
-0       &      & {w_0 + w_1x_1 + w_2x_2 > 0}\\
-1     &      & {w_0 + w_1x_1 + w_2x_2 \leq 0}\\
-\end{array} \right. %]]></script>
-
-<p>Because $f(x,y)$ is a linear function, we call it <strong>a linear classifier</strong>. To find a appropriate linear classifier of Iris, we need to find suitable $w_0,w_1$, and $w_3$.</p>
-
-<h2 id="implement-a-perceptron">Implement a perceptron</h2>
-
-<p>To implement a perceptron, we manually choose suitable $w_0,w_1$, and $w_3$ parameters for it.</p>
-
-<p>Let,
-<script type="math/tex">w_0 = 2
-w_1 = 0.1
-w_2 = -1</script></p>
-
-<p>Then the line is:
-<script type="math/tex">2 + 0.1x_1 - x_2 = 0</script></p>
-
-<p>The perceptron act like this:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-y=\left\{
-\begin{array}{rcl}
-0       &      & {2 + 0.1x_1 - x_2 > 0}\\
-1     &      & {2 + 0.1x_1 - x_2 \leq 0}\\
-\end{array} \right. %]]></script>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
-
-<span class="n">w_0</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">w_1</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">w_2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">x_2</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="s">"sepal length (cm)"</span><span class="p">,</span> <span class="s">"petal length (cm)"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">iris_dataset</span><span class="p">,</span><span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s">"target_class"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2</span><span class="p">,</span> <span class="s">'-r'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[&lt;matplotlib.lines.Line2D at 0x1a180c4400&gt;]
-</code></pre></div></div>
-
-<p class="output output_png"><img src="/Users/youxinyu/Library/Mobile%20Documents/com%7Eapple%7ECloudDocs/Documents/3%20%E9%A1%B9%E7%9B%AE/DeepLearningCourseGSoC/_build/images/02/Iris_21_1.png" alt="png" /></p>
-
-<p>Here, we define a function perceptron which takes $x_1,x_2$ as inputs.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">perceptron</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
-    <span class="n">w0</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">w1</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">w2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-    
-    <span class="n">value</span> <span class="o">=</span> <span class="n">w0</span> <span class="o">+</span> <span class="n">w1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">w2</span><span class="o">*</span><span class="n">x2</span>
-    
-    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-</code></pre></div></div>
-
-<p>Now, let use it to predict the new Iris data with 5.1 sepal length and 1.4 petal length.</p>
-
-<div class="language-python input_area highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">perceptron</span><span class="p">(</span><span class="mf">5.1</span><span class="p">,</span><span class="mf">1.4</span><span class="p">)</span>
-</code></pre></div></div>
-
-<div class="output output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1
-</code></pre></div></div>
-
-<p>The output is right. We build a perceptron!</p>
-
-<p>In this section, we learn about how to use the perceptron to classify Iris data set and implement a simple perceptron.</p>
-
-<p>So far, our perceptron is not smart at all, because we manually choose the parameters of the linear classifier. Later in the course, one of the key things to understand is how to teach them automatically learn the appropriate parameters from the data.</p>
-
-<h2 id="reference">Reference</h2>
-<ul>
-  <li><a href="https://archive.ics.uci.edu/ml/datasets/Iris/">Iris data set</a></li>
-  <li><a href="https://medium.com/jameslearningnote/資料分析-機器學習-第3-2講-線性分類-感知器-perceptron-介紹-84d8b809f866">perceptron introduction</a></li>
-</ul>
+<p>The calculation process looks a lot cleaner than it did before.</p>
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/02/Perceptron">
-      〈 <span class="u-margin-right-tiny"></span> Foundation block of Neural Network...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/Matrix">
+      〈 <span class="u-margin-right-tiny"></span> Matrix
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/MultilayerPerceptron">
-      Multilayer Perceptron <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/03/OutputLayer">
+      Design the Output Layer <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

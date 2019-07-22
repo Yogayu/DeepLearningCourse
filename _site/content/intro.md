@@ -1,6 +1,6 @@
-# Deep Learning course for humanists
+# An online deep learning course for humanists (WIP)
 
-![log](media/logo.png)
+![log](../media/logo.png)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -8,23 +8,32 @@
 
   - [Read Online](#read-online)
   - [Project Description](#project-description)
+- [An online deep learning course for humanists (WIP)](#an-online-deep-learning-course-for-humanists-wip)
+  - [Read Online](#read-online)
+  - [Project Description](#project-description)
 - [Course Outline](#course-outline)
   - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
   - [Chapter 1 Introduction](#chapter-1-introduction)
   - [Chapter 2 Perceptron](#chapter-2-perceptron)
-    - [Perceptron: a single layer neural network](#perceptron-a-single-layer-neural-network)
-    - [Example: Iris Classification](#example-iris-classification)
+    - [Perceptron: foundation block of Neural Network](#perceptron-foundation-block-of-neural-network)
+    - [Iris Classification Example](#iris-classification-example)
   - [Chapter 3 Multilayer Perceptron (deep feedforward networks)](#chapter-3-multilayer-perceptron-deep-feedforward-networks)
-    - [3.1 Multilayer perceptron](#31-multilayer-perceptron)
-    - [3.2 Forward Propagation](#32-forward-propagation)
-    - [3.3 Why we use None-linearities activation function?](#33-why-we-use-none-linearities-activation-function)
-  - [Chapter 4 Learning: Training Neural Networks](#chapter-4-learning-training-neural-networks)
-    - [4.1 Loss function](#41-loss-function)
-    - [4.2 Loss Optimization](#42-loss-optimization)
-    - [4.3 Back Propagation](#43-back-propagation)
-    - [4.4 Optimization](#44-optimization)
+    - [The architecture of Multilayer perceptron](#the-architecture-of-multilayer-perceptron)
+    - [Activation function](#activation-function)
+    - [Design Output Layer](#design-output-layer)
+  - [Chapter 4 Forward Propagation](#chapter-4-forward-propagation)
+    - [Forward Process](#forward-process)
+    - [Matrixs](#matrixs)
+    - [Apply Matrix to Neural Network computation](#apply-matrix-to-neural-network-computation)
+    - [Design the Output Layer](#design-the-output-layer)
+    - [Why we use None-linearities activation function?](#why-we-use-none-linearities-activation-function)
+  - [Chapter 5 Learning: Training Neural Networks](#chapter-5-learning-training-neural-networks)
+    - [Loss function](#loss-function)
+    - [Learning to minimize error: Gradient Descent method](#learning-to-minimize-error-gradient-descent-method)
+    - [Back Propagation](#back-propagation)
+    - [Optimization](#optimization)
   - [Physical Experiment](#physical-experiment)
-  - [Chapter 5 Make your own neural network to classify handwritten digitals](#chapter-5-make-your-own-neural-network-to-classify-handwritten-digitals)
+  - [Chapter 6 Make your own neural network to classify handwritten digitals](#chapter-6-make-your-own-neural-network-to-classify-handwritten-digitals)
   - [Other Projects](#other-projects)
     - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
     - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
@@ -62,82 +71,102 @@ Math
 
 ## Chapter 1 Introduction
 
-- [x]  What is deep learning?
-2. [x] Relationship: AI-> machine learning -> deep learning
-3. [x] What can deep learning do?
-4. [x] [Environment Setup](https://yogayu.github.io/DeepLearningCourse/part0/environment.html#environment-setup)
-		Setup the environment we need in this course, including Anaconda, TensorFlow and Jupyter Lab.
+- [x] What is artificial intelligence, machine learning, deep learning and their relationship?
+- [x] Environment Setup
+      Anaconda, TensorFlow and Jupyter Lab.
 
 ## Chapter 2 Perceptron
 
-### Perceptron: a single layer neural network
+### Perceptron: foundation block of Neural Network
 
 - [x] How do we learn? (Biological neuron model)
 - [x] How can machine learn? (Artificial neural->Perceptron)
 
-### Example: Iris Classification
+### Iris Classification Example
+
+- [x] Question and Dataset
 - [x] Linear Classifier
 - [x] Implement a perceptron
 
 ## Chapter 3 Multilayer Perceptron (deep feedforward networks)
 
-### 3.1 Multilayer perceptron
+### The architecture of Multilayer perceptron
 
-- [x] The architecture
-    - Nodes
-    - Input/Output
-    - Layer
-        - Input Layer
-        - Output Layer
-        - Hidden Layer: Why we call it hidden layer
-    - Connection
-        - Fully connected
-    - Weights
-- [x] Activation function
-    - What is Activation function
-    - The common active function
+- Nodes
+- Input/Output
+- Layer
+    - Input Layer
+    - Output Layer
+    - Hidden Layer: Why we call it hidden layer
+- Connection
+    - Fully connected
+- Weights
 
-### 3.2 Forward Propagation
+### Activation function
 
-- [x] Forward Process
-- [x] Math: Multiplying Matrixs
-- [x] Apply matrix to neural network computation
-- [x] Design the output layer
+- [x] What is Activation function?
+- [x] The common active function
 
-Make animation videos(gifs).
+### Design Output Layer
 
-### 3.3 Why we use None-linearities activation function?
+- [x] Regression and classification
 
-## Chapter 4 Learning: Training Neural Networks
+## Chapter 4 Forward Propagation
 
-### 4.1 Loss function
+### Forward Process
 
-- [x] Error loss function
+### Matrixs
+  - [x] What is Matrix
+  - [x] Multiplying Matrixs
+
+### Apply Matrix to Neural Network computation
+[x] Apply Matrix to Neural Network computation
+
+### Design the Output Layer
+[x] Design the Output Layer
+### Why we use None-linearities activation function?
+
+
+## Chapter 5 Learning: Training Neural Networks
+
+### Loss function
+
+- [x] How well does the neural network predict: Loss Function
+  - [x] Example
+  - [x] Loss function: Mean Squared Error
+  - [x] Why we use squared error instead of raw error?
+
     The empirical loss measures the total loss over the dataset. Loss function is a function of the Weight.
 
-### 4.2 Loss Optimization
+### Learning to minimize error: Gradient Descent method
 
 - [ ] Gradient Descent
-  - Greedy algorithm
-  - Like Hiking Down a Mountain
-      Make an animation video
-  - Local minimum
+  - [x] Minimize error
+  - [x] What is Gradient Descent?
+    - [x] Greedy algorithm
+    - [x] Like Hiking Down a Mountain
+    - [x] Simple Example
+    - [ ] Local minimum
 
-### 4.3 Back Propagation
+### Back Propagation
 
+- [ ] Chain Rule
 - [ ] Back Propagation
 
-### 4.4 Optimization
+The error is propagated backwards to the other layers.
+
+### Optimization
  
+- [ ] Mini-Batch
 - [ ] Early stop
 
 ## Physical Experiment
 
-- Every student acted as a Neuron
+- Each student acted as a Neuron
 - Mock Forward Propagation
 - Mock Backward Propagation
 
-## Chapter 5 Make your own neural network to classify handwritten digitals
+## Chapter 6 Make your own neural network to classify handwritten digitals
 
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 

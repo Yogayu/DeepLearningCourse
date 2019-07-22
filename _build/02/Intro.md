@@ -1,7 +1,7 @@
 ---
 redirect_from:
   - "/02/intro"
-title: '2. Perceptron'
+title: 'Perceptron'
 prev_page:
   url: /01/environment
   title: 'Environment Setup'
