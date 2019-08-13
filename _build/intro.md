@@ -10,7 +10,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 # An online deep learning course for humanists (WIP)
 
-![log](../media/logo.png)
+![log](media/logo.png)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -130,10 +130,13 @@ Math
   - [x] Multiplying Matrixs
 
 ### Apply Matrix to Neural Network computation
+
 [x] Apply Matrix to Neural Network computation
 
 ### Design the Output Layer
+
 [x] Design the Output Layer
+
 ### Why we use None-linearities activation function?
 
 

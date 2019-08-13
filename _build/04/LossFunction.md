@@ -50,15 +50,15 @@ def neural_netwok_predict(x, w):
 ```
 
 
-We define row error as the difference between the actual value $y$ and the target value $t$ .
+We define row error as the difference between the actual value $y$ and the target value $t$.
 
-*row_error = actual_value - target_vlaue*
+*raw_error = actual_value - target_value*
 
 
 
 {:.input_area}
 ```python
-def row_error(y, t):
+def raw_error(y, t):
     return y - t
 ```
 
@@ -170,7 +170,7 @@ Squared error e: 105.0625
 
 ## Loss function: Mean Squared Error
 
-Now we get all the output y and square errors.
+Now we get all the output y and squared errors.
 
 |  x | t | y | e|
 | ---- | ----------------------- | ---------|---------|
@@ -179,13 +179,13 @@ Now we get all the output y and square errors.
 | 2.8    | 6.17                  |  2.24               |15.4449|
 | 7.3    | 16.09                 |  5.84              |105.0625|
 
-By adding up the errors in each data and average them, we get the Mean Square Error(MSE).
+By adding up the errors in each data and average them, we get the Mean Squared Error(MSE).
 
 
 
 {:.input_area}
 ```python
-def mean_square_error(errors):
+def mean_squared_error(errors):
     MAE = 1/len(errors) * sum(errors)
     return MAE
 ```
@@ -196,7 +196,7 @@ def mean_square_error(errors):
 {:.input_area}
 ```python
 errors = [2.8561,  22.8484,  15.4449, 105.0625]
-mean_square_error(errors)
+mean_squared_error(errors)
 ```
 
 
@@ -233,7 +233,7 @@ Suppose we have a set of data.
 | 3    | 0.7                     | 0.85                   |
 | 4    | 0.95                    | 0.8                    |
 
-The first thing that comes to mind is to use row error to measure the performance of neural network.
+The first thing that comes to mind is to use raw error to measure the performance of neural network.
 
 
 $$L = \sum_{i=1}^{n}\left ( y_{i} - t_{i} \right )$$

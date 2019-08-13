@@ -30,12 +30,12 @@ Here, we can calculate $y_i$ with input, weights and biases.
 
 $$y_i = \sigma (w_ix_i+b_i)$$
 
-If I substitute y into this equation:
+If we substitute $y$ into this equation:
 
 
 $$L(w, b) = \frac{1}{n}\sum_{i=1}^{k}\left ( \sigma (w_ix_i+b_i) - t_{i} \right )^2$$
 
-So it's clear that The error is a function of the network's weights and biases.
+It becomes clear that the error is a function of the network's weights and biases.
 
 ## What is Gradient Descent?
 
@@ -49,15 +49,17 @@ You may use the torch to look around the ground beneath your feet. Then you can 
 
 This method in mathematic is called gradient descent. The gradient means the slope of the ground.
 
-What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error!
+What does gradient descent have to do with our neural network? We want to minimize the output error of loss function, hiking down the mountain means minimizing the error.
 
 ### Example
 
-Here we still begin with this simple neural network. 
+Here we still begin with a simple neural network. 
 
 ![](img/0.png)
 
-Say the following graph shows a function where $y$ is the error, we are going to find the $w$ to minimize it.
+The input layer has a input $x$ and the output layer has an output $y$. $t$ is the target value.
+
+Say the following graph shows a function where y-axis is the error, we are going to find the right $w$ to minimize it.
 
 ![](img/gd1.png)
 
@@ -96,3 +98,28 @@ On the whole, we randomly choose a weight and then changed it in a direction opp
 If the slope is negative, we increase the weight. Otherwise, we decrease the weight. So use a minus sign when you update. The step size also varies with each change in the slope. Moreover, the learning rate is a factor to control the intensity of updates. 
 
 Congratulations! You have learned how to update weights to minimize errors which is a big step forward.
+
+## Challenges with Gradient Descent: Local Minima
+
+The resultant loss function doesn't look a nice bowl, with only one minima we can converge to. In fact, such nice santa-like loss functions are called convex functions (functions for which are always curving upwards) , and the loss functions for deep nets are hardly convex.
+
+For a two layers neural network with two parameters. The loss function may looks like:
+
+![](./img/init.png)
+
+If we are lucky we may reach the global minimum from a random initial point.
+
+![](img/gl.gif)
+
+However, we may come across to a local minimum.
+
+![](./img/ll.gif)
+
+One way to solve this problem is run the algorithms multiple times with different initial weights and then choose the the best minimum.
+
+However, it is found that there are not so many local extremums in the dimension optimization problem. The reason is that a local optimal solution is one where each dimension is a local minimum at that point. The probability of this happening is extremely low. Especially in higher dimensions, it doesn't happen. Because one dimension has a local minimum at one point, and the other dimension may be rising or flattening, the local minimum may be small.
+
+## Reference
+
+- Identifying and attacking the saddle point problem in high-dimensional non-convex optimization（https://arxiv.org/pdf/1406.2572v1.pdf）
+- https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-15-tf-gradient-descent/

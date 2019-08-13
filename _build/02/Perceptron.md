@@ -54,6 +54,7 @@ The simple step function we use may look like this:
 {:.input_area}
 ```python
 import matplotlib.pyplot as plt
+%matplotlib inline
 
 plt.xlabel("Input")
 plt.ylabel("Output")
@@ -66,10 +67,9 @@ plt.show()
 
 
 
-{:.output .output_data_text}
-```
-<Figure size 640x480 with 1 Axes>
-```
+{:.output .output_png}
+..images/02/Perceptron_7_0.png)
+
 
 
 The threshold value is 3. When the input less than 3, the output is 0. Once the threshold input is reached, output jumps to 1.
