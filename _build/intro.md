@@ -8,7 +8,7 @@ next_page:
   title: 'Techne Public Site'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# An online deep learning course for humanists (WIP)
+# An online deep learning course for humanists
 
 ![log](media/logo.png)
 
