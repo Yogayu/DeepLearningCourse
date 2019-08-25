@@ -1,4 +1,4 @@
-# An online deep learning course for humanists (WIP)
+# An online deep learning course for humanists
 
 ![log](media/logo.png)
 
@@ -48,7 +48,7 @@
 
 This book is powered by Jekyll Book. So you can read it online: 
 - [Github Jekyll Book](https://yogayu.github.io/DeepLearningCourse/)
-- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
+<!-- - [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home) -->
 
 ## Project Description
 
@@ -57,6 +57,17 @@ This is my [Google Summer of Code 2019](https://summerofcode.withgoogle.com/proj
 The Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain basic deep learning theory and labs case studies from multimodal communication. 
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
+
+## Slides
+All the course slide can be found at this [directory](https://github.com/Yogayu/DeepLearningCourse/tree/master/Slides).
+
+- Lesson1-Introduction
+- Lesson2-PerceptronAndStructure
+- Lesson3-TrainingAndGradientDescent
+- Lesson4-Backpropagation
+- Lesson5-CNNs
+- Lesson6-RNNs
+- Lesson7-Neural Network Zoo
 
 # Course Outline
 ## Chapter 0 Background Knowledge
@@ -149,25 +160,14 @@ Math
     - [x] Greedy algorithm
     - [x] Like Hiking Down a Mountain
     - [x] Simple Example
-    - [ ] Local minimum
+    - [x] Local minimum
 
 ### Back Propagation
-
-- [ ] Chain Rule
-- [ ] Back Propagation
+- [x] Compute Graph
+- [x] Chain Rule
+- [x] Back Propagation
 
 The error is propagated backwards to the other layers.
-
-### Optimization
- 
-- [ ] Mini-Batch
-- [ ] Early stop
-
-## Physical Experiment
-
-- Each student acted as a Neuron
-- Mock Forward Propagation
-- Mock Backward Propagation
 
 ## Chapter 6 Make your own neural network to classify handwritten digitals
 

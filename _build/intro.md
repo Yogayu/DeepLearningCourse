@@ -68,6 +68,18 @@ The Project goal is to design and develops an online course, to teach deep learn
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
+
+## Slides
+All the course slide can be found at this [directory](https://github.com/Yogayu/DeepLearningCourse/tree/master/Slides).
+
+- Lesson1-Introduction
+- Lesson2-PerceptronAndStructure
+- Lesson3-TrainingAndGradientDescent
+- Lesson4-Backpropagation
+- Lesson5-CNNs
+- Lesson6-RNNs
+- Lesson7-Neural Network Zoo
+
 # Course Outline
 ## Chapter 0 Background Knowledge
 
