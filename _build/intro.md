@@ -165,25 +165,21 @@ Math
 
 ### Learning to minimize error: Gradient Descent method
 
-- [ ] Gradient Descent
+- [x] Gradient Descent
   - [x] Minimize error
   - [x] What is Gradient Descent?
     - [x] Greedy algorithm
     - [x] Like Hiking Down a Mountain
     - [x] Simple Example
-    - [ ] Local minimum
+    - [x] Local minimum
 
 ### Back Propagation
-
-- [ ] Chain Rule
-- [ ] Back Propagation
+- [x] Compute Graph
+- [x] Chain Rule
+- [x] Back Propagation
 
 The error is propagated backwards to the other layers.
 
-### Optimization
- 
-- [ ] Mini-Batch
-- [ ] Early stop
 
 ## Physical Experiment
 
@@ -196,33 +192,6 @@ The error is propagated backwards to the other layers.
 In this chapter, the student will learn how to teach the computer to classify handwritten digits by using MNIST dataset in Python.
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
-
-
-TBD
-
-## Other Projects
-
-TBD
-
-### Classify Hand Gesture Pose in Art
-
-In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.
-
-**Dataset:**  we will use Rijksmuseum dataset, the [Fototeca Zeri data](<http://data.fondazionezeri.unibo.it/query/>) or the [Bibliotheca Hertziana dataset]([http://foto.biblhertz.it](http://foto.biblhertz.it/)).
-
-### Audio Recognition of Simple words
-
-In this part, the student will learn how to build a basic speech recognition network that recognizes ten different words:  "yes", "no", "up", "down", "left", "right", "on", "off", "stop", or "go". Real speech and audio recognition systems is much more complex than classify handwritten digits. 
-
-**Dataset**: we will use the [Speech Commands dataset](https://storage.cloud.google.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), which consists of over 105,000 WAVE audio files of people saying thirty different words. This data was collected by Google and released under a CC-BY license.
-
-### Exploring Sentiment in Literature
-
-In this part, the student will learn how to build use Convolutional Neural Network and Recurrent Neural Network to train a [models](https://github.com/awjuliani/DNN-Sentiment), which will let us exploring Sentiment in Literature.
-
-**Dataset**: we will choose three books (one positive book, one negative book, and one normal book) form [**Project Gutenberg**](http://www.gutenberg.org). Project Gutenberg offers over 58,000 free eBooks. 
-
-
 
 ## About Me
 
