@@ -149,12 +149,12 @@ Math
     - [x] Greedy algorithm
     - [x] Like Hiking Down a Mountain
     - [x] Simple Example
-    - [ ] Local minimum
+    - [x] Local minimum
 
 ### Back Propagation
-
-- [ ] Chain Rule
-- [ ] Back Propagation
+- [x] Compute Graph
+- [x] Chain Rule
+- [x] Back Propagation
 
 The error is propagated backwards to the other layers.
 
@@ -176,17 +176,13 @@ In this chapter, the student will learn how to teach the computer to classify ha
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
 
 
-TBD
-
 ## Other Projects
-
-TBD
 
 ### Classify Hand Gesture Pose in Art
 
 In this part, the student will learn how to classify Hand Gesture Pose in Art using Tensorflow.
 
-**Dataset:**  we will use Rijksmuseum dataset, the [Fototeca Zeri data](<http://data.fondazionezeri.unibo.it/query/>) or the [Bibliotheca Hertziana dataset]([http://foto.biblhertz.it](http://foto.biblhertz.it/)).
+**Dataset:**  we will use Rijksmuseum dataset, the [Fototeca Zeri data](http://data.fondazionezeri.unibo.it/query/) or the [Bibliotheca Hertziana dataset]( [http://foto.biblhertz.it](http://foto.biblhertz.it/) ).
 
 ### Audio Recognition of Simple words
 
