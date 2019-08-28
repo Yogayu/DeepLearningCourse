@@ -8,9 +8,27 @@
 
   - [Read Online](#read-online)
   - [Project Description](#project-description)
-- [An online deep learning course for humanists (WIP)](#an-online-deep-learning-course-for-humanists-wip)
-  - [Read Online](#read-online)
-  - [Project Description](#project-description)
+  - [Slides](#slides)
+    - [Lesson1-Introduction](#lesson1-introduction)
+      - [Keynote](#keynote)
+      - [Keynote Content](#keynote-content)
+    - [Lesson2-perceptron & Multilayer perceptron](#lesson2-perceptron--multilayer-perceptron)
+      - [Keynote](#keynote-1)
+      - [Keynote Content](#keynote-content-1)
+    - [Lesson3-Training Neural Networks](#lesson3-training-neural-networks)
+      - [Keynote](#keynote-2)
+      - [Content](#content)
+    - [Lesson4-Backpropagation](#lesson4-backpropagation)
+      - [Keynote](#keynote-3)
+      - [Content](#content-1)
+    - [Lesson5-CNNs](#lesson5-cnns)
+      - [Keynote](#keynote-4)
+      - [Content](#content-2)
+    - [Lesson6-RNNs](#lesson6-rnns)
+      - [keynote](#keynote)
+      - [content](#content)
+    - [Lesson7-Neural Network Zoo](#lesson7-neural-network-zoo)
+      - [keynote](#keynote-1)
 - [Course Outline](#course-outline)
   - [Chapter 0 Background Knowledge](#chapter-0-background-knowledge)
   - [Chapter 1 Introduction](#chapter-1-introduction)
@@ -31,15 +49,12 @@
     - [Loss function](#loss-function)
     - [Learning to minimize error: Gradient Descent method](#learning-to-minimize-error-gradient-descent-method)
     - [Back Propagation](#back-propagation)
-    - [Optimization](#optimization)
   - [Physical Experiment](#physical-experiment)
   - [Chapter 6 Make your own neural network to classify handwritten digitals](#chapter-6-make-your-own-neural-network-to-classify-handwritten-digitals)
-  - [Other Projects](#other-projects)
-    - [Classify Hand Gesture Pose in Art](#classify-hand-gesture-pose-in-art)
-    - [Audio Recognition of Simple words](#audio-recognition-of-simple-words)
-    - [Exploring Sentiment in Literature](#exploring-sentiment-in-literature)
-  - [About Me](#about-me)
   - [Reference](#reference)
+    - [Dataset and Content](#dataset-and-content)
+    - [Broader Discussion](#broader-discussion)
+  - [About Me](#about-me)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -48,7 +63,7 @@
 
 This book is powered by Jekyll Book. So you can read it online: 
 - [Github Jekyll Book](https://yogayu.github.io/DeepLearningCourse/)
-<!-- - [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home) -->
+- [Red Hen Lab's Techne Public Site](https://sites.google.com/case.edu/techne-public-site/home)
 
 ## Project Description
 
@@ -58,16 +73,122 @@ The Project goal is to design and develops an online course, to teach deep learn
 
 Project Mentors: [Francis Steen](http://cogweb.ucla.edu/steen/), [Mark Turner](http://markturner.org) and Rajesh Kasturirangan.
 
+
 ## Slides
 All the course slide can be found at this [directory](https://github.com/Yogayu/DeepLearningCourse/tree/master/Slides).
 
-- Lesson1-Introduction
-- Lesson2-PerceptronAndStructure
-- Lesson3-TrainingAndGradientDescent
-- Lesson4-Backpropagation
-- Lesson5-CNNs
-- Lesson6-RNNs
-- Lesson7-Neural Network Zoo
+### Lesson1-Introduction
+
+#### Keynote
+
+- [Introduction Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson1-Introduction.key)
+- [Introduction PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson1-Introduction.pdf)
+
+#### Keynote Content
+
+- Application of deep learning
+- What is Artificial Intelligence?
+- What is Machine Learning?
+- What is Deep Learning?
+- Limitation of deep learning
+
+### Lesson2-perceptron & Multilayer perceptron
+
+#### Keynote
+
+- [Perceptron & Multilayer perceptron Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson2-PerceptronAndStructure.key)
+- [Perceptron & Multilayer perceptron PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson2-PerceptronAndStructure.pdf)
+
+#### Keynote Content
+
+- Logic-gate neurons
+- Neuron-like perceptron
+- Neurons are more powerful
+- Color Factory
+- Multilayer perceptron
+  - Why is the middle layer called a hidden layer?
+  - Activation functions
+  - Commonly used activation functions
+  - Why must the activation functions be non-linear?
+- Forward Propagation
+- Example: Handwritten Digits Recognition
+
+### Lesson3-Training Neural Networks
+#### Keynote
+
+- [Training Neural Networks Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson3-TrainingAndGradientDescent.key)
+- [Training Neural Networks PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson3-TrainingAndGradientDescent.pdf)
+
+#### Content
+- Loss function
+- Gradient Descent
+  - What is Gradient Descent?
+  - Simple Example
+  - Avoid Overshooting
+  - Challenges: Local Minima
+
+### Lesson4-Backpropagation
+#### Keynote
+
+- [Backpropagation Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson4-Backpropagation.key)
+- [Backpropagation PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson4-Backpropagation.pdf)
+
+#### Content
+- Compute Graph
+  - Example
+  - Local Compute
+  - Compute Graph Advantage
+- The Chain Rule
+- Compute graph & Chain Rule
+- Back propagation
+  - Back propagation of addition nodes
+  - Back propagation of multiplication nodes
+  - Back propagation of ReLU
+  - Back propagation of Sigmoid
+- Application
+  - Exercise 1
+  - Exercise 2
+- Summary
+
+### Lesson5-CNNs
+
+#### Keynote
+
+- [CNNs Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson5-CNNs.key)
+- [CNNs PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson5-CNNs.pdf)
+
+#### Content
+
+- A Brief History of CNNs 
+- Why we need CNNs? 
+- The Structure of CNNs
+- Convolution operation
+- Padding Stride
+- Convolution
+- Pooling
+- Some typical CNNs 
+- Example: Dog or Cat?
+
+### Lesson6-RNNs
+#### keynote
+
+- [RNNs Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson6-RNNs.key)
+- [RNNs PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson6-RNNs.pdf)
+
+#### content
+
+- Sequence modeling
+- Deep forward neural networks vs Recurrent neural networks
+- Recurrent neural networks
+- The Problems Of RNNs
+- LSTM networks
+- Application of RNNs
+
+### Lesson7-Neural Network Zoo
+#### keynote
+
+- [RNNs Keynote](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson7-Neural%20Network%20Zoo.key)
+- [RNNs PDF](https://github.com/Yogayu/DeepLearningCourse/blob/master/Slides/Lesson7-Neural%20Network%20Zoo.pdf)
 
 # Course Outline
 ## Chapter 0 Background Knowledge
@@ -132,11 +253,11 @@ Math
 
 ### Apply Matrix to Neural Network computation
 
-[x] Apply Matrix to Neural Network computation
+- [x] Apply Matrix to Neural Network computation
 
 ### Design the Output Layer
 
-[x] Design the Output Layer
+- [x] Design the Output Layer
 
 ### Why we use None-linearities activation function?
 
@@ -168,6 +289,13 @@ Math
 - [x] Back Propagation
 
 The error is propagated backwards to the other layers.
+
+
+## Physical Experiment
+
+- Each student acted as a Neuron
+- Mock Forward Propagation
+- Mock Backward Propagation
 
 ## Chapter 6 Make your own neural network to classify handwritten digitals
 
