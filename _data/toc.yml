@@ -26,6 +26,11 @@
   url: /intro
   not_numbered: true
 
+- title: Course Slides
+  url: https://github.com/Yogayu/DeepLearningCourse/tree/master/Slides
+  external: true
+  not_numbered: true
+
 # External link
 - title: Techne Public Site
   url: https://sites.google.com/case.edu/techne-public-site/home

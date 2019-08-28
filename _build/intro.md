@@ -193,6 +193,41 @@ In this chapter, the student will learn how to teach the computer to classify ha
 
 **DataSet:** The dataset I choose for this part is MNIST(Modified National Institute of Standards and Technology)  dataset, which has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST(National Institute of Standards and Technology) which gives data set of over 800,000 images of handwritten digits from 3,600 writers. The digits have been size-normalized and centered in a fixed-size image.
 
+## Reference
+
+### Dataset and Content
+
+- [Kaggle -- MNIST sign language](https://www.kaggle.com/datamunge/sign-language-mnist)
+- [OpenML](https://www.openml.org/home) -- datasets, tasks, flows, results
+- [Speed Dating](https://www.openml.org/d/40536) -- [Covertype satellite images](https://www.openml.org/d/150)
+- [Awesome Public Datasets on GitHub](https://github.com/awesomedata/awesome-public-datasets)
+- [Wikipedia's list of datasets for machine-learning research](https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research)
+- [Medium's 50 best public datasets for machine learning](https://medium.com/towards-artificial-intelligence/the-50-best-public-datasets-for-machine-learning-d80e9f030279)
+- [25 Open Datasets for Deep Learning](https://www.analyticsvidhya.com/blog/2018/03/comprehensive-collection-deep-learning-datasets/)
+- [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)
+- [1996 English Broadcast News Speech](https://catalog.ldc.upenn.edu/LDC97S44)
+- [Skymind open datasets](https://skymind.ai/wiki/open-datasets)
+
+- Grokking Deep Learning Andrew W. Trask
+- [*Make Your Own Neural Network* ](https://www.amazon.com/Make-Your-Own-Neural-Network-ebook/dp/B01EER4Z4G/)*by* [Tariq Rashid](https://www.amazon.com/Tariq-Rashid/e/B01N1YH9L9/ref=dp_byline_cont_ebooks_1)
+- [*Introduction to Deep Learning*](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=1) animation videos created by [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU)
+- [http://introtodeeplearning.com](http://introtodeeplearning.com/)
+- http://deeplearning.net/tutorial/
+- [https://nndl.github.io](https://nndl.github.io/) 
+- http://zh.gluon.ai/index.html 
+
+### Broader Discussion
+
+- [Critique of Pure Learning](https://www.nature.com/articles/s41467-019-11786-6) (2019)
+- Geoffrey Hinton on capsule networks: https://www.youtube.com/watch?v=rTawFwUvnLE
+  - [Hinton, Dynamic Routing Between Capsules](https://arxiv.org/abs/1710.09829)
+  - For the MNIST dataset, see [A Tensorflow implementation of CapsNet based on Geoffrey Hinton's paper Dynamic Routing Between Capsules](https://github.com/naturomics/CapsNet-Tensorflow)
+- [Yann LeCun on the limits of deep learning](https://www.quora.com/What-are-the-limits-of-deep-learning-2) (2016, Quora)
+- [Artificial Intelligence Pioneer Says We Need to Start Over](https://cacm.acm.org/news/221108-artificial-intelligence-pioneer-says-we-need-to-start-over/fulltext) (2017)
+- [Why is Geoffrey Hinton suspicious of backpropagation and wants AI to start over?](https://www.quora.com/Why-is-Geoffrey-Hinton-suspicious-of-backpropagation-and-wants-AI-to-start-over)
+- [Geoffrey Hinton talk "What is wrong with convolutional neural nets?"](https://www.youtube.com/watch?v=rTawFwUvnLE)
+
+
 ## About Me
 
 - **Name**: Xinyu You
@@ -202,11 +237,3 @@ In this chapter, the student will learn how to teach the computer to classify ha
 - **Resume**: [youxinyu.me](http://youxinyu.me)
 
 If there are any problems, please feel free to contact me.
-
-## Reference
-
-- https://elitedatascience.com/machine-learning-projects-for-beginners
-- https://github.com/gkchai/GestureRecognition
-- https://www.tensorflow.org/tutorials/sequences/audio_recognition
-- https://medium.com/@awjuliani/exploring-sentiment-in-literature-with-deep-learning-30366aff578e
-- http://awjuliani.github.io/books/
