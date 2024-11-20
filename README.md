@@ -343,7 +343,6 @@ In this chapter, the student will learn how to teach the computer to classify ha
 - **Name**: Xinyu You
 - **Email**: yxydiscovery@gmail.com
 - **Github**: [yogayu](http://github.com/yogayu)
-- **Website**: [data2art](http://data2art.com)
-- **Resume**: [youxinyu.me](http://youxinyu.me)
+- **Website**: [Blog](http://exploreyour.life)
 
 If there are any problems, please feel free to contact me.
